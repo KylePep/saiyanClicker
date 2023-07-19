@@ -43,6 +43,10 @@ class GameService {
 
   attack(bossId) {
     // SECTION Damage effect
+
+    // document.body.style.setProperty('--mouseX', AppState.mouseX.toString())
+    // document.body.style.setProperty('--mouseY', AppState.mouseY.toString())
+
     AppState.effects++
     if (AppState.effects >= 2) {
       AppState.effects = 0

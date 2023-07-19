@@ -10,6 +10,8 @@ font-family: 'Wendy One', sans-serif; */
   --bossKiColor: rgb(9, 149, 93);
   --char1KiColor: rgb(255, 77, 0);
   --char2KiColor: green;
+  --mouseX: 0;
+  --mouseY: 0;
 }
 
 .main {
@@ -112,11 +114,13 @@ font-family: 'Wendy One', sans-serif; */
 } */
 
 
-.damage-effect {
+.damage-effect>* {
   position: absolute;
-  /* opacity: 0; */
+  opacity: 0;
   z-index: 100;
-  /* animation: fade 0.5s 0.5s; */
+  animation: fade 0.5s;
+  /* mask-image: "assets/img/damageEffectGrayscale.gif"; */
+  /* background-color: var(--bossKiColor); */
 }
 
 .fade {

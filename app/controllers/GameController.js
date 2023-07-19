@@ -31,8 +31,9 @@ function _drawEffects() {
   let effectIndex = AppState.effectIndex
   let template = ''
   template = boss.bossDamageEffect
+  console.log(template)
   console.log(document.getElementById(effectIndex[effects]))
-  setHTML(effectIndex[effects], template)
+  setHTML(effectIndex[effects], boss.bossDamageEffect)
 }
 
 export class GameController {
