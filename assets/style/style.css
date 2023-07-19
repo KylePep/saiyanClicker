@@ -114,9 +114,9 @@ font-family: 'Wendy One', sans-serif; */
 
 .damage-effect {
   position: absolute;
-  opacity: 0;
+  /* opacity: 0; */
   z-index: 100;
-  animation: fade 0.5s 0.5s;
+  /* animation: fade 0.5s 0.5s; */
 }
 
 .fade {

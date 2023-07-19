@@ -30,9 +30,8 @@ function _drawEffects() {
   let effects = AppState.effects
   let effectIndex = AppState.effectIndex
   let template = ''
-  template = boss?.bossDamageEffect
-
-  console.log(effectIndex[effects])
+  template = boss.bossDamageEffect
+  console.log(document.getElementById(effectIndex[effects]))
   setHTML(effectIndex[effects], template)
 }
 

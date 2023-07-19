@@ -44,7 +44,7 @@ class GameService {
   attack(bossId) {
     // SECTION Damage effect
     AppState.effects++
-    if (AppState.effects >= 3) {
+    if (AppState.effects >= 2) {
       AppState.effects = 0
     }
     console.log(AppState.effects)
