@@ -1,0 +1,189 @@
+/* BASIC STYLES HERE */
+
+/* font-family: 'Alkalami', serif;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Silkscreen', cursive;
+font-family: 'Wendy One', sans-serif; */
+
+:root {
+  --bossKiColor: rgb(9, 149, 93);
+  --char1KiColor: rgb(255, 77, 0);
+  --char2KiColor: green;
+}
+
+.main {
+  position: relative;
+  /* color: #461561; */
+}
+
+.header-tray {
+  background-image: linear-gradient(rgb(249, 52, 12), rgb(157, 37, 13));
+  border: 4mm double rgb(98, 23, 8);
+}
+
+.lrg-font {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.sml-font {
+  font-family: 'Silkscreen', cursive;
+}
+
+.shadow-font {
+  text-shadow: 2px 2px black;
+}
+
+.foreground {
+  image-rendering: pixelated;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  transform-origin: 50% bottom;
+  object-fit: cover;
+  width: 100vw;
+  height: auto;
+  bottom: 0vh;
+  left: 0vh;
+}
+
+.character1 {
+  image-rendering: pixelated;
+  scale: 2;
+  transform-origin: 50% 80%;
+  transform: scaleX(-1);
+  transition: 200ms;
+}
+
+.char1-bar {
+  background-color: var(--char1KiColor);
+}
+
+.character2 {
+  image-rendering: pixelated;
+  scale: 2;
+  transform-origin: right bottom;
+  transform: scaleX(-1);
+  transition: 200ms;
+}
+
+.char2-bar {
+  background-color: var(--char2KiColor);
+}
+
+.character1:hover {
+  filter: drop-shadow(2px -1px var(--char1KiColor));
+}
+
+.character2:hover {
+  filter: drop-shadow(2px -1px var(--char2KiColor));
+}
+
+.boss {
+  image-rendering: pixelated;
+  scale: 2.2;
+  transform-origin: 50% bottom;
+  transition: 200ms;
+}
+
+.boss:hover {
+  filter: drop-shadow(2px -1px var(--bossKiColor));
+}
+
+.boss-bar {
+  rotate: (0.5turn);
+  background-color: var(--bossKiColor);
+}
+
+.bossElemBorder {
+  border: 2mm ridge rgb(255, 255, 255);
+  height: 7vh;
+}
+
+/* .flash {
+  animation: flash 0.5s;
+}
+
+@keyframes flash {
+  0% {
+    mix-blend-mode: multiply;
+    fill: rgb(177, 60, 60);
+  }
+} */
+
+
+.damage-effect {
+  position: absolute;
+  opacity: 0;
+  z-index: 100;
+  animation: fade 0.5s 0.5s;
+}
+
+.fade {
+  animation: fade 0.5s 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+.shake {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px);
+  }
+
+  10% {
+    transform: translate(-1px, -2px);
+  }
+
+  20% {
+    transform: translate(-3px, 0px);
+  }
+
+  30% {
+    transform: translate(3px, 2px);
+  }
+
+  40% {
+    transform: translate(1px, -1px);
+  }
+
+  50% {
+    transform: translate(-1px, 2px);
+  }
+
+  60% {
+    transform: translate(-3px, 1px);
+  }
+
+  70% {
+    transform: translate(3px, 1px);
+  }
+
+  80% {
+    transform: translate(-1px, -1px);
+  }
+
+  90% {
+    transform: translate(1px, 2px);
+  }
+
+  100% {
+    transform: translate(1px, -2px);
+  }
+}

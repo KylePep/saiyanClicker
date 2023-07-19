@@ -1,0 +1,56 @@
+import { AppState } from "../AppState.js";
+import { characterService } from "../services/CharactersService.js";
+import { gameService } from "../services/GameService.js";
+import { setHTML, setText } from "../utils/Writer.js";
+
+function _drawBoss() {
+  let boss = AppState.boss.find(b => b.active == true)
+  // @ts-ignore
+  setHTML('boss', boss.bossTemplate)
+  // @ts-ignore
+  document.body.style.setProperty('--bossKiColor', boss.kiColor)
+}
+function _drawBossStats() {
+  let boss = AppState.boss.find(b => b.active == true)
+  // @ts-ignore
+  setText('bossPowerLevel', `Power Level: ${boss.powerLevel}`)
+  // @ts-ignore
+  setHTML('bossIcon', boss.bossIcon)
+  // @ts-ignore
+  setHTML('bossTillDmg', boss.bossAttackBar)
+}
+function _drawHealthBar() {
+  let boss = AppState.boss.find(b => b.active == true)
+  // @ts-ignore
+  setHTML('bossHp', boss.bossHealthBar)
+}
+
+function _drawEffects() {
+  let boss = AppState.boss.find(b => b.active == true)
+  let template = ''
+  // let effects = AppState.effects
+  // for (let i = 0; i < effects; i++) {
+  template = boss.bossDamageEffect
+  // }
+  // let body = document.getElementById('damageEffect')?.innerHTML
+  // body += template
+  setHTML('damageEffect', template)
+  console.log(template)
+}
+
+export class GameController {
+  constructor() {
+    _drawBoss()
+    _drawBossStats()
+    _drawHealthBar()
+    AppState.on('bossStats', _drawHealthBar)
+    AppState.on('bossStats', _drawBossStats)
+    AppState.on('boss', _drawBoss)
+    //AppState.on('effects', _drawEffects)
+  }
+
+  attack(bossId) {
+    gameService.attack(bossId)
+    characterService.animateAttack()
+  }
+}
