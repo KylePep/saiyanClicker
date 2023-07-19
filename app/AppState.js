@@ -102,7 +102,7 @@ class ObservableAppState extends EventEmitter {
   fighting = false
 
   effects = 0
-  effectIndex = ['effect1, effect2, effect3']
+  effectIndex = ['effect1', 'effect2', 'effect3']
   mouseX = 0
   mouseY = 0
 

@@ -62,9 +62,7 @@ export class Game {
 
   get bossDamageEffect() {
     return `
-    <div id="damageEffect" class="damage-effect" style="top: ${AppState.mouseY - 64}px; left: ${AppState.mouseX - 64}px;">
-    <img src="assets/img/damageEffectGrayscale.gif" alt="">
-  </div>
+    <img class="damage-effect" src="assets/img/damageEffectGrayscale.gif" alt="" style="top: ${AppState.mouseY - 64}px; left: ${AppState.mouseX - 64}px;>
     `
   }
 

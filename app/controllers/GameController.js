@@ -27,15 +27,13 @@ function _drawHealthBar() {
 
 function _drawEffects() {
   let boss = AppState.boss.find(b => b.active == true)
+  let effects = AppState.effects
+  let effectIndex = AppState.effectIndex
   let template = ''
-  // let effects = AppState.effects
-  // for (let i = 0; i < effects; i++) {
-  template = boss.bossDamageEffect
-  // }
-  // let body = document.getElementById('damageEffect')?.innerHTML
-  // body += template
-  setHTML('damageEffect', template)
-  console.log(template)
+  template = boss?.bossDamageEffect
+
+  console.log(effectIndex[effects])
+  setHTML(effectIndex[effects], template)
 }
 
 export class GameController {
@@ -46,7 +44,7 @@ export class GameController {
     AppState.on('bossStats', _drawHealthBar)
     AppState.on('bossStats', _drawBossStats)
     AppState.on('boss', _drawBoss)
-    //AppState.on('effects', _drawEffects)
+    AppState.on('effects', _drawEffects)
   }
 
   attack(bossId) {
