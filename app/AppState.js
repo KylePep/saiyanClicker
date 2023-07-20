@@ -29,7 +29,7 @@ class ObservableAppState extends EventEmitter {
       hpMod: 2,
       hpRegen: 1,
       // },
-      powerLevel: 350,
+      powerLevel: 500,
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {

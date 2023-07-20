@@ -22,11 +22,17 @@ function _drawCharacters() {
 function _drawCharStats() {
   let template = ''
   let characters = AppState.characters
+  let boss = AppState.boss.find(b => b.active == true)
   let powerTotal = 0
   characters.forEach(c => {
     template += c.characterStatsTemplate
     powerTotal += c.powerLevel
   })
+  if (powerTotal > boss.powerLevel) {
+    document.body.style.setProperty('--powerTotalColor', '#0fe10f')
+  } else if (powerTotal < boss.powerLevel) {
+    document.body.style.setProperty('--powerTotalColor', '#e91a1a')
+  }
   setHTML(`characterStats`, template)
   setText('totals', `${powerTotal}`)
 

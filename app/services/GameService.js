@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+// @ts-ignore
 import { CharacterController } from "../controllers/CharacterController.js"
 import { characterService } from "./CharactersService.js"
 
@@ -7,6 +8,7 @@ class GameService {
   constructor() {
     //this.delayReset = this.debounce(this.reset)
     let boss = AppState.boss.find(b => b.active == true)
+    // @ts-ignore
     setInterval(this.damageCharacters, boss.bossDmgRate)
     setInterval(this.updateBossTimer, 500)
     window.addEventListener("mousemove", this.screenView);
@@ -18,12 +20,21 @@ class GameService {
     console.log(AppState.mouseX, AppState.mouseY)
   }
 
+  // @ts-ignore
   damageCharacters(damageCharacters) {
     let boss = AppState.boss.find(b => b.active == true)
 
+    // @ts-ignore
     const charDmg = AppState.characters.forEach(c => {
       if (c.state != 'block') {
+        // @ts-ignore
+        if (AppState.powerLevelTotal < boss.powerLevel) {
+          // @ts-ignore
+          c.hp -= (boss.bossDmg) * 1.5
+        }
+        // @ts-ignore
         c.hp -= boss.bossDmg
+        // @ts-ignore
         boss.powerLevel += 10
         AppState.emit('characters')
       }
@@ -33,9 +44,12 @@ class GameService {
 
   updateBossTimer() {
     let boss = AppState.boss.find(b => b.active == true)
+    // @ts-ignore
     if (boss.bossTillDmg < boss.bossDmgRate) {
+      // @ts-ignore
       boss.bossTillDmg += 500;
     } else {
+      // @ts-ignore
       boss.bossTillDmg = 500;
     }
     AppState.emit('bossStats')
@@ -77,7 +91,11 @@ class GameService {
         }
       })
       // @ts-ignore
-      findBoss.health -= damage;
+      if (AppState.powerLevelTotal > findBoss.powerLevel) {
+        // @ts-ignore
+        findBoss.health -= damage * 1.5;
+        // @ts-ignore
+      } findBoss.health -= damage;
     } else {
       // @ts-ignore
       findBoss.powerLevel = Math.round(findBoss.powerLevel * findBoss.powerMod)

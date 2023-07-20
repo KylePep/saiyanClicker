@@ -10,6 +10,7 @@ font-family: 'Wendy One', sans-serif; */
   --bossKiColor: rgb(9, 149, 93);
   --char1KiColor: rgb(255, 77, 0);
   --char2KiColor: green;
+  --powerTotalColor: #e91a1a;
   --mouseX: 0;
   --mouseY: 0;
 }
@@ -22,6 +23,10 @@ font-family: 'Wendy One', sans-serif; */
 .header-tray {
   background-image: linear-gradient(rgb(249, 52, 12), rgb(157, 37, 13));
   border: 4mm double rgb(98, 23, 8);
+}
+
+.powerTotal {
+  color: var(--powerTotalColor);
 }
 
 .lrg-font {
@@ -120,6 +125,10 @@ font-family: 'Wendy One', sans-serif; */
   opacity: 0;
   z-index: 100;
   animation: fade 0.5s;
+
+}
+
+.effect-backdrop {
   filter: drop-shadow(4px 4px var(--char1KiColor)) drop-shadow(-4px -4px var(--char2KiColor));
 }
 

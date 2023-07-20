@@ -62,7 +62,11 @@ export class Game {
 
   get bossDamageEffect() {
     return `
-    <img onclick="app.GameController.attack('${this.id}')" class="damage-effect"  src="assets/img/damageEffectGrayscale.gif" alt="" style="top: ${AppState.mouseY - 64}px; left: ${AppState.mouseX - 64}px; transform: rotate(${this.computedDegree}deg)" >
+    <div  transform: "top: ${AppState.mouseY - 64}px; left: ${AppState.mouseX - 64}px;">
+      <img class="damage-effect" onclick="app.GameController.attack('${this.id}')"  src="assets/img/damageEffectGrayscale.gif" alt="" style=" transform: rotate(${this.computedDegree}deg)" >
+      <div class="effect-backdrop">
+      </div>
+    </div>
     `
   }
 
