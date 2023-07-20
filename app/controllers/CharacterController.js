@@ -1,6 +1,6 @@
 import { AppState } from "../AppState.js"
 import { characterService } from "../services/CharactersService.js"
-import { setHTML } from "../utils/Writer.js"
+import { setHTML, setText } from "../utils/Writer.js"
 
 function _setCharacterKiColor() {
   let characters = AppState.characters
@@ -22,8 +22,13 @@ function _drawCharacters() {
 function _drawCharStats() {
   let template = ''
   let characters = AppState.characters
-  characters.forEach(c => template += c.characterStatsTemplate)
+  let powerTotal = 0
+  characters.forEach(c => {
+    template += c.characterStatsTemplate
+    powerTotal += c.powerLevel
+  })
   setHTML(`characterStats`, template)
+  setText('totals', `${powerTotal}`)
 
 }
 export class CharacterController {

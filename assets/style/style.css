@@ -116,12 +116,11 @@ font-family: 'Wendy One', sans-serif; */
 
 .damage-effect>* {
   position: absolute;
+  scale: .5;
   opacity: 0;
   z-index: 100;
   animation: fade 0.5s;
-  background-color: var(--bossKiColor);
-  -webkit-mask-image: "assets/img/damageEffectGrayscale.gif";
-  mask-image: "assets/img/damageEffectGrayscale.gif";
+  filter: drop-shadow(4px 4px var(--char1KiColor)) drop-shadow(-4px -4px var(--char2KiColor));
 }
 
 .fade {

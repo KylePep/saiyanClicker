@@ -62,10 +62,14 @@ export class Game {
 
   get bossDamageEffect() {
     return `
-    <div class="damage-effect" style="top: ${AppState.mouseY - 64}px; left: ${AppState.mouseX - 64}px;">
-    <img onclick="app.GameController.attack('${this.id}')"  src="assets/img/damageEffectGrayscale.gif" alt="" >
-    </div>
+    <img onclick="app.GameController.attack('${this.id}')" class="damage-effect"  src="assets/img/damageEffectGrayscale.gif" alt="" style="top: ${AppState.mouseY - 64}px; left: ${AppState.mouseX - 64}px; transform: rotate(${this.computedDegree}deg)" >
     `
+  }
+
+  get computedDegree() {
+    let deg = 0
+    deg = Math.random() * 360
+    return deg
   }
 
 }

@@ -24,6 +24,7 @@ class GameService {
     const charDmg = AppState.characters.forEach(c => {
       if (c.state != 'block') {
         c.hp -= boss.bossDmg
+        boss.powerLevel += 10
         AppState.emit('characters')
       }
     })
@@ -71,6 +72,8 @@ class GameService {
       characters.forEach(c => {
         if (c.active == true && c.state != 'block') {
           damage += c.dmg
+          c.powerLevel += c.powerLevelMod
+          AppState.emit('bossStats')
         }
       })
       // @ts-ignore

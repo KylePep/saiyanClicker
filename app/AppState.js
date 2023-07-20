@@ -16,6 +16,7 @@ class ObservableAppState extends EventEmitter {
     new Character({
       name: "Goku",
       active: true,
+      alive: true,
       state: 'neutral',
       elementId: 'character1',
       icon: "assets/img/gokuIcon.png",
@@ -28,8 +29,8 @@ class ObservableAppState extends EventEmitter {
       hpMod: 2,
       hpRegen: 1,
       // },
-      powerLevel: 1000,
-      powerLevelMod: 10,
+      powerLevel: 350,
+      powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
       dmg: 10,
@@ -46,6 +47,7 @@ class ObservableAppState extends EventEmitter {
     new Character({
       name: "Picollo",
       active: true,
+      alive: true,
       state: 'neutral',
       elementId: 'character2',
       icon: "assets/img/piccoloIcon.png",
@@ -57,8 +59,8 @@ class ObservableAppState extends EventEmitter {
       hpMax: 100,
       hpMod: 2,
       hpRegen: 1,
-      powerLevel: 1000,
-      powerLevelMod: 10,
+      powerLevel: 300,
+      powerLevelMod: 1,
       kiColor: '#ffff5e',
       // },
       // damage: {
@@ -82,8 +84,8 @@ class ObservableAppState extends EventEmitter {
       active: true,
       boss: 'Raditz',
       bossImg: 'assets/img/RaditzIdle.gif',
-      health: 400,
-      healthMax: 500,
+      health: 15000,
+      healthMax: 15000,
       bossDmg: 10,
       bossDmgRate: 5000,
       kiColor: '#b668e1',
@@ -100,6 +102,8 @@ class ObservableAppState extends EventEmitter {
   activeBoss = null
 
   fighting = false
+
+  powerLevelTotal = 0
 
   effects = 0
   effectIndex = ['effect1', 'effect2', 'effect3']

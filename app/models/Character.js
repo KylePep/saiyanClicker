@@ -6,6 +6,7 @@ export class Character {
     this.id = data.id ? data.id : generateId();
     this.name = data.name;
     this.active = data.active;
+    this.alive = data.alive;
     this.state = data.state;
 
     // display information
