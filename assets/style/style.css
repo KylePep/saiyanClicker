@@ -119,8 +119,9 @@ font-family: 'Wendy One', sans-serif; */
   opacity: 0;
   z-index: 100;
   animation: fade 0.5s;
-  /* mask-image: "assets/img/damageEffectGrayscale.gif"; */
-  /* background-color: var(--bossKiColor); */
+  background-color: var(--bossKiColor);
+  -webkit-mask-image: "assets/img/damageEffectGrayscale.gif";
+  mask-image: "assets/img/damageEffectGrayscale.gif";
 }
 
 .fade {
