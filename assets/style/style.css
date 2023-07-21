@@ -118,6 +118,14 @@ font-family: 'Wendy One', sans-serif; */
   }
 } */
 
+.masked {
+  -webkit-mask-image: url(MDN.svg), url(star.svg);
+  mask-image: url(MDN.svg), url(star.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+}
 
 .damage-effect>* {
   position: absolute;

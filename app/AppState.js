@@ -29,7 +29,7 @@ class ObservableAppState extends EventEmitter {
       hpMod: 2,
       hpRegen: 1,
       // },
-      powerLevel: 500,
+      powerLevel: 350,
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
@@ -53,7 +53,7 @@ class ObservableAppState extends EventEmitter {
       icon: "assets/img/piccoloIcon.png",
       idle: 'assets/img/piccoloIdle.gif',
       attack: 'assets/img/PiccoloAttack.gif',
-      block: 'assets/img/gokuBlockOne.png',
+      block: 'assets/img/piccoloBlock.png',
       // health: {
       hp: 100,
       hpMax: 100,
@@ -87,7 +87,7 @@ class ObservableAppState extends EventEmitter {
       health: 15000,
       healthMax: 15000,
       bossDmg: 10,
-      bossDmgRate: 5000,
+      bossDmgRate: 15000,
       kiColor: '#b668e1',
       powerLevel: 1000,
       powerMod: 1.1,

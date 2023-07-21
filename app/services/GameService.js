@@ -1,23 +1,20 @@
 import { AppState } from "../AppState.js"
-// @ts-ignore
-import { CharacterController } from "../controllers/CharacterController.js"
 import { characterService } from "./CharactersService.js"
 
 class GameService {
 
   constructor() {
-    //this.delayReset = this.debounce(this.reset)
     let boss = AppState.boss.find(b => b.active == true)
-    // @ts-ignore
-    setInterval(this.damageCharacters, boss.bossDmgRate)
-    setInterval(this.updateBossTimer, 500)
+
+    setInterval(this.damageCharacters, boss?.bossDmgRate)
+    setInterval(this.updateBossTimer, boss?.bossDmgRate / 50)
     window.addEventListener("mousemove", this.screenView);
   }
 
   screenView(e) {
     AppState.mouseX = e.clientX;
     AppState.mouseY = e.clientY;
-    console.log(AppState.mouseX, AppState.mouseY)
+    // console.log(AppState.mouseX, AppState.mouseY)
   }
 
   // @ts-ignore
@@ -35,8 +32,9 @@ class GameService {
         // @ts-ignore
         c.hp -= boss.bossDmg
         // @ts-ignore
-        boss.powerLevel += 10
+        boss.powerLevel = (boss?.powerLevel * boss?.powerMod).toFixed(0)
         AppState.emit('characters')
+        console.log('[Attack]')
       }
     })
     characterService.takeDamage()
@@ -47,13 +45,13 @@ class GameService {
     // @ts-ignore
     if (boss.bossTillDmg < boss.bossDmgRate) {
       // @ts-ignore
-      boss.bossTillDmg += 500;
+      boss.bossTillDmg += boss.bossDmgRate / 50;
     } else {
       // @ts-ignore
-      boss.bossTillDmg = 500;
+      boss.bossTillDmg = 0;
     }
     AppState.emit('bossStats')
-    // console.log(boss.bossTillDmg)
+    console.log(boss.bossTillDmg)
   }
 
   attack(bossId) {
@@ -112,14 +110,6 @@ class GameService {
     // @ts-ignore
     //bossElem.classList.remove('flash')
   }
-
-  // debounce(func, timeout = 1900) {
-  //   let timer
-  //   return (...args) => {
-  //     clearTimeout(timer)
-  //     timer = setTimeout(() => { func.apply(this, args) }, timeout)
-  //   }
-  // }
 
 }
 export const gameService = new GameService()
