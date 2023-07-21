@@ -39,6 +39,7 @@ function _drawCharStats() {
 }
 export class CharacterController {
   constructor() {
+    console.log('[Character Controller]')
     _setCharacterKiColor()
     _drawCharacters()
     _drawCharStats()

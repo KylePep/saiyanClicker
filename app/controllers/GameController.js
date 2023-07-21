@@ -38,6 +38,7 @@ function _drawEffects() {
 
 export class GameController {
   constructor() {
+    console.log('[Game Controller]')
     _drawBoss()
     _drawBossStats()
     _drawHealthBar()
