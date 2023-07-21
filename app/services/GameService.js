@@ -33,6 +33,7 @@ class GameService {
         c.hp -= boss.bossDmg
         // @ts-ignore
         boss.powerLevel = (boss?.powerLevel * boss?.powerMod).toFixed(0)
+        boss.bossTillDmg = 0
         AppState.emit('characters')
         console.log('[Attack]')
       }
