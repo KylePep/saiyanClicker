@@ -18,7 +18,7 @@ export const GameView = /*html*/`
 <section class="row">
   <div class="col-5" id="characterStats">
 
-    // SECTION 
+    
 
   </div>
   <div class="col-2 d-flex flex-column fs-1 text-light lrg-font shadow-font text-center justify-content-center">
@@ -43,7 +43,7 @@ export const GameView = /*html*/`
 </section>
 </header>
 
-// SECTION
+
 <main class="container-fluid d-flex flex-column justify-content-end" class=" main ">
 
 

@@ -1,24 +1,35 @@
 import { AppState } from "../AppState.js"
+import { GameController } from "../controllers/GameController.js";
 import { characterService } from "./CharactersService.js"
 
 class GameService {
-
   constructor() {
     let boss = AppState.boss.find(b => b.active == true)
-
-    setInterval(this.damageCharacters, boss?.bossDmgRate)
+    // setInterval(this.damageCharacters, boss?.bossDmgRate)
     setInterval(this.updateBossTimer, boss?.bossDmgRate / 50)
     window.addEventListener("mousemove", this.screenView);
+
+    let _this = this
+
+    AppState.on('page', this.checkPage)
   }
 
   screenView(e) {
     AppState.mouseX = e.clientX;
     AppState.mouseY = e.clientY;
-    // console.log(AppState.mouseX, AppState.mouseY)
   }
 
-  // @ts-ignore
-  damageCharacters(damageCharacters) {
+  checkPage() {
+    if (AppState.page == '#/game') {
+      console.log('[Page]', AppState.page)
+      AppState.gamePage = true
+    } else {
+      AppState.gamePage = false
+    }
+  }
+
+  damageCharacters() {
+    console.log('[DamagCharacters]')
     let boss = AppState.boss.find(b => b.active == true)
 
     // @ts-ignore
@@ -39,33 +50,41 @@ class GameService {
       }
     })
     characterService.takeDamage()
+    return
   }
 
-  updateBossTimer() {
+  updateBossTimer(_this) {
     let boss = AppState.boss.find(b => b.active == true)
-    // @ts-ignore
-    if (boss.bossTillDmg < boss.bossDmgRate) {
-      // @ts-ignore
-      boss.bossTillDmg += boss.bossDmgRate / 50;
+
+    if (AppState.gamePage == false) {
+      boss.bossTillDmg = 0
+      console.log('[Stalling timer]', boss.bossTillDmg = 0)
+      return
     } else {
+
       // @ts-ignore
-      boss.bossTillDmg = 0;
+      if (boss.bossTillDmg < boss.bossDmgRate) {
+
+        // @ts-ignore
+        boss.bossTillDmg += boss.bossDmgRate / 50;
+      } else {
+        // @ts-ignore
+        boss.bossTillDmg = 0;
+        console.log('[Damage Characters]')
+        GameController.damageCharacters()
+
+      }
+      AppState.emit('bossStats')
     }
-    AppState.emit('bossStats')
-    console.log(boss.bossTillDmg)
   }
 
   attack(bossId) {
     // SECTION Damage effect
 
-    // document.body.style.setProperty('--mouseX', AppState.mouseX.toString())
-    // document.body.style.setProperty('--mouseY', AppState.mouseY.toString())
-
     AppState.effects++
     if (AppState.effects >= 2) {
       AppState.effects = 0
     }
-    console.log(AppState.effects)
 
 
     // SECTION damage boss
@@ -103,13 +122,11 @@ class GameService {
     }
     AppState.emit('bossStats')
   }
+
   stopDamage() {
     let bossBar = document.getElementById('bossHp')
-    //let bossElem = document.getElementById('boss')
     // @ts-ignore
     bossBar.classList.remove('shake')
-    // @ts-ignore
-    //bossElem.classList.remove('flash')
   }
 
 }

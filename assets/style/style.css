@@ -20,6 +20,18 @@ font-family: 'Wendy One', sans-serif; */
   /* color: #461561; */
 }
 
+.Start-Button {
+  image-rendering: pixelated;
+  transform-origin: 50% 100%;
+  scale: 3;
+  transition: 1s;
+
+}
+
+.Start-Button:hover {
+  scale: 3.2;
+}
+
 .header-tray {
   background-image: linear-gradient(rgb(249, 52, 12), rgb(157, 37, 13));
   border: 4mm double rgb(98, 23, 8);
@@ -39,6 +51,28 @@ font-family: 'Wendy One', sans-serif; */
 
 .shadow-font {
   text-shadow: 2px 2px black;
+}
+
+.start-font {
+  color: #ff400f;
+  text-shadow: -4px 4px 0 #000,
+    4px 4px 0 #000,
+    4px -4px 0 #000,
+    -4px -4px 0 #000,
+    4px 0px 0 #000,
+    -4px 0px 0 #000;
+}
+
+
+.char-select {
+  background-color: #ff400f;
+  box-shadow: 4px 4px #00000057;
+  padding: 10px;
+  border: 4mm ridge black;
+}
+
+.char-select>img {
+  filter: drop-shadow(4px 4px black);
 }
 
 .foreground {
