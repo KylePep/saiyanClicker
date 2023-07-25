@@ -38,7 +38,7 @@ export class Game {
     <div class="d-flex justify-content-end">
 
     <div class="d-flex align-items-end">
-      <div class="fs-1 lrg-font shadow-font text-light ms-3 mt-1"> ${this.boss}</div>
+      <div class="fs-1 lrg-font shadow-md-font text-light ms-3 mt-1"> ${this.boss}</div>
 
     <div>
       <img class="mx-3 mt-3 border border-4 border-light" src="${this.icon}"
@@ -55,7 +55,7 @@ export class Game {
       <div class="progress-bar boss-bar" role="progressbar" style="width: ${(this.health / this.healthMax) * 100}%;"     
       aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <div id="bossPowerLevel" class="fs-4 sml-font shadow-font text-center text-light ms-3">Power Level: ${this.powerLevel}</div>
+    <div id="bossPowerLevel" class="fs-4 sml-font shadow-md-font text-center text-light ms-3">Power Level: ${this.powerLevel}</div>
     </div>
     `
   }

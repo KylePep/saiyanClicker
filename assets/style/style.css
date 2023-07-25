@@ -49,8 +49,22 @@ font-family: 'Wendy One', sans-serif; */
   font-family: 'Silkscreen', cursive;
 }
 
-.shadow-font {
-  text-shadow: 2px 2px black;
+.shadow-md-font {
+  text-shadow: -2px 2px 0 #000,
+    2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    2px 0px 0 #000,
+    -2px 0px 0 #000;
+}
+
+.shadow-sm-font {
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    1px 0px 0 #000,
+    -1px 0px 0 #000;
 }
 
 .start-font {

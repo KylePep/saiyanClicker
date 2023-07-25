@@ -21,7 +21,7 @@ export const GameView = /*html*/`
     
 
   </div>
-  <div class="col-2 d-flex flex-column fs-1 text-light lrg-font shadow-font text-center justify-content-center">
+  <div class="col-2 d-flex flex-column fs-1 text-light lrg-font shadow-md-font text-center justify-content-center">
     <div class="mb-3">VS</div>
     <div id="totals" class="fs-4 powerTotal">Char|Boss</div>
   </div>

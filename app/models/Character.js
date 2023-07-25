@@ -64,13 +64,13 @@ export class Character {
           </div>
 
           <div class="ms-2 flex-fill">
-            <div class="fs-3 lrg-font shadow-font text-light mt-1"> ${this.name}</div>
+            <div class="fs-3 lrg-font shadow-md-font text-light mt-1"> ${this.name}</div>
 
             <div id="${this.elementId}bar" class="progress bg-dark bossElemBorder bossHp">
               <div  class="progress-bar ${this.computedStatsColor}" role="progressbar" style="width: ${(this.hp / this.hpMax) * 100}%;" aria-valuenow="25"
                 aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <div id="" class="fs-6 sml-font shadow-font text-center text-light ms-3">Power Level:
+            <div id="" class="fs-6 sml-font shadow-sm-font text-center text-light ms-3">Power Level:
               ${this.powerLevel}</div>
           </div>
         </div>
