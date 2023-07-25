@@ -65,14 +65,22 @@ font-family: 'Wendy One', sans-serif; */
 
 
 .char-select {
-  background-color: #ff400f;
+  /* background: linear-gradient(#fff870, #ffd800, #ffc000); */
+  background: linear-gradient(#ff901f, #ff5810, #ff400f);
   box-shadow: 4px 4px #00000057;
   padding: 10px;
   border: 4mm ridge black;
+
 }
 
+
 .char-select>img {
-  filter: drop-shadow(4px 4px black);
+  filter: drop-shadow(4px 4px #761f09);
+  transition: .5s;
+}
+
+.char-select:hover>img {
+  scale: 1.05;
 }
 
 .foreground {

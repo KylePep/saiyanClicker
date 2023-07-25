@@ -21,7 +21,7 @@ class ObservableAppState extends EventEmitter {
       state: 'neutral',
       elementId: 'character1',
       icon: "assets/img/gokuIcon.png",
-      idle: 'assets/img/gokuIdle.gif',
+      idle: 'assets/img/Vegeta/vegetaIdle.gif',
       attack: 'assets/img/gokuAttack.gif',
       block: 'assets/img/gokuBlockOne.png',
       // health: {

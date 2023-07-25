@@ -71,7 +71,8 @@ class GameService {
         // @ts-ignore
         boss.bossTillDmg = 0;
         console.log('[Damage Characters]')
-        GameController.damageCharacters()
+        // NOTE Just changed this might break
+        gameService.damageCharacters()
 
       }
       AppState.emit('bossStats')
