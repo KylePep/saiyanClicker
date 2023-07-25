@@ -20,10 +20,10 @@ class ObservableAppState extends EventEmitter {
       alive: true,
       state: 'neutral',
       elementId: 'character1',
-      icon: "assets/img/gokuIcon.png",
-      idle: 'assets/img/Vegeta/vegetaIdle.gif',
-      attack: 'assets/img/gokuAttack.gif',
-      block: 'assets/img/gokuBlockOne.png',
+      icon: "assets/img/Goku/gokuIcon.png",
+      idle: 'assets/img/Goku/gokuIdle.gif',
+      attack: 'assets/img/Goku/gokuAttack.gif',
+      block: 'assets/img/Goku/gokuBlockOne.png',
       // health: {
       hp: 100,
       hpMax: 100,
@@ -51,10 +51,10 @@ class ObservableAppState extends EventEmitter {
       alive: true,
       state: 'neutral',
       elementId: 'character2',
-      icon: "assets/img/piccoloIcon.png",
-      idle: 'assets/img/piccoloIdle.gif',
-      attack: 'assets/img/PiccoloAttack.gif',
-      block: 'assets/img/piccoloBlock.png',
+      icon: "assets/img/Piccolo/piccoloIcon.png",
+      idle: 'assets/img/Piccolo/piccoloIdle.gif',
+      attack: 'assets/img/Piccolo/PiccoloAttack.gif',
+      block: 'assets/img/Piccolo/piccoloBlock.png',
       // health: {
       hp: 100,
       hpMax: 100,
@@ -84,7 +84,7 @@ class ObservableAppState extends EventEmitter {
     new Game({
       active: true,
       boss: 'Raditz',
-      bossImg: 'assets/img/RaditzIdle.gif',
+      bossImg: 'assets/img/Raditz/RaditzIdle.gif',
       health: 15000,
       healthMax: 15000,
       bossDmg: 10,
@@ -92,7 +92,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#b668e1',
       powerLevel: 1000,
       powerMod: 1.1,
-      icon: 'assets/img/RaditzIcon.png'
+      icon: 'assets/img/Raditz/RaditzIcon.png'
     })
   ]
 

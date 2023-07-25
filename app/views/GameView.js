@@ -3,13 +3,13 @@ export const GameView = /*html*/`
 
 <div id="damageEffect">
 <div id="effect1" class="damage-effect">
-  <img src="assets/img/damageEffectGrayscale.gif" alt="">
+  <img src="assets/img/Other/damageEffectGrayscale.gif" alt="">
 </div>
 <div id="effect2" class="damage-effect">
-  <img src="assets/img/damageEffectGrayscale.gif" alt="">
+  <img src="assets/img/Other/damageEffectGrayscale.gif" alt="">
 </div>
 <div id="effect3" class="damage-effect">
-  <img src="assets/img/damageEffectGrayscale.gif" alt="">
+  <img src="assets/img/Other/damageEffectGrayscale.gif" alt="">
 </div>
 </div>
 
@@ -49,7 +49,7 @@ export const GameView = /*html*/`
 
 
 <div id="foreground">
-  <img class="foreground" src="assets/img/WastelandForeground-large-crop.png" alt="">
+  <img class="foreground" src="assets/img/Other/WastelandForeground-large-crop.png" alt="">
 </div>
 
 <section class="row d-flex flex-row justify-content-around">
