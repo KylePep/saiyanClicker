@@ -13,14 +13,16 @@ function _isVegetaUnlocked() {
 }
 
 function _checkSelection() {
-  let characters = AppState.characters
-  characters.forEach(c => {
-    if (c.elementId == 'character1') {
-      setHTML('c1', c.name)
-    } else if (c.elementId == 'character2') {
-      setHTML('c2', c.name)
-    }
-  })
+  if (AppState.gamePage == false) {
+    let characters = AppState.characters
+    characters.forEach(c => {
+      if (c.elementId == 'character1') {
+        setHTML('c1', c.name)
+      } else if (c.elementId == 'character2') {
+        setHTML('c2', c.name)
+      }
+    })
+  }
 }
 
 export class HomeController {

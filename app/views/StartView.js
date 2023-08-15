@@ -13,12 +13,15 @@ export const StartView = /*html*/`
     </div>
     </div>
   </div>
-  <div class="sml-font shadow-sm-font text-light d-flex flex-column align-items-center justify-content-center ">
-    <div class="fs-4" >
-      Team: 
-    </div>
-        <div class="">
-        <p id="c1" class="text-center">Character1</p> <p id="c2" class="text-center">Character2</p>
+  <div class="sml-font shadow-md-font text-light  ">
+
+        <div class="fs-3 d-flex justify-content-center pe-3"> Team:
+          <p class="text-center fs-3 ms-3">1:
+            <span id="c1" class="ms-0">Character1</span> 
+          </p>
+          <p class="text-center fs-3 ms-3">2:
+            <span id="c2" >Character2</span>
+          </p>
         </div>
   </div>
   <div class="row d-flex justify-content-around">

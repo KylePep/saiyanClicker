@@ -32,19 +32,21 @@ class GameService {
 
     // @ts-ignore
     const charDmg = AppState.characters.forEach(c => {
-      if (c.state != 'block') {
-        // @ts-ignore
-        if (AppState.powerLevelTotal < boss.powerLevel) {
+      if (c.elementId != null) {
+        if (c.state != 'block') {
           // @ts-ignore
-          c.hp -= (boss.bossDmg) * 1.5
+          if (AppState.powerLevelTotal < boss.powerLevel) {
+            // @ts-ignore
+            c.hp -= (boss.bossDmg) * 1.5
+          }
+          // @ts-ignore
+          c.hp -= boss.bossDmg
+          // @ts-ignore
+          boss.powerLevel = (boss?.powerLevel * boss?.powerMod).toFixed(0)
+          boss.bossTillDmg = 0
+          AppState.emit('characters')
+          console.log('[Attack]')
         }
-        // @ts-ignore
-        c.hp -= boss.bossDmg
-        // @ts-ignore
-        boss.powerLevel = (boss?.powerLevel * boss?.powerMod).toFixed(0)
-        boss.bossTillDmg = 0
-        AppState.emit('characters')
-        console.log('[Attack]')
       }
     })
     characterService.takeDamage()
@@ -118,6 +120,7 @@ class GameService {
       findBoss.powerLevel = Math.round(findBoss.powerLevel * findBoss.powerMod)
       // @ts-ignore
       findBoss.health = findBoss.healthMax
+      AppState.vegetaUnlocked = true;
     }
     AppState.emit('bossStats')
   }

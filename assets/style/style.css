@@ -113,7 +113,8 @@ font-family: 'Wendy One', sans-serif; */
 .character1 {
   image-rendering: pixelated;
   scale: 2;
-  transform-origin: 50% 80%;
+  /* transform-origin: 50% 80%; */
+  transform-origin: center bottom;
   transform: scaleX(-1);
   transition: 200ms;
 }
