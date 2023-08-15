@@ -75,9 +75,41 @@ class ObservableAppState extends EventEmitter {
       kiMod: 1,
       kiRegen: 1,
       // }
+    }),
+    new Character({
+      name: "Vegeta",
+      active: false,
+      alive: true,
+      state: 'neutral',
+      elementId: null,
+      icon: "assets/img/Vegeta/vegetaIcon.png",
+      idle: "assets/img/Vegeta/vegetaIdle.gif",
+      attack: 'assets/img/Vegeta/vegetaAttack.gif',
+      block: 'assets/img/Vegeta/vegetaBlock.png',
+      // health: {
+      hp: 200,
+      hpMax: 200,
+      hpMod: 2,
+      hpRegen: 1,
+      powerLevel: 2000,
+      powerLevelMod: 1,
+      kiColor: '#d9c0e9',
+      // },
+      // damage: {
+      dmg: 20,
+      dmgMod: 1,
+      dmgCost: 1,
+      // },
+      // ki: {
+      kiCurrent: 10,
+      kiMax: 10,
+      kiMod: 1,
+      kiRegen: 1,
+      // }
     })
   ]
 
+  vegetaUnlocked = false
 
   /** @type {import('./models/Game.js').Game[]} */
   boss = [

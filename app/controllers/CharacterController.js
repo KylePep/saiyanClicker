@@ -15,7 +15,9 @@ function _setCharacterKiColor() {
 function _drawCharacters() {
   let characters = AppState.characters
   characters.forEach(c => {
-    setHTML(`${c.elementId}`, c.characterTemplate)
+    if (c.elementId != null) {
+      setHTML(`${c.elementId}`, c.characterTemplate)
+    }
   })
 }
 
@@ -25,8 +27,10 @@ function _drawCharStats() {
   let boss = AppState.boss.find(b => b.active == true)
   let powerTotal = 0
   characters.forEach(c => {
-    template += c.characterStatsTemplate
-    powerTotal += c.powerLevel
+    if (c.elementId != null) {
+      template += c.characterStatsTemplate
+      powerTotal += c.powerLevel
+    }
   })
   if (powerTotal > boss.powerLevel) {
     document.body.style.setProperty('--powerTotalColor', '#0fe10f')

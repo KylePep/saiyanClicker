@@ -79,9 +79,11 @@ class CharacterService {
     const characters = AppState.characters
     const charDmg = characters.forEach(c => {
       if (c.state != 'block') {
-        const char = document.getElementById(`${c.elementId}bar`)
-        // @ts-ignore
-        char.classList.add('shake')
+        if (c.elementId != null) {
+          const char = document.getElementById(`${c.elementId}bar`)
+          // @ts-ignore
+          char.classList.add('shake')
+        }
       }
     })
     setTimeout(this.stopDamage, 50)

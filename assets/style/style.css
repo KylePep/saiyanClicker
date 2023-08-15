@@ -210,6 +210,9 @@ font-family: 'Wendy One', sans-serif; */
   }
 }
 
+.color {
+  color: #4d236e;
+}
 
 .shake {
   /* Start the shake animation and make the animation last for 0.5 seconds */

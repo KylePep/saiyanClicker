@@ -20,7 +20,9 @@ export const StartView = /*html*/`
   <div class="col-2 char-select">
     <img src="assets/img/Piccolo/piccoloSelect.png" alt="" class=" img-fluid ">
   </div>
-  <div class="col-2 char-select">
+
+
+  <div id="vegetaSelect" class="col-2 char-select">
     <img src="assets/img/Vegeta/vegetaSelect.png" alt="" class=" img-fluid ">
   </div>
   </div>
