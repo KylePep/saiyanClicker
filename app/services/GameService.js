@@ -27,55 +27,59 @@ class GameService {
   }
 
   damageCharacters() {
-    console.log('[DamagCharacters]')
-    let boss = AppState.boss.find(b => b.active == true)
+    if (AppState.page == '#/game') {
+      console.log('[DamagCharacters]')
+      let boss = AppState.boss.find(b => b.active == true)
 
-    // @ts-ignore
-    const charDmg = AppState.characters.forEach(c => {
-      if (c.elementId != null) {
-        if (c.state != 'block') {
-          // @ts-ignore
-          if (AppState.powerLevelTotal < boss.powerLevel) {
+      // @ts-ignore
+      const charDmg = AppState.characters.forEach(c => {
+        if (c.elementId != null) {
+          if (c.state != 'block') {
             // @ts-ignore
-            c.hp -= (boss.bossDmg) * 1.5
+            if (AppState.powerLevelTotal < boss.powerLevel) {
+              // @ts-ignore
+              c.hp -= (boss.bossDmg) * 1.5
+            }
+            // @ts-ignore
+            c.hp -= boss.bossDmg
+            // @ts-ignore
+            boss.powerLevel = (boss?.powerLevel * boss?.powerMod).toFixed(0)
+            boss.bossTillDmg = 0
+            AppState.emit('characters')
+            console.log('[Attack]')
           }
-          // @ts-ignore
-          c.hp -= boss.bossDmg
-          // @ts-ignore
-          boss.powerLevel = (boss?.powerLevel * boss?.powerMod).toFixed(0)
-          boss.bossTillDmg = 0
-          AppState.emit('characters')
-          console.log('[Attack]')
         }
-      }
-    })
-    characterService.takeDamage()
-    return
+      })
+      characterService.takeDamage()
+      return
+    }
   }
 
   updateBossTimer(_this) {
-    let boss = AppState.boss.find(b => b.active == true)
+    if (AppState.page == '#/game') {
+      let boss = AppState.boss.find(b => b.active == true)
 
-    if (AppState.gamePage == false) {
-      boss.bossTillDmg = 0
-      // console.log('[Stalling timer]', boss.bossTillDmg = 0)
-      return
-    } else {
-
-      // @ts-ignore
-      if (boss.bossTillDmg < boss.bossDmgRate) {
-
-        // @ts-ignore
-        boss.bossTillDmg += boss.bossDmgRate / 50;
+      if (AppState.gamePage == false) {
+        boss.bossTillDmg = 0
+        // console.log('[Stalling timer]', boss.bossTillDmg = 0)
+        return
       } else {
-        // @ts-ignore
-        boss.bossTillDmg = 0;
-        console.log('[Damage Characters]')
-        // NOTE Just changed this might break
-        gameService.damageCharacters()
 
+        // @ts-ignore
+        if (boss.bossTillDmg < boss.bossDmgRate) {
+
+          // @ts-ignore
+          boss.bossTillDmg += boss.bossDmgRate / 50;
+        } else {
+          // @ts-ignore
+          boss.bossTillDmg = 0;
+          console.log('[Damage Characters]')
+          // NOTE Just changed this might break
+          gameService.damageCharacters()
+
+        }
+        AppState.emit('bossStats')
       }
-      AppState.emit('bossStats')
     }
   }
 
@@ -116,19 +120,24 @@ class GameService {
         // @ts-ignore
       } findBoss.health -= damage;
     } else {
+
       // @ts-ignore
       findBoss.powerLevel = Math.round(findBoss.powerLevel * findBoss.powerMod)
       // @ts-ignore
       findBoss.health = findBoss.healthMax
       AppState.vegetaUnlocked = true;
+      console.log('Vegeta Unlocked', AppState.vegetaUnlocked)
+      document.location.href = '#'
     }
     AppState.emit('bossStats')
   }
 
   stopDamage() {
-    let bossBar = document.getElementById('bossHp')
-    // @ts-ignore
-    bossBar.classList.remove('shake')
+    if (AppState.page == '#/game') {
+      let bossBar = document.getElementById('bossHp')
+      // @ts-ignore
+      bossBar.classList.remove('shake')
+    }
   }
 
 }

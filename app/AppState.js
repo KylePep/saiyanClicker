@@ -117,7 +117,7 @@ class ObservableAppState extends EventEmitter {
       active: true,
       boss: 'Raditz',
       bossImg: 'assets/img/Raditz/RaditzIdle.gif',
-      health: 15000,
+      health: 150,
       healthMax: 15000,
       bossDmg: 10,
       bossDmgRate: 15000,
