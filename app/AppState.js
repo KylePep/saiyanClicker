@@ -46,7 +46,7 @@ class ObservableAppState extends EventEmitter {
       // }
     }),
     new Character({
-      name: "Picollo",
+      name: "Piccolo",
       active: true,
       alive: true,
       state: 'neutral',

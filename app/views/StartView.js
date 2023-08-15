@@ -23,15 +23,15 @@ export const StartView = /*html*/`
   </div>
   <div class="row d-flex justify-content-around">
 
-  <div class="col-2 char-select">
-    <img src="assets/img/Goku/gokuSelect.png" alt="" class=" img-fluid ">
+  <div class="col-2 char-select" onclick="app.HomeController.selectCharacter('Goku')">
+    <img  src="assets/img/Goku/gokuSelect.png" alt="" class=" img-fluid ">
   </div>
 
-  <div id="vegetaSelect" class="col-2 char-select">
+  <div id="vegetaSelect" class="col-2 char-select" onclick="app.HomeController.selectCharacter('Vegeta')">
     <img src="assets/img/Vegeta/vegetaSelect.png" alt="" class=" img-fluid ">
   </div>
 
-  <div class="col-2 char-select">
+  <div class="col-2 char-select" onclick="app.HomeController.selectCharacter('Piccolo')">
     <img src="assets/img/Piccolo/piccoloSelect.png" alt="" class=" img-fluid ">
   </div>
 

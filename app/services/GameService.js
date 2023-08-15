@@ -9,8 +9,6 @@ class GameService {
     setInterval(this.updateBossTimer, boss?.bossDmgRate / 50)
     window.addEventListener("mousemove", this.screenView);
 
-    let _this = this
-
     AppState.on('page', this.checkPage)
   }
 
@@ -58,7 +56,7 @@ class GameService {
 
     if (AppState.gamePage == false) {
       boss.bossTillDmg = 0
-      console.log('[Stalling timer]', boss.bossTillDmg = 0)
+      // console.log('[Stalling timer]', boss.bossTillDmg = 0)
       return
     } else {
 
