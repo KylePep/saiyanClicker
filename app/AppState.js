@@ -109,7 +109,7 @@ class ObservableAppState extends EventEmitter {
     })
   ]
 
-  vegetaUnlocked = false
+  vegetaUnlocked = true
 
   /** @type {import('./models/Game.js').Game[]} */
   boss = [

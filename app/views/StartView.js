@@ -13,18 +13,28 @@ export const StartView = /*html*/`
     </div>
     </div>
   </div>
+  <div class="sml-font shadow-sm-font text-light d-flex flex-column align-items-center justify-content-center ">
+    <div class="fs-4" >
+      Team: 
+    </div>
+        <div class="">
+        <p id="c1" class="text-center">Character1</p> <p id="c2" class="text-center">Character2</p>
+        </div>
+  </div>
   <div class="row d-flex justify-content-around">
+
   <div class="col-2 char-select">
     <img src="assets/img/Goku/gokuSelect.png" alt="" class=" img-fluid ">
   </div>
-  <div class="col-2 char-select">
-    <img src="assets/img/Piccolo/piccoloSelect.png" alt="" class=" img-fluid ">
-  </div>
-
 
   <div id="vegetaSelect" class="col-2 char-select">
     <img src="assets/img/Vegeta/vegetaSelect.png" alt="" class=" img-fluid ">
   </div>
+
+  <div class="col-2 char-select">
+    <img src="assets/img/Piccolo/piccoloSelect.png" alt="" class=" img-fluid ">
+  </div>
+
   </div>
 </div>
 `
