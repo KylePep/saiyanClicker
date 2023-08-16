@@ -61,20 +61,23 @@ class GameService {
 
       if (AppState.gamePage == false) {
         boss.bossTillDmg = 0
-        // console.log('[Stalling timer]', boss.bossTillDmg = 0)
+
         return
       } else {
 
         // @ts-ignore
         if (boss.bossTillDmg < boss.bossDmgRate) {
-
           // @ts-ignore
           boss.bossTillDmg += boss.bossDmgRate / 50;
+          if (boss.bossTillDmg >= (boss.bossDmgRate / 50) * 49) {
+            boss.imgsrc = boss?.bossAttack
+            AppState.emit('boss')
+          }
         } else {
           // @ts-ignore
           boss.bossTillDmg = 0;
-          console.log('[Damage Characters]')
-          // NOTE Just changed this might break
+          boss.imgsrc = boss?.bossIdle
+          AppState.emit('boss')
           gameService.damageCharacters()
 
         }

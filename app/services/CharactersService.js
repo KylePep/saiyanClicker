@@ -131,6 +131,7 @@ class CharacterService {
     AppState.characters.forEach(c => {
       c.hp = c.hpMax
       c.state = 'neutral'
+      c.imgsrc = c.idle
     })
   }
 }

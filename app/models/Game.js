@@ -6,7 +6,9 @@ export class Game {
     this.id = generateId()
     this.active = data.active
     this.boss = data.boss
-    this.bossImg = data.bossImg
+    this.bossIdle = data.bossIdle
+    this.bossAttack = data.bossAttack
+    this.imgsrc = this.bossIdle;
     this.health = data.health
     this.healthMax = data.healthMax
     this.bossTillDmg = 1000
@@ -20,7 +22,7 @@ export class Game {
   get bossTemplate() {
     return `
       <div onclick="app.GameController.attack('${this.id}')">
-      <img id="bossImg" class="boss" src="${this.bossImg}" alt="">
+      <img id="bossImg" class="boss" src="${this.imgsrc}" alt="">
     </div>
       </div>
   `
