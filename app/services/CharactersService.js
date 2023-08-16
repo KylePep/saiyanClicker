@@ -82,6 +82,11 @@ class CharacterService {
     AppState.emit('characters')
   }
   takeDamage() {
+    if (AppState.gameState == 'fail') {
+      this.resetStats()
+      AppState.gameState = 'null'
+      document.location.href = '#'
+    }
     const characters = AppState.characters
     const charDmg = characters.forEach(c => {
       if (c.state != 'block') {
@@ -92,25 +97,25 @@ class CharacterService {
           if (c.hp <= 0) {
             c.imgsrc = c.down
             c.state = 'down'
+            AppState.emit('characters')
           }
         }
       }
 
-      let fail = true
-      let failDelay = 0
-      characters.forEach(c => {
-        if (c.elementId != null && c.state != 'down') {
-          fail = false
-        }
-      })
-      if (fail == true) {
-        if (failDelay == 1) {
-          document.location.href = '#'
-        }
-        failDelay += 1;
-      }
-
     })
+
+    if (AppState.gameState == 'null') {
+      let upChar = characters.find(c => {
+        if (c.elementId != null && c.state != 'down') {
+          return true
+        } else return false
+      })
+      if (!upChar) {
+        AppState.gameState = 'fail'
+      }
+      console.log('[GameState]', AppState.gameState)
+    }
+
     setTimeout(this.stopDamage, 50)
   }
   stopDamage() {
@@ -120,6 +125,12 @@ class CharacterService {
       if (char?.classList.contains('shake')) {
         char.classList.remove('shake')
       }
+    })
+  }
+  resetStats() {
+    AppState.characters.forEach(c => {
+      c.hp = c.hpMax
+      c.state = 'neutral'
     })
   }
 }

@@ -86,16 +86,27 @@ class GameService {
   attack(bossId) {
     // SECTION Damage effect
 
-    AppState.effects++
-    if (AppState.effects >= 2) {
-      AppState.effects = 0
-    }
+    AppState.characters.find(c => {
+      if (c.elementId != null && c.state != 'down') {
+        AppState.effects++
+        if (AppState.effects >= 2) {
+          AppState.effects = 0
+        }
+      }
+    })
+
+
 
 
     // SECTION damage boss
     let bossBar = document.getElementById('bossHp')
-    // @ts-ignore
-    bossBar.classList.add('shake')
+
+    AppState.characters.find(c => {
+      if (c.elementId != null && c.state != 'down') {
+        // @ts-ignore
+        bossBar.classList.add('shake')
+      }
+    })
 
     setTimeout(this.stopDamage, 50)
 

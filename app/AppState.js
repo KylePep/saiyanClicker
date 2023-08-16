@@ -8,6 +8,7 @@ import { loadState } from "./utils/Store.js"
 class ObservableAppState extends EventEmitter {
   page = ''
   gamePage = false
+  gameState = 'null'
 
   /** @type {import('./models/Value.js').Value[]} */
   values = loadState('values', [Value])
