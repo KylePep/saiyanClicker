@@ -29,15 +29,19 @@ class CharacterService {
   resetChar1() {
     let characters = AppState.characters
     let char1 = characters.find(c => c.elementId == 'character1')
-    char1.state = 'neutral'
-    char1.imgsrc = char1.idle
+    if (char1.state != 'down') {
+      char1.state = 'neutral'
+      char1.imgsrc = char1.idle
+    }
     AppState.emit('characters')
   }
   resetChar2() {
     let characters = AppState.characters
     let char2 = characters.find(c => c.elementId == 'character2')
-    char2.state = 'neutral'
-    char2.imgsrc = char2.idle
+    if (char2.state != 'down') {
+      char2.state = 'neutral'
+      char2.imgsrc = char2.idle
+    }
     AppState.emit('characters')
   }
   animateBlock(characterId) {
@@ -83,6 +87,10 @@ class CharacterService {
           const char = document.getElementById(`${c.elementId}bar`)
           // @ts-ignore
           char.classList.add('shake')
+          if (c.hp <= 0) {
+            c.state = 'down'
+            c.imgsrc = 
+          }
         }
       }
     })

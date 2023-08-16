@@ -17,13 +17,13 @@ class ObservableAppState extends EventEmitter {
     new Character({
       name: "Goku",
       active: true,
-      alive: true,
       state: 'neutral',
       elementId: 'character1',
       icon: "assets/img/Goku/gokuIcon.png",
       idle: 'assets/img/Goku/gokuIdle.gif',
       attack: 'assets/img/Goku/gokuAttack.gif',
       block: 'assets/img/Goku/gokuBlockOne.png',
+      down: 'assets/img/Goku/gokuDown.png',
       // health: {
       hp: 100,
       hpMax: 100,
@@ -48,13 +48,13 @@ class ObservableAppState extends EventEmitter {
     new Character({
       name: "Piccolo",
       active: true,
-      alive: true,
       state: 'neutral',
       elementId: 'character2',
       icon: "assets/img/Piccolo/piccoloIcon.png",
       idle: 'assets/img/Piccolo/piccoloIdle.gif',
       attack: 'assets/img/Piccolo/PiccoloAttack.gif',
       block: 'assets/img/Piccolo/piccoloBlock.png',
+      down: 'assets/img/Piccolo/piccoloDown.png',
       // health: {
       hp: 100,
       hpMax: 100,
@@ -79,13 +79,13 @@ class ObservableAppState extends EventEmitter {
     new Character({
       name: "Vegeta",
       active: false,
-      alive: true,
       state: 'neutral',
       elementId: null,
       icon: "assets/img/Vegeta/vegetaIcon.png",
       idle: "assets/img/Vegeta/vegetaIdle.gif",
       attack: 'assets/img/Vegeta/vegetaAttack.gif',
       block: 'assets/img/Vegeta/vegetaBlock.png',
+      down: 'assets/img/Vegeta/vegetaDown.png',
       // health: {
       hp: 200,
       hpMax: 200,
@@ -117,7 +117,7 @@ class ObservableAppState extends EventEmitter {
       active: true,
       boss: 'Raditz',
       bossImg: 'assets/img/Raditz/RaditzIdle.gif',
-      health: 150,
+      health: 15000,
       healthMax: 15000,
       bossDmg: 10,
       bossDmgRate: 15000,
