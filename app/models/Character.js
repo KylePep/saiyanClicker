@@ -5,8 +5,8 @@ export class Character {
     //Character information
     this.id = data.id ? data.id : generateId();
     this.name = data.name;
-    this.active = data.active;
-    this.alive = data.alive;
+    // this.active = data.active;
+    // this.alive = data.alive;
     this.state = data.state;
 
     // display information
@@ -16,6 +16,7 @@ export class Character {
     this.idle = data.idle;
     this.attack = data.attack;
     this.block = data.block;
+    this.down = data.down;
     this.elementId = data.elementId;
     this.imgsrc = this.idle;
     // Damage

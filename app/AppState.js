@@ -22,7 +22,7 @@ class ObservableAppState extends EventEmitter {
       idle: 'assets/img/Goku/gokuIdle.gif',
       attack: 'assets/img/Goku/gokuAttack.gif',
       block: 'assets/img/Goku/gokuBlockOne.png',
-      alive: 'assets/img/Goku/gokuDown.png',
+      down: 'assets/img/Goku/gokuDown.png',
       // health: {
       hp: 10,
       hpMax: 100,
@@ -52,9 +52,9 @@ class ObservableAppState extends EventEmitter {
       idle: 'assets/img/Piccolo/piccoloIdle.gif',
       attack: 'assets/img/Piccolo/PiccoloAttack.gif',
       block: 'assets/img/Piccolo/piccoloBlock.png',
-      alive: 'assets/img/Piccolo/piccoloDown.png',
+      down: 'assets/img/Piccolo/piccoloDown.png',
       // health: {
-      hp: 100,
+      hp: 10,
       hpMax: 100,
       hpMod: 2,
       hpRegen: 1,
@@ -82,7 +82,7 @@ class ObservableAppState extends EventEmitter {
       idle: "assets/img/Vegeta/vegetaIdle.gif",
       attack: 'assets/img/Vegeta/vegetaAttack.gif',
       block: 'assets/img/Vegeta/vegetaBlock.png',
-      alive: 'assets/img/Vegeta/vegetaDown.png',
+      down: 'assets/img/Vegeta/vegetaDown.png',
       // health: {
       hp: 200,
       hpMax: 200,

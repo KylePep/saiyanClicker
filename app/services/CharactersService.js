@@ -48,7 +48,9 @@ class CharacterService {
     let characters = AppState.characters
     let blockCharacter = characters.find(c => c.id == characterId)
 
-    blockCharacter.state = 'block'
+    if (blockCharacter?.state != 'down') {
+      blockCharacter.state = 'block'
+    }
 
     characters.forEach(c => {
       if (c.state == 'block') {
@@ -88,11 +90,26 @@ class CharacterService {
           // @ts-ignore
           char.classList.add('shake')
           if (c.hp <= 0) {
-            c.imgsrc = c.alive
+            c.imgsrc = c.down
             c.state = 'down'
           }
         }
       }
+
+      let fail = true
+      let failDelay = 0
+      characters.forEach(c => {
+        if (c.elementId != null && c.state != 'down') {
+          fail = false
+        }
+      })
+      if (fail == true) {
+        if (failDelay == 1) {
+          document.location.href = '#'
+        }
+        failDelay += 1;
+      }
+
     })
     setTimeout(this.stopDamage, 50)
   }

@@ -107,7 +107,7 @@ class GameService {
       let damage = 0
       let characters = AppState.characters
       characters.forEach(c => {
-        if (c.elementId != null && c.state != 'block') {
+        if (c.elementId != null && c.state != 'block' && c.state != 'down') {
           damage += c.dmg
           c.powerLevel += c.powerLevelMod
           AppState.emit('bossStats')
