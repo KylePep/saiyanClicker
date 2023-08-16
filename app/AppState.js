@@ -16,7 +16,6 @@ class ObservableAppState extends EventEmitter {
   characters = [
     new Character({
       name: "Goku",
-      active: true,
       state: 'neutral',
       elementId: 'character1',
       icon: "assets/img/Goku/gokuIcon.png",
@@ -47,7 +46,6 @@ class ObservableAppState extends EventEmitter {
     }),
     new Character({
       name: "Piccolo",
-      active: true,
       state: 'neutral',
       elementId: 'character2',
       icon: "assets/img/Piccolo/piccoloIcon.png",
@@ -78,7 +76,6 @@ class ObservableAppState extends EventEmitter {
     }),
     new Character({
       name: "Vegeta",
-      active: false,
       state: 'neutral',
       elementId: null,
       icon: "assets/img/Vegeta/vegetaIcon.png",
