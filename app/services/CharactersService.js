@@ -88,8 +88,8 @@ class CharacterService {
           // @ts-ignore
           char.classList.add('shake')
           if (c.hp <= 0) {
+            c.imgsrc = c.alive
             c.state = 'down'
-            c.imgsrc = 
           }
         }
       }
