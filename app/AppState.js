@@ -25,8 +25,8 @@ class ObservableAppState extends EventEmitter {
       block: 'assets/img/Goku/gokuBlockOne.png',
       down: 'assets/img/Goku/gokuDown.png',
       // health: {
-      hp: 10,
-      hpMax: 100,
+      hp: 120,
+      hpMax: 120,
       hpMod: 2,
       hpRegen: 1,
       // },
@@ -34,15 +34,9 @@ class ObservableAppState extends EventEmitter {
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
-      dmg: 10,
+      dmg: 12,
       dmgMod: 1,
       dmgCost: 1,
-      // },
-      // ki: {
-      kiCurrent: 10,
-      kiMax: 10,
-      kiMod: 1,
-      kiRegen: 1,
       // }
     }),
     new Character({
@@ -55,8 +49,8 @@ class ObservableAppState extends EventEmitter {
       block: 'assets/img/Piccolo/piccoloBlock.png',
       down: 'assets/img/Piccolo/piccoloDown.png',
       // health: {
-      hp: 10,
-      hpMax: 100,
+      hp: 160,
+      hpMax: 160,
       hpMod: 2,
       hpRegen: 1,
       powerLevel: 300,
@@ -64,15 +58,9 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#ffff5e',
       // },
       // damage: {
-      dmg: 10,
+      dmg: 8,
       dmgMod: 1,
       dmgCost: 1,
-      // },
-      // ki: {
-      kiCurrent: 10,
-      kiMax: 10,
-      kiMod: 1,
-      kiRegen: 1,
       // }
     }),
     new Character({
@@ -85,25 +73,19 @@ class ObservableAppState extends EventEmitter {
       block: 'assets/img/Vegeta/vegetaBlock.png',
       down: 'assets/img/Vegeta/vegetaDown.png',
       // health: {
-      hp: 200,
-      hpMax: 200,
+      hp: 80,
+      hpMax: 80,
       hpMod: 2,
       hpRegen: 1,
       powerLevel: 2000,
-      powerLevelMod: 1,
+      powerLevelMod: 2,
       kiColor: '#d9c0e9',
       // },
       // damage: {
-      dmg: 20,
+      dmg: 30,
       dmgMod: 1,
       dmgCost: 1,
       // },
-      // ki: {
-      kiCurrent: 10,
-      kiMax: 10,
-      kiMod: 1,
-      kiRegen: 1,
-      // }
     })
   ]
 

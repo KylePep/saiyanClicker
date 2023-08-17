@@ -36,13 +36,6 @@ export class Character {
     this.powerLevel = data.powerLevel;
     this.powerLevelMod = data.powerLevelMod;
     this.kiColor = data.kiColor
-    // Ki
-    this.ki = [
-      this.kiCurrent = data.kiCurrent,
-      this.kiMax = data.kiMax,
-      this.kiMod = data.kiMod,
-      this.kiRegen = data.kiRegen,
-    ]
   }
 
 

@@ -64,7 +64,6 @@ class GameService {
 
         return
       } else {
-
         // @ts-ignore
         if (boss.bossTillDmg < boss.bossDmgRate) {
           // @ts-ignore
@@ -79,8 +78,14 @@ class GameService {
           boss.imgsrc = boss?.bossIdle
           AppState.emit('boss')
           gameService.damageCharacters()
-
         }
+        let temp = 0
+        AppState.characters.forEach(c => {
+          if (c.elementId != null) {
+            temp += c.powerLevel;
+          }
+        })
+        AppState.powerLevelTotal = temp;
         AppState.emit('bossStats')
       }
     }
@@ -130,11 +135,10 @@ class GameService {
       // @ts-ignore
       if (AppState.powerLevelTotal > findBoss.powerLevel) {
         // @ts-ignore
-        findBoss.health -= damage * 1.5;
+        findBoss.health -= (damage * 1.5);
         // @ts-ignore
       } findBoss.health -= damage;
     } else {
-
       // @ts-ignore
       findBoss.powerLevel = Math.round(findBoss.powerLevel * findBoss.powerMod)
       // @ts-ignore

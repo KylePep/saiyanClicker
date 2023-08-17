@@ -30,8 +30,8 @@ export class Game {
 
   get bossAttackBar() {
     return `
-    <div class="progress bg-dark" role="progressbar" style="width: 50%">
-    <div class="progress-bar bg-primary" style="width: ${(this.bossTillDmg / this.bossDmgRate) * 100}% "></div>
+    <div class="progress bg-dark border border-light border-3 rounded-0" role="progressbar" style="width: 50%">
+    <div class="progress-bar bg-danger" style="width: ${(this.bossTillDmg / this.bossDmgRate) * 100}% "></div>
     `
   }
 
