@@ -16,6 +16,7 @@ export class Game {
     this.bossDmgRate = data.bossDmgRate
     this.kiColor = data.kiColor
     this.powerLevel = data.powerLevel
+    this.powerLevelInit = data.powerLevel
     this.powerMod = data.powerMod
     this.icon = data.icon
   }

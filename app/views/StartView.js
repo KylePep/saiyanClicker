@@ -1,16 +1,14 @@
 // console.log('[Start View, this might not be seen]')
 export const StartView = /*html*/`
-<div class="container-fluid">
+<div class="container-fluid  ">
   <div class="row py-3">
-    <div class="col-lg-12 d-flex flex-column align-items-center">
-    <div class="">
+    <div class="col-lg-12 d-flex  flex-column align-items-center">
     <a href="#/game" class="nav-link d-flex flex-column align-items-center  ">
       <img src="/assets/img/Other/DragonBallZ.png" alt="" class="Start-Button">
-      <div class="lrg-font start-font fs-1 text-center ">
+      <div class="lrg-font start-font fs-2 text-center ">
       Press to Start
       </div>
     </a>
-    </div>
     </div>
   </div>
   <div class="sml-font shadow-md-font text-light  ">

@@ -42,10 +42,17 @@ export class GameController {
     _drawBoss()
     _drawBossStats()
     _drawHealthBar()
-    AppState.on('bossStats', _drawHealthBar)
-    AppState.on('bossStats', _drawBossStats)
+    AppState.on('boss', _drawHealthBar)
+    AppState.on('boss', _drawBossStats)
     AppState.on('boss', _drawBoss)
     AppState.on('effects', _drawEffects)
+  }
+
+  pauseGame() {
+    gameService.pauseGame()
+  }
+  quitGame() {
+    gameService.quitGame()
   }
 
   attack(bossId) {

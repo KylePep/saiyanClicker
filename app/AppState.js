@@ -10,6 +10,8 @@ class ObservableAppState extends EventEmitter {
   gamePage = false
   gameState = 'null'
 
+  zennie = 0;
+
   /** @type {import('./models/Value.js').Value[]} */
   values = loadState('values', [Value])
 

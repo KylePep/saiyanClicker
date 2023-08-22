@@ -47,8 +47,36 @@ export const GameView = /*html*/`
 <main class="container-fluid d-flex flex-column justify-content-end" class=" main ">
 
 
+<!-- Button trigger modal -->
+<div class="gameMenu d-flex flex-column">
+    <button onclick="app.GameController.pauseGame()" type="button" class="btn btn-primary pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
+      Pause
+    </button>
+      <button onclick="app.GameController.quitGame()" class="btn btn-primary quitButton">
+      Quit
+  </button>
+</div>
 
-<div id="foreground">
+    <!-- Modal -->
+    <div class="modal fade" id="pauseMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Pause Menu</h1>
+          </div>
+          <div class="modal-body">
+            The Game is Paused
+          </div>
+          <div class="modal-footer">
+            <button onclick="app.GameController.pauseGame()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Unpause</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+<div id="">
   <img class="foreground" src="assets/img/Other/WastelandForeground-large-crop.png" alt="">
 </div>
 
@@ -68,9 +96,9 @@ export const GameView = /*html*/`
 </main>
 
 
-<footer class="bg-dark text-light">
+<footer class="footer-reserve text-light">
 <div class="text-center no-select">
-  <p class="mb-0"><small>🐉</small></p>
+  
 </div>
 </footer> 
 `

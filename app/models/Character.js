@@ -34,6 +34,7 @@ export class Character {
     ]
     // PowerLevel
     this.powerLevel = data.powerLevel;
+    this.powerLevelInit = data.powerLevel;
     this.powerLevelMod = data.powerLevelMod;
     this.kiColor = data.kiColor
   }

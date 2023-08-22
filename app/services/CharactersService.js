@@ -132,6 +132,16 @@ class CharacterService {
       c.hp = c.hpMax
       c.state = 'neutral'
       c.imgsrc = c.idle
+      c.powerLevel = c.powerLevelInit
+    })
+
+  }
+  successStats() {
+    AppState.characters.forEach(c => {
+      c.hp = c.hpMax
+      c.state = 'neutral'
+      c.imgsrc = c.idle
+      c.powerLevelInit = c.powerLevel
     })
   }
 }
