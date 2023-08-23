@@ -4,12 +4,15 @@ import { setHTML } from "../utils/Writer.js"
 
 // Public
 
-function _isVegetaUnlocked() {
-  if (AppState.vegetaUnlocked == false) {
-    document.getElementById('vegetaSelect')?.classList.add('visually-hidden')
-  } else {
-    document.getElementById('vegetaSelect')?.classList.remove('visually-hidden')
-  }
+function _isUnlocked() {
+  AppState.locks.forEach(l => {
+    if (l.Unlocked == false) {
+      document.getElementById(`${l.element}`)?.classList.add('visually-hidden')
+    } else {
+      document.getElementById(`${l.element}`)?.classList.remove('visually-hidden')
+    }
+  })
+
 }
 
 function _checkSelection() {
@@ -23,6 +26,11 @@ function _checkSelection() {
       }
     })
   }
+}
+
+function _checkBoss() {
+  let boss = AppState.activeBoss
+  setHTML('b1', `<img class="boss-LineUp" src="${boss.lineUp}" alt="">`)
 }
 
 function _setBackground() {
@@ -39,12 +47,14 @@ function _drawInventory() {
 export class HomeController {
   constructor() {
     console.log('[HomeController]')
-    _isVegetaUnlocked()
+    console.log(AppState.activeBoss)
+    _isUnlocked()
     _checkSelection()
+    _checkBoss()
     _setBackground()
     _drawInventory()
-    AppState.on('vegetaUnlocked', _isVegetaUnlocked)
     AppState.on('characters', _checkSelection)
+    AppState.on('boss', _checkBoss)
   }
 
   selectCharacter(name) {
@@ -67,10 +77,16 @@ export class HomeController {
         }
       })
     }
-
-
     AppState.emit('characters')
+  }
 
+  selectBoss(bossName) {
+    let boss = AppState.boss.find(b => b.boss == bossName)
+    AppState.boss.forEach(b => b.active = false)
+    boss.active = true
+    let selectBoss = AppState.boss.find(b => b.active == true)
+    AppState.activeBoss = selectBoss
+    AppState.emit('boss')
   }
 
 }

@@ -3,37 +3,49 @@ import { characterService } from "../services/CharactersService.js";
 import { gameService } from "../services/GameService.js";
 import { setHTML, setText } from "../utils/Writer.js";
 
+function _initBossStats() {
+  gameService.initBossStats()
+}
+
 function _drawBoss() {
-  let boss = AppState.boss.find(b => b.active == true)
-  // @ts-ignore
-  setHTML('boss', boss.bossTemplate)
-  // @ts-ignore
-  document.body.style.setProperty('--bossKiColor', boss.kiColor)
+  if (AppState.page == '#/game') {
+    let boss = AppState.boss.find(b => b.active == true)
+    // @ts-ignore
+    setHTML('boss', boss.bossTemplate)
+    // @ts-ignore
+    document.body.style.setProperty('--bossKiColor', boss.kiColor)
+    // @ts-ignore
+    setHTML('bossIcon', boss.bossIcon)
+  }
 }
+
 function _drawBossStats() {
-  let boss = AppState.boss.find(b => b.active == true)
-  // @ts-ignore
-  setText('bossPowerLevel', `Power Level: ${boss.powerLevel}`)
-  // @ts-ignore
-  setHTML('bossIcon', boss.bossIcon)
-  // @ts-ignore
-  setHTML('bossTillDmg', boss.bossAttackBar)
+  if (AppState.page == '#/game') {
+    let boss = AppState.activeBoss
+    // @ts-ignore
+    setText('bossPowerLevel', `Power Level: ${boss.powerLevel}`)
+    // @ts-ignore
+    setHTML('bossTillDmg', boss.bossAttackBar)
+  }
 }
+
 function _drawHealthBar() {
-  let boss = AppState.boss.find(b => b.active == true)
-  // @ts-ignore
-  setHTML('bossHp', boss.bossHealthBar)
+  if (AppState.page == '#/game') {
+    let boss = AppState.activeBoss
+    // @ts-ignore
+    setHTML('bossHp', boss.bossHealthBar)
+  }
 }
 
 function _drawEffects() {
-  let boss = AppState.boss.find(b => b.active == true)
-  let effects = AppState.effects
-  let effectIndex = AppState.effectIndex
-  let template = ''
-  template = boss.bossDamageEffect
-  // console.log(template)
-  // console.log(document.getElementById(effectIndex[effects]))
-  setHTML(effectIndex[effects], boss.bossDamageEffect)
+  if (AppState.page == '#/game') {
+    let boss = AppState.boss.find(b => b.active == true)
+    let effects = AppState.effects
+    let effectIndex = AppState.effectIndex
+    let template = ''
+    template = boss.bossDamageEffect
+    setHTML(effectIndex[effects], boss.bossDamageEffect)
+  }
 }
 
 function _setBackground() {
@@ -43,15 +55,19 @@ function _setBackground() {
 export class GameController {
   constructor() {
     console.log('[Game Controller]')
-    _drawBoss()
+
+    _initBossStats()
     _drawBossStats()
     _drawHealthBar()
+    _drawBoss()
     _setBackground()
-    AppState.on('boss', _drawHealthBar)
-    AppState.on('boss', _drawBossStats)
+    AppState.on('activeBoss', _drawHealthBar)
+    AppState.on('activeBoss', _drawBossStats)
     AppState.on('boss', _drawBoss)
     AppState.on('effects', _drawEffects)
   }
+
+
 
   pauseGame() {
     gameService.pauseGame()

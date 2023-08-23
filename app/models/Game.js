@@ -20,6 +20,7 @@ export class Game {
     this.powerMod = data.powerMod
     this.zennieDrop = data.zennieDrop
     this.icon = data.icon
+    this.lineUp = data.lineUp
   }
   get bossTemplate() {
     return `

@@ -44,7 +44,32 @@ class ObservableAppState extends EventEmitter {
   ]
   activeItem
 
-  vegetaUnlocked = true
+  locks = [
+    {
+      element: 'raditzSelect',
+      name: 'Raditz',
+      bossUnlocked: true,
+      Unlocked: false
+    },
+    {
+      element: 'nappaSelect',
+      name: 'Nappa',
+      bossUnlocked: false,
+      Unlocked: false
+    },
+    {
+      element: 'vegetaSelect',
+      name: 'Vegeta',
+      bossUnlocked: false,
+      Unlocked: false
+    },
+    {
+      element: 'bardockSelect',
+      name: 'Bardock',
+      bossUnlocked: false,
+      Unlocked: false
+    },
+  ]
 
 
   /** @type {import('./models/Character.js').Character[]} */
@@ -173,6 +198,31 @@ class ObservableAppState extends EventEmitter {
       dmgMod: 1,
       dmgCost: 1,
       // },
+    }),
+    new Character({
+      name: "Bardock",
+      state: 'neutral',
+      elementId: null,
+      icon: "assets/img/Bardock/bardockIcon.png",
+      lineUp: "assets/img/Bardock/bardockLineUp.png",
+      idle: "assets/img/Bardock/bardockIdle.gif",
+      attack: 'assets/img/Bardock/bardockAttack.gif',
+      block: 'assets/img/Bardock/bardockBlock.png',
+      down: 'assets/img/Bardock/bardockDown.png',
+      // health: {
+      hp: 300,
+      hpMax: 300,
+      hpMod: 2,
+      hpRegen: 1,
+      powerLevel: 450,
+      powerLevelMod: 2,
+      kiColor: '#d9c0e9',
+      // },
+      // damage: {
+      dmg: 50,
+      dmgMod: 1,
+      dmgCost: 1,
+      // },
     })
   ]
 
@@ -193,17 +243,30 @@ class ObservableAppState extends EventEmitter {
       powerLevel: 1000,
       powerMod: 1.1,
       zennieDrop: 200,
-      icon: 'assets/img/Raditz/RaditzIcon.png'
-    })
+      icon: 'assets/img/Raditz/RaditzIcon.png',
+      lineUp: "assets/img/Raditz/raditzLineUp.png"
+    }),
+    new Game({
+      active: false,
+      boss: 'Nappa',
+      bossIdle: 'assets/img/Nappa/nappaIdle.gif',
+      bossAttack: 'assets/img/Nappa/nappaAttack.gif',
+      health: 30000,
+      healthMax: 30000,
+      bossDmg: 30,
+      bossDmgRate: 15000,
+      kiColor: '#b668e1',
+      powerLevel: 6000,
+      powerMod: 1.1,
+      zennieDrop: 600,
+      icon: 'assets/img/Raditz/RaditzIcon.png',
+      lineUp: "assets/img/Nappa/nappaLineUp.png"
+    }),
   ]
 
-  bossStats = {
-    health: 400, healthMax: 500, kiColor: '#b668e1', powerLevel: 1000, powerMod: 1.1
-  }
+  activeBoss = this.boss[0]
 
-  activeBoss = null
-
-  fighting = false
+  // fighting = false
 
   powerLevelTotal = 0
 

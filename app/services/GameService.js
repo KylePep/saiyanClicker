@@ -1,13 +1,10 @@
 import { AppState } from "../AppState.js"
-// @ts-ignore
-import { GameController } from "../controllers/GameController.js";
 import { characterService } from "./CharactersService.js"
 
 class GameService {
 
   constructor() {
-    let boss = AppState.boss.find(b => b.active == true)
-    // setInterval(this.damageCharacters, boss?.bossDmgRate)
+    let boss = AppState.activeBoss
     setInterval(this.updateBossTimer, boss?.bossDmgRate / 50)
     window.addEventListener("mousemove", this.screenView);
 
@@ -19,10 +16,17 @@ class GameService {
     AppState.mouseY = e.clientY;
   }
 
+  initBossStats() {
+    let boss = AppState.boss.find(b => b.active == true)
+    AppState.activeBoss = boss
+    console.log(AppState.activeBoss)
+  }
+
   checkPage() {
     if (AppState.page == '#/game') {
       console.log('[Page]', AppState.page)
       AppState.gamePage = true
+      // gameService.initBossStats()
     } else {
       AppState.gamePage = false
     }
@@ -46,12 +50,10 @@ class GameService {
     document.location.href = '#'
   }
 
+
   damageCharacters() {
     if (AppState.page == '#/game') {
-      // console.log('[DamagCharacters]')
-      let boss = AppState.boss.find(b => b.active == true)
-
-      // @ts-ignore
+      let boss = AppState.activeBoss
       // @ts-ignore
       const charDmg = AppState.characters.forEach(c => {
         if (c.elementId != null) {
@@ -80,30 +82,31 @@ class GameService {
   updateBossTimer(_this) {
     if (AppState.page == '#/game') {
       let boss = AppState.boss.find(b => b.active == true)
+      let bossStats = AppState.activeBoss
 
       if (AppState.gamePage == false) {
         // @ts-ignore
-        boss.bossTillDmg = 0
+        bossStats.bossTillDmg = 0
         return
       } else {
         // @ts-ignore
-        if (boss.bossTillDmg < boss.bossDmgRate) {
+        if (bossStats.bossTillDmg < bossStats.bossDmgRate) {
           if (AppState.gameState != 'pause') {
-            // console.log('not paused')
             // @ts-ignore
-            boss.bossTillDmg += boss.bossDmgRate / 50;
+            bossStats.bossTillDmg += bossStats.bossDmgRate / 50;
+            AppState.emit('activeBoss')
           }
           // @ts-ignore
-          if (boss.bossTillDmg >= (boss.bossDmgRate / 50) * 49) {
+          if (bossStats.bossTillDmg >= (bossStats.bossDmgRate / 50) * 49) {
             // @ts-ignore
-            boss.imgsrc = boss?.bossAttack
+            boss.imgsrc = boss.bossAttack
             AppState.emit('boss')
           }
         } else {
           // @ts-ignore
-          boss.bossTillDmg = 0;
+          bossStats.bossTillDmg = 0;
           // @ts-ignore
-          boss.imgsrc = boss?.bossIdle
+          boss.imgsrc = boss.bossIdle
           AppState.emit('boss')
           gameService.damageCharacters()
         }
@@ -114,25 +117,22 @@ class GameService {
           }
         })
         AppState.powerLevelTotal = temp;
-        AppState.emit('boss')
+        AppState.emit('activeBoss')
       }
     }
   }
 
-  attack(bossId) {
+  attack() {
     // SECTION Damage effect
 
     AppState.characters.find(c => {
-      if (c.elementId != null && c.state != 'down') {
+      if (c.elementId != null && c.state != 'down' && c.state != 'block') {
         AppState.effects++
         if (AppState.effects >= 2) {
           AppState.effects = 0
         }
       }
     })
-
-
-
 
     // SECTION damage boss
     let bossBar = document.getElementById('bossHp')
@@ -146,10 +146,10 @@ class GameService {
 
     setTimeout(this.stopDamage, 50)
 
-    let boss = AppState.boss
-    let findBoss = boss.find(b => b.id == bossId)
+    let activeBoss = AppState.activeBoss
+    let boss = AppState.boss.find(b => b.active == true)
     // @ts-ignore
-    if (findBoss.health > 0) {
+    if (activeBoss.health > 0) {
       // @ts-ignore
       let damage = 0
       let characters = AppState.characters
@@ -157,31 +157,37 @@ class GameService {
         if (c.elementId != null && c.state != 'block' && c.state != 'down') {
           damage += c.dmg
           c.powerLevel += c.powerLevelMod
-          AppState.emit('boss')
+          AppState.emit('activeBoss')
         }
       })
       // @ts-ignore
-      if (AppState.powerLevelTotal > findBoss.powerLevel) {
+      if (AppState.powerLevelTotal > activeBoss.powerLevel) {
         // @ts-ignore
-        findBoss.health -= (damage * 1.5);
+        activeBoss.health -= (damage * 1.5);
         // @ts-ignore
-      } findBoss.health -= damage;
+      } activeBoss.health -= damage;
     } else {
       // @ts-ignore
-      findBoss.powerLevel = Math.round(findBoss.powerLevel * findBoss.powerMod)
+      activeBoss.powerLevel = Math.round(activeBoss.powerLevel * activeBoss.powerMod)
       // @ts-ignore
-      findBoss.powerLevelInit = findBoss.powerLevel
+      activeBoss.powerLevelInit = activeBoss.powerLevel
       // @ts-ignore
-      findBoss.health = findBoss.healthMax
+      activeBoss.health = activeBoss.healthMax
       // @ts-ignore
-      findBoss.bossTillDmg = 0
-      AppState.vegetaUnlocked = true;
+      activeBoss.activeBossTillDmg = 0
+      AppState.locks.find(l => {
+        // @ts-ignore
+        if (l.name == activeBoss.boss)
+          l.Unlocked = true;
+      })
       // @ts-ignore
-      AppState.zennie += Math.round(findBoss.zennieDrop * (findBoss.powerLevelInit) / 1000)
+      AppState.zennie += Math.round(activeBoss.zennieDrop * (activeBoss.powerLevelInit) / 1000)
+      boss = activeBoss
       characterService.successStats()
+      this.bossStatsReset()
       document.location.href = '#'
     }
-    AppState.emit('boss')
+    AppState.emit('activeBoss')
   }
 
   stopDamage() {
