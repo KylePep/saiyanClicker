@@ -17,12 +17,16 @@ function _checkSelection() {
     let characters = AppState.characters
     characters.forEach(c => {
       if (c.elementId == 'character1') {
-        setHTML('c1', c.name)
+        setHTML('c1', `<img class="char-LineUp" src="${c.lineUp}" alt="">`)
       } else if (c.elementId == 'character2') {
-        setHTML('c2', c.name)
+        setHTML('c2', `<img class="char-LineUp" src="${c.lineUp}" alt="">`)
       }
     })
   }
+}
+
+function _setBackground() {
+  document.getElementById('router-view').style.backgroundImage = `url(assets/img/Other/newBackground.png)`
 }
 
 export class HomeController {
@@ -30,6 +34,7 @@ export class HomeController {
     console.log('[HomeController]')
     _isVegetaUnlocked()
     _checkSelection()
+    _setBackground()
     AppState.on('vegetaUnlocked', _isVegetaUnlocked)
     AppState.on('characters', _checkSelection)
   }

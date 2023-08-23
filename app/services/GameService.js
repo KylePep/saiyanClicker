@@ -42,6 +42,7 @@ class GameService {
   quitGame() {
     this.bossStatsReset();
     characterService.resetStats();
+    AppState.gameState = 'null';
     document.location.href = '#'
   }
 
@@ -195,7 +196,9 @@ class GameService {
     // @ts-ignore
     findBoss.health = findBoss.healthMax
     // @ts-ignore
-    findBoss.powerLevel = findBoss?.powerLevelInit
+    findBoss.powerLevel = findBoss.powerLevelInit
+    findBoss.bossTillDmg = 0
+
   }
 
 }

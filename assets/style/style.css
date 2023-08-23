@@ -77,16 +77,39 @@ font-family: 'Wendy One', sans-serif; */
     -4px 0px 0 #000;
 }
 
+.clouds {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: -10;
+
+}
+
+.clouds>img {
+  object-fit: cover;
+  height: 80vh;
+  width: 100vw;
+}
 
 .char-select {
   /* background: linear-gradient(#fff870, #ffd800, #ffc000); */
+  scale: .75;
   background: linear-gradient(#ff901f, #ff5810, #ff400f);
   box-shadow: 4px 4px #00000057;
   padding: 10px;
   border: 4mm ridge black;
-
 }
 
+.char-LineUp {
+  transform: scaleX(1);
+  scale: 2;
+  padding: 0px 1em;
+}
+
+.boss-LineUp {
+  transform: scaleX(-1);
+  scale: 2;
+}
 
 .char-select>img {
   filter: drop-shadow(4px 4px #761f09);
@@ -95,6 +118,40 @@ font-family: 'Wendy One', sans-serif; */
 
 .char-select:hover>img {
   scale: 1.05;
+}
+
+.shop-Item {
+  height: 30vh;
+  width: 30vh;
+  transition: .25s;
+  background-color: #1aa74b;
+  border: 4mm ridge rgb(193, 193, 193);
+
+}
+
+.shop-Item:hover {
+  scale: 1.01;
+  cursor: pointer;
+}
+
+.shop-Modal {
+  background-color: #1aa74b;
+  border: 4mm ridge rgb(193, 193, 193);
+}
+
+.shop-Modal>button {
+  border: none;
+  color: white;
+  background-color: #00000000;
+  transition: .25s;
+}
+
+.shop-Modal>button:hover {
+  scale: 1.05;
+}
+
+.shop-Reserve {
+  height: 40vh;
 }
 
 .foreground {
@@ -118,9 +175,27 @@ font-family: 'Wendy One', sans-serif; */
   z-index: 100;
 }
 
-.pauseButton {}
+.pauseButton {
+  border: none;
+  background-color: #00000000;
+}
 
-.quitButton {}
+.pauseButton:hover {
+  scale: 1.1;
+}
+
+.quitButton {
+  cursor: pointer;
+}
+
+.quitButton:hover {
+  scale: 1.1;
+}
+
+.pause-menu {
+  background-color: #000000a1;
+  height: 50vh;
+}
 
 .footer-reserve {
   height: 16px;
@@ -129,7 +204,6 @@ font-family: 'Wendy One', sans-serif; */
 .character1 {
   image-rendering: pixelated;
   scale: 2;
-  /* transform-origin: 50% 80%; */
   transform-origin: center bottom;
   transform: scaleX(-1);
   transition: 200ms;

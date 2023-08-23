@@ -49,27 +49,23 @@ export const GameView = /*html*/`
 
 <!-- Button trigger modal -->
 <div class="gameMenu d-flex flex-column">
-    <button onclick="app.GameController.pauseGame()" type="button" class="btn btn-primary pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
+    <button onclick="app.GameController.pauseGame()" type="button" class="text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
       Pause
     </button>
-      <button onclick="app.GameController.quitGame()" class="btn btn-primary quitButton">
-      Quit
-  </button>
 </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="pauseMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal" id="pauseMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Pause Menu</h1>
-          </div>
-          <div class="modal-body">
-            The Game is Paused
-          </div>
-          <div class="modal-footer">
-            <button onclick="app.GameController.pauseGame()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Unpause</button>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content pause-menu">
+          <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+          <button onclick="app.GameController.pauseGame()" type="button" class="mb-5 text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-dismiss="modal" data-bs-target="#pauseMenu" >
+          Resume
+        </button>
+          <div onclick="app.GameController.quitGame()" class="text-light fs-2 sml-font shadow-md-font quitButton">
+            Quit
+        </div>
           </div>
         </div>
       </div>

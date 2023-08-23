@@ -13,6 +13,7 @@ export class Character {
     // TODO can this be constructed into a library?
     // An array of objects for each image with directly related timeouts?
     this.icon = data.icon;
+    this.lineUp = data.lineUp;
     this.idle = data.idle;
     this.attack = data.attack;
     this.block = data.block;

@@ -36,12 +36,17 @@ function _drawEffects() {
   setHTML(effectIndex[effects], boss.bossDamageEffect)
 }
 
+function _setBackground() {
+  document.getElementById('router-view').style.backgroundImage = `url(assets/img/Other/TitleBackground.png)`
+}
+
 export class GameController {
   constructor() {
     console.log('[Game Controller]')
     _drawBoss()
     _drawBossStats()
     _drawHealthBar()
+    _setBackground()
     AppState.on('boss', _drawHealthBar)
     AppState.on('boss', _drawBossStats)
     AppState.on('boss', _drawBoss)

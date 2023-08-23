@@ -1,19 +1,46 @@
 import { Character } from "./models/Character.js"
 import { Game } from "./models/Game.js"
+import { ShopItem } from "./models/ShopItem.js"
 import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
 import { isValidProp } from "./utils/isValidProp.js"
 import { loadState } from "./utils/Store.js"
 
 class ObservableAppState extends EventEmitter {
+  /** @type {import('./models/Value.js').Value[]} */
+  values = loadState('values', [Value])
   page = ''
   gamePage = false
   gameState = 'null'
 
-  zennie = 0;
+  zennie = 100;
 
-  /** @type {import('./models/Value.js').Value[]} */
-  values = loadState('values', [Value])
+  shopItems = [
+    new ShopItem({
+      id: 0,
+      name: 'Senzu Juice',
+      cost: 100,
+      description: 'Allows you to revive one team member if they fall in battle',
+      count: 0,
+    }),
+    new ShopItem({
+      id: 1,
+      name: 'Weighted Clothing',
+      cost: 50,
+      description: `During your next battle you'll fight with heavy weights, This will increase how quickly you gain Power Level but at the cost of some attack`,
+      count: 0,
+    }),
+    new ShopItem({
+      id: 2,
+      name: 'Scouter',
+      cost: 10000,
+      description: "Use the Saiyan's Scouter to find a powerful new enemy to fight",
+      count: 0,
+    })
+  ]
+
+  vegetaUnlocked = true
+
 
   /** @type {import('./models/Character.js').Character[]} */
   characters = [
@@ -22,6 +49,7 @@ class ObservableAppState extends EventEmitter {
       state: 'neutral',
       elementId: 'character1',
       icon: "assets/img/Goku/gokuIcon.png",
+      lineUp: "assets/img/Goku/gokuLineUp.png",
       idle: 'assets/img/Goku/gokuIdle.gif',
       attack: 'assets/img/Goku/gokuAttack.gif',
       block: 'assets/img/Goku/gokuBlockOne.png',
@@ -46,6 +74,7 @@ class ObservableAppState extends EventEmitter {
       state: 'neutral',
       elementId: 'character2',
       icon: "assets/img/Piccolo/piccoloIcon.png",
+      lineUp: "assets/img/Piccolo/piccoloLineUp.png",
       idle: 'assets/img/Piccolo/piccoloIdle.gif',
       attack: 'assets/img/Piccolo/PiccoloAttack.gif',
       block: 'assets/img/Piccolo/piccoloBlock.png',
@@ -70,6 +99,7 @@ class ObservableAppState extends EventEmitter {
       state: 'neutral',
       elementId: null,
       icon: "assets/img/Vegeta/vegetaIcon.png",
+      lineUp: "assets/img/Vegeta/vegetaLineUp.png",
       idle: "assets/img/Vegeta/vegetaIdle.gif",
       attack: 'assets/img/Vegeta/vegetaAttack.gif',
       block: 'assets/img/Vegeta/vegetaBlock.png',
@@ -91,7 +121,7 @@ class ObservableAppState extends EventEmitter {
     })
   ]
 
-  vegetaUnlocked = false
+
 
   /** @type {import('./models/Game.js').Game[]} */
   boss = [
