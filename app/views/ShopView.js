@@ -34,14 +34,19 @@ export const ShopView = /*html*/`
 <div class="modal" id="shopModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content fs-3 text-light sml-font shadow-md-font shop-Modal">
-      <div class="modal-body">
-        <p> Item Name: <span class="fs-5" id="iName"></span> </p>
-        <p> Description: <span class="fs-5" id="iDescription"></span>  </p>
-        <p> Cost: <span class="fs-5" id="iCost"></span>  </p>
-        <p> Count: <span class="fs-5" id="iCount"></span>  </p>
+      <div class="modal-body p-0">
+        <p class="shop-Modal-Header"> Item Name: <span class="fs-5 " id="iName"></span> </p>
+          <p id="iIcon" class=" shop-Modal-Item "></p>
+          <div class="shop-Modal-Body">
+          <p class="px-1"> Description: <span class="fs-5 p-0 m-0" id="iDescription"></span>  </p>
+          <p class="px-1"> Cost: <span class="fs-5" id="iCost"></span>  </p>
+          <p class="px-1"> Own: <span class="fs-5" id="iCount"></span>  </p>
+          <div  class="d-flex justify-content-between shop-Modal-Body">
+          <button type="button" class="shop-Modal-button shadow-md-font text-light" data-bs-dismiss="modal">Cancel</button>
+          <button onclick="app.ShopController.purchaseItem()" type="button" class="shop-Modal-button shadow-md-font text-light">Purchase</button>
+          </div>
+          </div>
       </div>
-      <button type="button" class="shadow-md-font">Purchase</button>
-        <button type="button" class="shadow-md-font" data-bs-dismiss="modal">Cancel</button>
     </div>
   </div>
 </div>

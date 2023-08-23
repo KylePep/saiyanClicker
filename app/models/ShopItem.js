@@ -8,6 +8,7 @@ export class ShopItem {
     this.cost = data.cost
     this.description = data.description
     this.count = data.count
+    this.icon = data.icon
   }
 }
 

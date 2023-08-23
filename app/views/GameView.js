@@ -76,15 +76,18 @@ export const GameView = /*html*/`
   <img class="foreground" src="assets/img/Other/WastelandForeground-large-crop.png" alt="">
 </div>
 
-<section class="row d-flex flex-row justify-content-around">
+<section class="row d-flex flex-row justify-content-around align-items-end">
+  <div class="col-8 d-flex justify-content-around">  
+    <div id="character2" class="col-8 d-flex justify-content-center align-items-end">
+    </div>
 
-  <div id="character2" class="col-3 fs-1">
+    <div id="character1" class="col-4 d-flex justigy-conten-center align-items-end">
+    </div>
   </div>
 
-  <div id="character1" class="col-3 fs-1">
+  <div class="col-4">
+    <div id="boss" class="col-3 fs-1 d-flex flex-column justify-content-end">
   </div>
-
-  <div id="boss" class="col-3 fs-1 d-flex flex-column justify-content-end">
 
 
 </section>

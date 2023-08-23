@@ -13,7 +13,8 @@ class ObservableAppState extends EventEmitter {
   gamePage = false
   gameState = 'null'
 
-  zennie = 100;
+  zennie = 1000;
+
 
   shopItems = [
     new ShopItem({
@@ -22,13 +23,15 @@ class ObservableAppState extends EventEmitter {
       cost: 100,
       description: 'Allows you to revive one team member if they fall in battle',
       count: 0,
+      icon: "assets/img/Other/senzuJuice.png"
     }),
     new ShopItem({
       id: 1,
       name: 'Weighted Clothing',
       cost: 50,
-      description: `During your next battle you'll fight with heavy weights, This will increase how quickly you gain Power Level but at the cost of some attack`,
+      description: `Increase the amount of Power Level you gain, At the cost of some attack, during your next battle`,
       count: 0,
+      icon: "assets/img/Other/weightedClothing.png"
     }),
     new ShopItem({
       id: 2,
@@ -36,8 +39,10 @@ class ObservableAppState extends EventEmitter {
       cost: 10000,
       description: "Use the Saiyan's Scouter to find a powerful new enemy to fight",
       count: 0,
+      icon: "assets/img/Other/scouter.png"
     })
   ]
+  activeItem
 
   vegetaUnlocked = true
 
@@ -118,6 +123,56 @@ class ObservableAppState extends EventEmitter {
       dmgMod: 1,
       dmgCost: 1,
       // },
+    }),
+    new Character({
+      name: "Raditz",
+      state: 'neutral',
+      elementId: null,
+      icon: "assets/img/Raditz/RaditzIcon.png",
+      lineUp: "assets/img/Raditz/raditzLineUp.png",
+      idle: "assets/img/Raditz/RaditzIdle.gif",
+      attack: 'assets/img/Raditz/raditzAttack.gif',
+      block: 'assets/img/Raditz/raditzBlock.png',
+      down: 'assets/img/Raditz/raditzDown.png',
+      // health: {
+      hp: 100,
+      hpMax: 100,
+      hpMod: 2,
+      hpRegen: 1,
+      powerLevel: 1000,
+      powerLevelMod: 1,
+      kiColor: '#b668e1',
+      // },
+      // damage: {
+      dmg: 10,
+      dmgMod: 1,
+      dmgCost: 1,
+      // },
+    }),
+    new Character({
+      name: "Nappa",
+      state: 'neutral',
+      elementId: null,
+      icon: "assets/img/Nappa/nappaIcon.png",
+      lineUp: "assets/img/Nappa/nappaLineUp.png",
+      idle: "assets/img/Nappa/nappaIdle.gif",
+      attack: 'assets/img/Nappa/nappaAttack.gif',
+      block: 'assets/img/Nappa/nappaBlock.png',
+      down: 'assets/img/Nappa/nappaDown.png',
+      // health: {
+      hp: 200,
+      hpMax: 200,
+      hpMod: 2,
+      hpRegen: 1,
+      powerLevel: 2000,
+      powerLevelMod: 1,
+      kiColor: '#b668e1',
+      // },
+      // damage: {
+      dmg: 20,
+      dmgMod: 1,
+      dmgCost: 1,
+      // },
     })
   ]
 
@@ -137,6 +192,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#b668e1',
       powerLevel: 1000,
       powerMod: 1.1,
+      zennieDrop: 200,
       icon: 'assets/img/Raditz/RaditzIcon.png'
     })
   ]

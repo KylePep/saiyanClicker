@@ -77,6 +77,12 @@ font-family: 'Wendy One', sans-serif; */
     -4px 0px 0 #000;
 }
 
+.map {
+  height: 55vh;
+  width: auto;
+  border: .5em solid white;
+}
+
 .clouds {
   position: absolute;
   right: 0px;
@@ -93,7 +99,7 @@ font-family: 'Wendy One', sans-serif; */
 
 .char-select {
   /* background: linear-gradient(#fff870, #ffd800, #ffc000); */
-  scale: .75;
+  scale: .9;
   background: linear-gradient(#ff901f, #ff5810, #ff400f);
   box-shadow: 4px 4px #00000057;
   padding: 10px;
@@ -126,7 +132,6 @@ font-family: 'Wendy One', sans-serif; */
   transition: .25s;
   background-color: #1aa74b;
   border: 4mm ridge rgb(193, 193, 193);
-
 }
 
 .shop-Item:hover {
@@ -134,21 +139,45 @@ font-family: 'Wendy One', sans-serif; */
   cursor: pointer;
 }
 
+
 .shop-Modal {
   background-color: #1aa74b;
   border: 4mm ridge rgb(193, 193, 193);
 }
 
-.shop-Modal>button {
+.shop-Modal-button {
   border: none;
   color: white;
   background-color: #00000000;
   transition: .25s;
 }
 
-.shop-Modal>button:hover {
+.shop-Modal-button:hover {
   scale: 1.05;
 }
+
+.shop-Modal-Body {
+  border-top: 4mm ridge rgb(193, 193, 193);
+  background-color: #136a31;
+}
+
+.shop-Modal-Header {
+  border-bottom: 4mm ridge rgb(193, 193, 193);
+  background-color: #20cd5d;
+}
+
+.shop-Modal-Item {
+  display: flex;
+  justify-content: center;
+}
+
+.shop-Modal-Item>img {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 20vh;
+}
+
 
 .shop-Reserve {
   height: 40vh;
@@ -216,7 +245,7 @@ font-family: 'Wendy One', sans-serif; */
 .character2 {
   image-rendering: pixelated;
   scale: 2;
-  transform-origin: right bottom;
+  transform-origin: center bottom;
   transform: scaleX(-1);
   transition: 200ms;
 }

@@ -29,12 +29,20 @@ function _setBackground() {
   document.getElementById('router-view').style.backgroundImage = `url(assets/img/Other/newBackground.png)`
 }
 
+function _drawInventory() {
+  setHTML('zennie', AppState.zennie)
+  setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)
+  setHTML('iWC', ` - ${AppState.shopItems[1].count}`)
+  setHTML('iSC', ` - ${AppState.shopItems[2].count}`)
+}
+
 export class HomeController {
   constructor() {
     console.log('[HomeController]')
     _isVegetaUnlocked()
     _checkSelection()
     _setBackground()
+    _drawInventory()
     AppState.on('vegetaUnlocked', _isVegetaUnlocked)
     AppState.on('characters', _checkSelection)
   }

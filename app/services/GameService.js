@@ -176,6 +176,8 @@ class GameService {
       // @ts-ignore
       findBoss.bossTillDmg = 0
       AppState.vegetaUnlocked = true;
+      // @ts-ignore
+      AppState.zennie += Math.round(findBoss.zennieDrop * (findBoss.powerLevelInit) / 1000)
       characterService.successStats()
       document.location.href = '#'
     }
@@ -197,6 +199,7 @@ class GameService {
     findBoss.health = findBoss.healthMax
     // @ts-ignore
     findBoss.powerLevel = findBoss.powerLevelInit
+    // @ts-ignore
     findBoss.bossTillDmg = 0
 
   }

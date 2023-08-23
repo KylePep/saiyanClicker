@@ -18,6 +18,7 @@ export class Game {
     this.powerLevel = data.powerLevel
     this.powerLevelInit = data.powerLevel
     this.powerMod = data.powerMod
+    this.zennieDrop = data.zennieDrop
     this.icon = data.icon
   }
   get bossTemplate() {
