@@ -97,13 +97,16 @@ class CharacterService {
           if (c.hp <= 0) {
             c.imgsrc = c.down
             c.state = 'down'
+            if (AppState.shopItems[0].count >= 1) {
+              document.getElementById(`${c.elementId}Heal`)?.classList.remove('visually-hidden')
+            }
             AppState.emit('characters')
+          } else {
+            document.getElementById(`${c.elementId}Heal`)?.classList.add('visually-hidden')
           }
         }
       }
-
     })
-
     if (AppState.gameState == 'null') {
       let upChar = characters.find(c => {
         if (c.elementId != null && c.state != 'down') {
@@ -115,7 +118,6 @@ class CharacterService {
       }
       console.log('[GameState]', AppState.gameState)
     }
-
     setTimeout(this.stopDamage, 50)
   }
   stopDamage() {
@@ -127,6 +129,27 @@ class CharacterService {
       }
     })
   }
+
+
+
+  revive(elementId) {
+    AppState.shopItems[0].count -= 1
+
+    AppState.characters.forEach(c => {
+      if (AppState.shopItems[0].count <= 0) {
+        document.getElementById(`${c.elementId}Heal`)?.classList.add('visually-hidden')
+      }
+      if (c.elementId == elementId) {
+        c.hp = c.hpMax
+        c.state = 'neutral'
+        c.imgsrc = c.idle
+        document.getElementById(`${c.elementId}Heal`)?.classList.add('visually-hidden')
+        AppState.gameState = 'null'
+      }
+    })
+    AppState.emit('characters')
+  }
+
   resetStats() {
     AppState.characters.forEach(c => {
       c.hp = c.hpMax
@@ -134,7 +157,6 @@ class CharacterService {
       c.imgsrc = c.idle
       c.powerLevel = c.powerLevelInit
     })
-
   }
   successStats() {
     AppState.characters.forEach(c => {

@@ -167,6 +167,11 @@ class GameService {
         // @ts-ignore
       } activeBoss.health -= damage;
     } else {
+      AppState.locks.find(l => {
+        // @ts-ignore
+        if (l.name == activeBoss.boss)
+          l.Unlocked = true;
+      })
       // @ts-ignore
       activeBoss.powerLevel = Math.round(activeBoss.powerLevel * activeBoss.powerMod)
       // @ts-ignore
@@ -175,11 +180,6 @@ class GameService {
       activeBoss.health = activeBoss.healthMax
       // @ts-ignore
       activeBoss.activeBossTillDmg = 0
-      AppState.locks.find(l => {
-        // @ts-ignore
-        if (l.name == activeBoss.boss)
-          l.Unlocked = true;
-      })
       // @ts-ignore
       AppState.zennie += Math.round(activeBoss.zennieDrop * (activeBoss.powerLevelInit) / 1000)
       boss = activeBoss
@@ -200,7 +200,7 @@ class GameService {
 
 
   bossStatsReset() {
-    let findBoss = AppState.boss.find(b => b.active == true)
+    let findBoss = AppState.activeBoss
     // @ts-ignore
     findBoss.health = findBoss.healthMax
     // @ts-ignore

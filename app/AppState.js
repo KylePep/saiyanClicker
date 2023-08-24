@@ -13,7 +13,7 @@ class ObservableAppState extends EventEmitter {
   gamePage = false
   gameState = 'null'
 
-  zennie = 1000;
+  zennie = 100000;
 
 
   shopItems = [
@@ -262,6 +262,39 @@ class ObservableAppState extends EventEmitter {
       icon: 'assets/img/Raditz/RaditzIcon.png',
       lineUp: "assets/img/Nappa/nappaLineUp.png"
     }),
+    new Game({
+      active: false,
+      boss: 'Vegeta',
+      bossIdle: 'assets/img/Vegeta/vegetaIdle.gif',
+      bossAttack: 'assets/img/Vegeta/vegetaAttack.gif',
+      health: 100000,
+      healthMax: 100000,
+      bossDmg: 60,
+      bossDmgRate: 12000,
+      kiColor: '#d9c0e9',
+      powerLevel: 10000,
+      powerMod: 1.1,
+      zennieDrop: 1000,
+      icon: 'assets/img/Vegeta/vegetaIcon.png',
+      lineUp: "assets/img/Vegeta/vegetaLineUp.png"
+    })
+    ,
+    new Game({
+      active: false,
+      boss: 'Bardock',
+      bossIdle: 'assets/img/Bardock/bardockIdle.gif',
+      bossAttack: 'assets/img/Bardock/bardockAttack.gif',
+      health: 1000000,
+      healthMax: 1000000,
+      bossDmg: 100,
+      bossDmgRate: 10000,
+      kiColor: '#d9c0e9',
+      powerLevel: 50000,
+      powerMod: 1.1,
+      zennieDrop: 100000,
+      icon: 'assets/img/Bardock/bardockIcon.png',
+      lineUp: "assets/img/Bardock/bardockLineUp.png"
+    })
   ]
 
   activeBoss = this.boss[0]

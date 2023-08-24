@@ -106,17 +106,6 @@ font-family: 'Wendy One', sans-serif; */
   border: 4mm ridge black;
 }
 
-.char-LineUp {
-  transform: scaleX(1);
-  scale: 2;
-  padding: 0px 1em;
-}
-
-.boss-LineUp {
-  transform: scaleX(-1);
-  scale: 2;
-}
-
 .char-select>img {
   filter: drop-shadow(4px 4px #761f09);
   transition: .5s;
@@ -125,6 +114,48 @@ font-family: 'Wendy One', sans-serif; */
 .char-select:hover>img {
   scale: 1.05;
 }
+
+.char-LineUp {
+  transform: scaleX(1);
+  filter: drop-shadow(-1px -1px 0px #ffffff);
+  scale: 2;
+  padding: 0px 1em;
+}
+
+.boss-LineUp {
+  transform: scaleX(-1);
+  filter: drop-shadow(-1px -1px 0px #ffffff);
+  scale: 2;
+}
+
+.Raditz {
+  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  position: absolute;
+  left: 55%;
+  bottom: 40%;
+}
+
+.Nappa {
+  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  position: absolute;
+  left: 39%;
+  bottom: 16%;
+}
+
+.Vegeta {
+  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  position: absolute;
+  left: 48%;
+  bottom: 31%;
+}
+
+.Bardock {
+  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  position: absolute;
+  left: 51%;
+  bottom: 50%;
+}
+
 
 .shop-Item {
   height: 30vh;
@@ -283,16 +314,14 @@ font-family: 'Wendy One', sans-serif; */
   height: 7vh;
 }
 
-/* .flash {
-  animation: flash 0.5s;
+.heal {
+  margin-bottom: 15vh;
 }
 
-@keyframes flash {
-  0% {
-    mix-blend-mode: multiply;
-    fill: rgb(177, 60, 60);
-  }
-} */
+.heal:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
 
 .masked {
   -webkit-mask-image: url(MDN.svg), url(star.svg);

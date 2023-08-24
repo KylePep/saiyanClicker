@@ -18,10 +18,10 @@ export const StartView = /*html*/`
   <p><img src="assets/img/Other/weightedClothing.png"><span  id="iWC"> - 0 </span></p>
   <p><img src="assets/img/Other/scouter.png"><span  id="iSC"> - 0 </span></p>
 
-  <p id="Raditz" onclick="app.HomeController.selectBoss('Raditz')"><img src="assets/img/Raditz/raditzLineUp.png"></p>
-  <p id="Nappa" onclick="app.HomeController.selectBoss('Nappa')"><img src="assets/img/Nappa/nappaLineUp.png"></p>
-  <p id="Vegeta" onclick="app.HomeController.selectBoss('Vegeta')"><img src="assets/img/Vegeta/vegetaLineUp.png"></p>
-  <p id="Bardock" onclick="app.HomeController.selectBoss('Bardock')"><img src="assets/img/Bardock/bardockLineUp.png"></p>
+  <p id="Raditz" onclick="app.HomeController.selectBoss('Raditz')"><img class="Raditz" src="assets/img/Raditz/raditzLineUp.png"></p>
+  <p id="Nappa" onclick="app.HomeController.selectBoss('Nappa')"><img class="Nappa" src="assets/img/Nappa/nappaLineUp.png"></p>
+  <p id="Vegeta" onclick="app.HomeController.selectBoss('Vegeta')"><img class="Vegeta" src="assets/img/Vegeta/vegetaLineUp.png"></p>
+  <p id="Bardock" onclick="app.HomeController.selectBoss('Bardock')"><img class="Bardock" src="assets/img/Bardock/bardockLineUp.png"></p>
   </div>
 
     <div class="col-4 d-flex flex-column align-items-center justify-content-end">

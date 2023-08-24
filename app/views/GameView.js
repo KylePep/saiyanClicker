@@ -78,10 +78,21 @@ export const GameView = /*html*/`
 
 <section class="row d-flex flex-row justify-content-around align-items-end">
   <div class="col-8 d-flex justify-content-around">  
-    <div id="character2" class="col-8 d-flex justify-content-center align-items-end">
+    <div class="col-8 d-flex  justify-content-center align-items-end">
+      <div class="d-flex flex-column  justify-content-center ">
+        <img id="character2Heal" onclick="app.CharacterController.revive('character2')" class="heal visually-hidden" src="assets/img/Other/senzuJuice.png">
+        <div id="character2">
+        </div>
+      </div>
+
     </div>
 
-    <div id="character1" class="col-4 d-flex justigy-conten-center align-items-end">
+    <div  class="col-4 d-flex justigy-conten-center align-items-end">
+    <div class="d-flex flex-column  justify-content-center ">
+    <img id="character1Heal" onclick="app.CharacterController.revive('character1')" class="heal visually-hidden" src="assets/img/Other/senzuJuice.png">
+    <div id="character1">
+    </div>
+  </div>
     </div>
   </div>
 

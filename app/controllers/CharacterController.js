@@ -64,4 +64,8 @@ export class CharacterController {
     characterService.takeDamage()
   }
 
+  revive(elementId) {
+    characterService.revive(elementId)
+  }
+
 }

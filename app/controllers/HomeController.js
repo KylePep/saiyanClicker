@@ -12,7 +12,16 @@ function _isUnlocked() {
       document.getElementById(`${l.element}`)?.classList.remove('visually-hidden')
     }
   })
+}
 
+function _isUnlockedBoss() {
+  AppState.locks.forEach(l => {
+    if (l.bossUnlocked == false) {
+      document.getElementById(`${l.name}`)?.classList.add('visually-hidden')
+    } else {
+      document.getElementById(`${l.name}`)?.classList.remove('visually-hidden')
+    }
+  })
 }
 
 function _checkSelection() {
@@ -28,9 +37,12 @@ function _checkSelection() {
   }
 }
 
+
 function _checkBoss() {
-  let boss = AppState.activeBoss
-  setHTML('b1', `<img class="boss-LineUp" src="${boss.lineUp}" alt="">`)
+  if (AppState.page != '#/game') {
+    let boss = AppState.activeBoss
+    setHTML('b1', `<img class="boss-LineUp" src="${boss.lineUp}" alt="">`)
+  }
 }
 
 function _setBackground() {
@@ -49,6 +61,7 @@ export class HomeController {
     console.log('[HomeController]')
     console.log(AppState.activeBoss)
     _isUnlocked()
+    _isUnlockedBoss()
     _checkSelection()
     _checkBoss()
     _setBackground()
