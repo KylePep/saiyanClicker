@@ -11,7 +11,7 @@ import { ShopView } from "./views/ShopView.js";
 export const router = [
   {
     path: '',
-    controller: HomeController,
+    controller: [HomeController],
     view: StartView,
   },
   {

@@ -2,7 +2,11 @@ export const ShopView = /*html*/`
 <div class="container-fluid ">
   <div class="row py-3 text-light sml-font shadow-md-font">
   <div class="col-12">
-  <p class="fs-1 text-light sml-font shadow-md-font mb-5 shop-Reserve">Zennie: <span id="zennie">100</span></p>
+  <div class="fs-1 text-light sml-font shadow-md-font mb-5 shop-Reserve">Zennie: <p id="zennie">100</p>  
+  <p><img src="assets/img/Other/senzuJuice.png"><span id="iSJ"> - 0 </span></p>
+  <p><img src="assets/img/Other/weightedClothing.png"><span  id="iWC"> - 0 </span></p>
+  <p><img src="assets/img/Other/scouter.png"><span  id="iSC"> - 0 </span></p>
+  </div>
   </div>
     <div class="col-12">
   

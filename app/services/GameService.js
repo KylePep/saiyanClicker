@@ -167,11 +167,7 @@ class GameService {
         // @ts-ignore
       } activeBoss.health -= damage;
     } else {
-      AppState.locks.find(l => {
-        // @ts-ignore
-        if (l.name == activeBoss.boss)
-          l.Unlocked = true;
-      })
+      this.unlockProgression()
       // @ts-ignore
       activeBoss.powerLevel = Math.round(activeBoss.powerLevel * activeBoss.powerMod)
       // @ts-ignore
@@ -198,6 +194,19 @@ class GameService {
     }
   }
 
+  unlockProgression() {
+    let activeBoss = AppState.activeBoss
+    let lockIndex = AppState.locks.findIndex(l => l.name == activeBoss.boss)
+    AppState.locks.find(l => {
+      // @ts-ignore
+      if (l.name == activeBoss.boss)
+        l.Unlocked = true;
+      if (lockIndex < (AppState.locks.length - 1)) {
+        AppState.locks[lockIndex + 1].bossUnlocked = true
+      }
+    })
+    console.log('ACTIVE BOSS', activeBoss, 'LOCK INDEX', lockIndex, 'APPSTATE LOCKS', AppState.locks)
+  }
 
   bossStatsReset() {
     let findBoss = AppState.activeBoss

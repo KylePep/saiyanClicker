@@ -8,33 +8,43 @@ function _setBackground() {
   document.getElementById('router-view').style.backgroundImage = `url(assets/img/Other/shopBackground.png)`
 }
 
-function _drawZennie() {
-  setHTML('zennie', AppState.zennie)
-}
 function _refreshShopItem() {
-  let item = AppState.activeItem
-  setHTML('iName', item.name)
-  setHTML('iDescription', item.description)
-  setHTML('iCost', item.cost)
-  setHTML('iCount', item.count)
-  setHTML('iIcon', `<img  src="${item.icon}" >`)
-}
-export class ShopController {
-  constructor() {
-    _setBackground()
-    _drawZennie()
-    AppState.on('zennie', _drawZennie)
-    AppState.on('shopItems', _refreshShopItem)
-  }
-
-  setShopItem(itemId) {
-    let item = AppState.shopItems.find(i => i.id == itemId)
+  if (AppState.page == '#/shop') {
+    let item = AppState.activeItem
     setHTML('iName', item.name)
     setHTML('iDescription', item.description)
     setHTML('iCost', item.cost)
     setHTML('iCount', item.count)
     setHTML('iIcon', `<img  src="${item.icon}" >`)
-    shopService.setShopItem(itemId)
+  }
+}
+
+function _drawInventory() {
+  if (AppState.page == '#/shop') {
+    setHTML('zennie', AppState.zennie)
+    setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)
+    setHTML('iWC', ` - ${AppState.shopItems[1].count}`)
+    setHTML('iSC', ` - ${AppState.shopItems[2].count}`)
+  }
+}
+export class ShopController {
+  constructor() {
+    _setBackground()
+    _drawInventory()
+    AppState.on('shopItems', _refreshShopItem)
+    AppState.on('shopItems', _drawInventory)
+  }
+
+  setShopItem(itemId) {
+    if (AppState.page == '#/shop') {
+      let item = AppState.shopItems.find(i => i.id == itemId)
+      setHTML('iName', item.name)
+      setHTML('iDescription', item.description)
+      setHTML('iCost', item.cost)
+      setHTML('iCount', item.count)
+      setHTML('iIcon', `<img  src="${item.icon}" >`)
+      shopService.setShopItem(itemId)
+    }
   }
   leaveShop() {
     shopService.leaveShop()

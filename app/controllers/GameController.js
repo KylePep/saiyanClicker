@@ -51,6 +51,9 @@ function _drawEffects() {
 function _setBackground() {
   document.getElementById('router-view').style.backgroundImage = `url(assets/img/Other/TitleBackground.png)`
 }
+function _drawInventory() {
+  setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)
+}
 
 export class GameController {
   constructor() {
@@ -61,10 +64,12 @@ export class GameController {
     _drawHealthBar()
     _drawBoss()
     _setBackground()
+    _drawInventory()
     AppState.on('activeBoss', _drawHealthBar)
     AppState.on('activeBoss', _drawBossStats)
     AppState.on('boss', _drawBoss)
     AppState.on('effects', _drawEffects)
+    AppState.on('shopItems', _drawInventory)
   }
 
 

@@ -49,6 +49,7 @@ export const GameView = /*html*/`
 
 <!-- Button trigger modal -->
 <div class="gameMenu d-flex flex-column">
+<p><img src="assets/img/Other/senzuJuice.png"><span id="iSJ" class="text-light sml-font shadow-md-font"> - 0 </span></p>
     <button onclick="app.GameController.pauseGame()" type="button" class="text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
       Pause
     </button>

@@ -148,6 +148,7 @@ class CharacterService {
       }
     })
     AppState.emit('characters')
+    AppState.emit('shopItems')
   }
 
   resetStats() {
