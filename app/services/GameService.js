@@ -201,7 +201,7 @@ class GameService {
       // @ts-ignore
       if (l.name == activeBoss.boss)
         l.Unlocked = true;
-      if (lockIndex < (AppState.locks.length - 1)) {
+      if (lockIndex < (AppState.locks.length - 2)) {
         AppState.locks[lockIndex + 1].bossUnlocked = true
       }
     })
