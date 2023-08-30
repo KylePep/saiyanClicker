@@ -20,7 +20,7 @@ class ObservableAppState extends EventEmitter {
 
 
 
-  zennie = 100000
+  zennie = 0
   shopItems = [
     new ShopItem({
       id: 0,
@@ -106,7 +106,6 @@ class ObservableAppState extends EventEmitter {
       hpMax: 120,
       hpMod: 2,
       hpRegen: 0,
-      // },
       powerLevel: 350,
       powerLevelMod: 1,
       kiColor: '#0882ed',
@@ -114,7 +113,6 @@ class ObservableAppState extends EventEmitter {
       dmg: 12,
       dmgMod: 1,
       dmgCost: 1,
-      // }
     }),
     new Character({
       name: "Piccolo",
@@ -134,12 +132,10 @@ class ObservableAppState extends EventEmitter {
       powerLevel: 300,
       powerLevelMod: 1,
       kiColor: '#ffff5e',
-      // },
       // damage: {
       dmg: 8,
       dmgMod: 1,
       dmgCost: 1,
-      // }
     }),
     new Character({
       name: "Vegeta",
@@ -156,15 +152,13 @@ class ObservableAppState extends EventEmitter {
       hpMax: 80,
       hpMod: 2,
       hpRegen: 0,
-      powerLevel: 2000,
+      powerLevel: 18000,
       powerLevelMod: 2,
       kiColor: '#ac022f',
-      // },
       // damage: {
       dmg: 30,
       dmgMod: 1,
       dmgCost: 1,
-      // },
     }),
     new Character({
       name: "Raditz",
@@ -181,15 +175,13 @@ class ObservableAppState extends EventEmitter {
       hpMax: 100,
       hpMod: 2,
       hpRegen: 0,
-      powerLevel: 1000,
+      powerLevel: 1600,
       powerLevelMod: 1,
       kiColor: '#b668e1',
-      // },
       // damage: {
       dmg: 10,
       dmgMod: 1,
       dmgCost: 1,
-      // },
     }),
     new Character({
       name: "Nappa",
@@ -206,15 +198,13 @@ class ObservableAppState extends EventEmitter {
       hpMax: 200,
       hpMod: 2,
       hpRegen: 0,
-      powerLevel: 2000,
+      powerLevel: 4000,
       powerLevelMod: 1,
       kiColor: '#ffad2c',
-      // },
       // damage: {
       dmg: 20,
       dmgMod: 1,
       dmgCost: 1,
-      // },
     }),
     new Character({
       name: "Bardock",
@@ -231,15 +221,13 @@ class ObservableAppState extends EventEmitter {
       hpMax: 300,
       hpMod: 2,
       hpRegen: 0,
-      powerLevel: 450,
+      powerLevel: 50000,
       powerLevelMod: 2,
       kiColor: '#0e5abe',
-      // },
       // damage: {
       dmg: 50,
       dmgMod: 1,
       dmgCost: 1,
-      // },
     })
   ]
 
@@ -256,7 +244,7 @@ class ObservableAppState extends EventEmitter {
       bossDmgRate: 15000,
       kiColor: '#b668e1',
       powerLevel: 1000,
-      powerMod: 1.1,
+      powerMod: 1.05,
       zennieDrop: 200,
       icon: 'assets/img/Raditz/RaditzIcon.png',
       lineUp: "assets/img/Raditz/raditzLineUp.png",
@@ -273,8 +261,8 @@ class ObservableAppState extends EventEmitter {
       bossDmg: 30,
       bossDmgRate: 15000,
       kiColor: '#ffad2c',
-      powerLevel: 6000,
-      powerMod: 1.1,
+      powerLevel: 4000,
+      powerMod: 1.05,
       zennieDrop: 600,
       icon: 'assets/img/Raditz/RaditzIcon.png',
       lineUp: "assets/img/Nappa/nappaLineUp.png",
@@ -291,8 +279,8 @@ class ObservableAppState extends EventEmitter {
       bossDmg: 60,
       bossDmgRate: 12000,
       kiColor: '#ac022f',
-      powerLevel: 10000,
-      powerMod: 1.1,
+      powerLevel: 18000,
+      powerMod: 1.05,
       zennieDrop: 1000,
       icon: 'assets/img/Vegeta/vegetaIcon.png',
       lineUp: "assets/img/Vegeta/vegetaLineUp.png",
@@ -311,7 +299,7 @@ class ObservableAppState extends EventEmitter {
       bossDmgRate: 10000,
       kiColor: '#0e5abe',
       powerLevel: 50000,
-      powerMod: 1.1,
+      powerMod: 1.05,
       zennieDrop: 100000,
       icon: 'assets/img/Bardock/bardockIcon.png',
       lineUp: "assets/img/Bardock/bardockLineUp.png",
