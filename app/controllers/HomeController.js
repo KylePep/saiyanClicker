@@ -137,6 +137,14 @@ export class HomeController {
     gameService.saveData()
   }
 
+  async resetGame() {
+    let confirmReset = await Pop.confirm('Reset Game Save? All progress will be lost.')
+    if (!confirmReset) {
+      return
+    }
+    gameService.resetGame()
+  }
+
 }
 
 

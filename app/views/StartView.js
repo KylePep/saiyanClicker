@@ -20,6 +20,7 @@ export const StartView = /*html*/`
   <p><img src="assets/img/Other/attackUp.png"><span  id="iAU"> - 0 </span></p>
   <p><img src="assets/img/Other/scouter.png"><span  id="iSC"> - 0 </span></p>
   <p data-bs-toggle="modal" data-bs-target="#howToPlayModal"  class="lrg-font info-button ms-2">How to Play</p>
+  <p onclick="app.HomeController.resetGame()" class="lrg-font info-button ms-2">Reset</p>
 
   <p id="Raditz" onclick="app.HomeController.selectBoss('Raditz')"><img class="Raditz" src="assets/img/Raditz/raditzLineUp.png"></p>
   <p id="Nappa" onclick="app.HomeController.selectBoss('Nappa')"><img class="Nappa" src="assets/img/Nappa/nappaLineUp.png"></p>

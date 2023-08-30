@@ -7,6 +7,7 @@ import { loadState, saveState } from "../utils/Store.js"
 import { characterService } from "./CharactersService.js"
 
 class GameService {
+
   constructor() {
     this.loadData()
     this.saveData()
@@ -43,6 +44,11 @@ class GameService {
       AppState.characters = loadState('characters', [Character])
       AppState.boss = loadState('boss', [Game])
     }
+  }
+  resetGame() {
+    AppState.saveInit = false
+    saveState('saveInit', AppState.saveInit)
+    location.reload()
   }
 
   screenView(e) {
