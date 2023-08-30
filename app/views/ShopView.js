@@ -3,8 +3,10 @@ export const ShopView = /*html*/`
   <div class="row py-3 text-light sml-font shadow-md-font">
   <div class="col-12">
   <div class="fs-1 text-light sml-font shadow-md-font mb-5 shop-Reserve">Zennie: <p id="zennie">100</p>  
-  <p><img src="assets/img/Other/senzuJuice.png"><span id="iSJ"> - 0 </span></p>
+  <p><img src="assets/img/Other/revive.png"><span id="iSJ"> - 0 </span></p>
   <p><img src="assets/img/Other/weightedClothing.png"><span  id="iWC"> - 0 </span></p>
+  <p><img src="assets/img/Other/healthUp.png"><span  id="iHU"> - 0 </span></p>
+  <p><img src="assets/img/Other/attackUp.png"><span  id="iAU"> - 0 </span></p>
   <p><img src="assets/img/Other/scouter.png"><span  id="iSC"> - 0 </span></p>
   </div>
   </div>
@@ -15,17 +17,26 @@ export const ShopView = /*html*/`
       </p>
       <div class="d-flex justify-content-center">
       <div>
-        <img onclick="app.ShopController.setShopItem(0)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item me-3" src="assets/img/Other/senzuJuice.png">
+        <img onclick="app.ShopController.setShopItem(0)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item me-3" src="assets/img/Other/revive.png">
         <p></p>
       </div>
+
       <div>
         <img onclick="app.ShopController.setShopItem(1)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item me-3" src="assets/img/Other/weightedClothing.png">
-      
       </div>
+      
       <div>
-        <img onclick="app.ShopController.setShopItem(2)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item" src="assets/img/Other/scouter.png">
-      
+        <img onclick="app.ShopController.setShopItem(2)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item me-3" src="assets/img/Other/healthUp.png">
       </div>
+
+      <div>
+        <img onclick="app.ShopController.setShopItem(3)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item me-3" src="assets/img/Other/attackUp.png">
+      </div>
+
+      <div>
+        <img onclick="app.ShopController.setShopItem(4)" data-bs-toggle="modal" data-bs-target="#shopModal" class="shop-Item" src="assets/img/Other/scouter.png">
+      </div>
+
       </div>
       <button onclick="app.ShopController.leaveShop()" class=" fs-4 mt-2 text-light shadow-md-font pauseButton">
           Leave Shop

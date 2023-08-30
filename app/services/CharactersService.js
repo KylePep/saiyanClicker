@@ -1,6 +1,8 @@
 import { AppState } from "../AppState.js"
 
 class CharacterService {
+
+
   constructor() {
     this.debounceResetChar1 = this.debounce(this.resetChar1);
     this.delayResetChar1 = this.timeout(this.resetChar1, 1900);
@@ -166,6 +168,33 @@ class CharacterService {
       c.imgsrc = c.idle
       c.powerLevelInit = c.powerLevel
     })
+  }
+  setInfoCharacter(name) {
+    let character = AppState.characters.find(c => c.name == name)
+    AppState.infoCharacter = character
+  }
+  applyItem(itemId) {
+    let item = AppState.shopItems.find(i => i.id == itemId)
+    let character = AppState.characters.find(c => c.name == AppState.infoCharacter.name)
+    if (item.count > 0) {
+      switch (itemId) {
+        case 1:
+          character.powerLevel = Math.ceil(character.powerLevel * 1.1)
+          character.powerLevelInit = character.powerLevel
+          break;
+        case 2:
+          character.hp = Math.ceil(character.hp * 1.1)
+          character.hpMax = character.hp
+          break;
+        case 3:
+          character.dmg = Math.ceil(character.dmg * 1.1)
+          break;
+        default:
+          break;
+      }
+      item.count--
+      AppState.emit('shopItems')
+    }
   }
 }
 export const characterService = new CharacterService()

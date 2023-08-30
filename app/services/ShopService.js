@@ -10,7 +10,7 @@ class ShopService {
   purchaseItem() {
     let activeItem = AppState.activeItem
     if (activeItem.cost <= AppState.zennie) {
-      if (activeItem.id == 2) {
+      if (activeItem.id == 4) {
         let bardockUnlock = AppState.locks.find(l => l.name == 'Bardock')
         bardockUnlock.bossUnlocked = true
       }

@@ -25,7 +25,6 @@ font-family: 'Wendy One', sans-serif; */
   transform-origin: 50% 100%;
   scale: 2;
   transition: 1s;
-
 }
 
 .Start-Button:hover {
@@ -102,16 +101,18 @@ font-family: 'Wendy One', sans-serif; */
   scale: .9;
   background: linear-gradient(#ff901f, #ff5810, #ff400f);
   box-shadow: 4px 4px #00000057;
-  padding: 10px;
   border: 4mm ridge black;
 }
 
 .char-select>img {
   filter: drop-shadow(4px 4px #761f09);
   transition: .5s;
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-.char-select:hover>img {
+.char-select>img:hover {
   scale: 1.05;
 }
 
@@ -133,6 +134,7 @@ font-family: 'Wendy One', sans-serif; */
   position: absolute;
   left: 55%;
   bottom: 40%;
+  cursor: pointer;
 }
 
 .Nappa {
@@ -140,6 +142,7 @@ font-family: 'Wendy One', sans-serif; */
   position: absolute;
   left: 39%;
   bottom: 16%;
+  cursor: pointer;
 }
 
 .Vegeta {
@@ -147,15 +150,70 @@ font-family: 'Wendy One', sans-serif; */
   position: absolute;
   left: 48%;
   bottom: 31%;
+  cursor: pointer;
 }
 
 .Bardock {
   filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
   position: absolute;
   left: 51%;
-  bottom: 50%;
+  bottom: 48%;
+  cursor: pointer;
 }
 
+.info-button {
+  cursor: pointer;
+}
+
+.info-button:hover {
+  scale: 1.02;
+}
+
+
+
+.character-Modal {
+  background: linear-gradient(#ff901f, #ff5810, #ff400f);
+  border: 4mm ridge black;
+}
+
+.character-Modal-button {
+  border: none;
+  color: white;
+  background-color: #00000000;
+  transition: .25s;
+}
+
+.character-Modal-button:hover {
+  scale: 1.05;
+}
+
+.character-Modal-Body {
+  background: linear-gradient(#ff901f, #ff5810, #ff400f);
+  border-top: 4mm ridge black;
+}
+
+.character-Modal-Header {
+  background: linear-gradient(#ff901f, #ff5810, #ff400f);
+  border-bottom: 4mm ridge black;
+  margin-bottom: 0;
+}
+
+.character-Modal-Item {
+  display: flex;
+  justify-content: center;
+  background-color: #2d85ce;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.character-Modal-Item>img {
+  filter: drop-shadow(8px 0px #185d95);
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: 20vh;
+}
 
 .shop-Item {
   height: 30vh;

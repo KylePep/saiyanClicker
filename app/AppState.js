@@ -19,22 +19,38 @@ class ObservableAppState extends EventEmitter {
   shopItems = [
     new ShopItem({
       id: 0,
-      name: 'Senzu Juice',
+      name: 'Extra Wish',
       cost: 100,
       description: 'Allows you to revive one team member if they fall in battle',
       count: 0,
-      icon: "assets/img/Other/senzuJuice.png"
+      icon: "assets/img/Other/revive.png"
     }),
     new ShopItem({
       id: 1,
-      name: 'Weighted Clothing',
-      cost: 50,
-      description: `Increase the amount of Power Level you gain, At the cost of some attack, during your next battle`,
+      name: 'Weighted Training',
+      cost: 500,
+      description: `Use to Train a fighter, raising their power level by 10%`,
       count: 0,
       icon: "assets/img/Other/weightedClothing.png"
     }),
     new ShopItem({
       id: 2,
+      name: 'Health Capsule',
+      cost: 200,
+      description: `Use to increase a fighters total health by 10%`,
+      count: 0,
+      icon: "assets/img/Other/healthUp.png"
+    }),
+    new ShopItem({
+      id: 3,
+      name: 'Strength Capsule',
+      cost: 200,
+      description: `Use to increase a fighters total attack by 10%`,
+      count: 0,
+      icon: "assets/img/Other/attackUp.png"
+    }),
+    new ShopItem({
+      id: 4,
       name: 'Scouter',
       cost: 10000,
       description: "Use the Saiyan's Scouter to find a powerful new enemy to fight",
@@ -88,13 +104,13 @@ class ObservableAppState extends EventEmitter {
       hp: 120,
       hpMax: 120,
       hpMod: 2,
-      hpRegen: 1,
+      hpRegen: 0,
       // },
       powerLevel: 350,
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
-      dmg: 1200,
+      dmg: 12,
       dmgMod: 1,
       dmgCost: 1,
       // }
@@ -113,7 +129,7 @@ class ObservableAppState extends EventEmitter {
       hp: 160,
       hpMax: 160,
       hpMod: 2,
-      hpRegen: 1,
+      hpRegen: 0,
       powerLevel: 300,
       powerLevelMod: 1,
       kiColor: '#ffff5e',
@@ -138,10 +154,10 @@ class ObservableAppState extends EventEmitter {
       hp: 80,
       hpMax: 80,
       hpMod: 2,
-      hpRegen: 1,
+      hpRegen: 0,
       powerLevel: 2000,
       powerLevelMod: 2,
-      kiColor: '#d9c0e9',
+      kiColor: '#ac022f',
       // },
       // damage: {
       dmg: 30,
@@ -163,7 +179,7 @@ class ObservableAppState extends EventEmitter {
       hp: 100,
       hpMax: 100,
       hpMod: 2,
-      hpRegen: 1,
+      hpRegen: 0,
       powerLevel: 1000,
       powerLevelMod: 1,
       kiColor: '#b668e1',
@@ -188,10 +204,10 @@ class ObservableAppState extends EventEmitter {
       hp: 200,
       hpMax: 200,
       hpMod: 2,
-      hpRegen: 1,
+      hpRegen: 0,
       powerLevel: 2000,
       powerLevelMod: 1,
-      kiColor: '#b668e1',
+      kiColor: '#ffad2c',
       // },
       // damage: {
       dmg: 20,
@@ -213,10 +229,10 @@ class ObservableAppState extends EventEmitter {
       hp: 300,
       hpMax: 300,
       hpMod: 2,
-      hpRegen: 1,
+      hpRegen: 0,
       powerLevel: 450,
       powerLevelMod: 2,
-      kiColor: '#d9c0e9',
+      kiColor: '#0e5abe',
       // },
       // damage: {
       dmg: 50,
@@ -225,8 +241,8 @@ class ObservableAppState extends EventEmitter {
       // },
     })
   ]
-
-
+  /** @type {import('./models/Character.js').Character} */
+  infoCharacter = this.characters[0]
 
   /** @type {import('./models/Game.js').Game[]} */
   boss = [
@@ -244,7 +260,9 @@ class ObservableAppState extends EventEmitter {
       powerMod: 1.1,
       zennieDrop: 200,
       icon: 'assets/img/Raditz/RaditzIcon.png',
-      lineUp: "assets/img/Raditz/raditzLineUp.png"
+      lineUp: "assets/img/Raditz/raditzLineUp.png",
+      background: "assets/img/Other/forestBackground.png",
+      foreground: ""
     }),
     new Game({
       active: false,
@@ -255,12 +273,14 @@ class ObservableAppState extends EventEmitter {
       healthMax: 30000,
       bossDmg: 30,
       bossDmgRate: 15000,
-      kiColor: '#b668e1',
+      kiColor: '#ffad2c',
       powerLevel: 6000,
       powerMod: 1.1,
       zennieDrop: 600,
       icon: 'assets/img/Raditz/RaditzIcon.png',
-      lineUp: "assets/img/Nappa/nappaLineUp.png"
+      lineUp: "assets/img/Nappa/nappaLineUp.png",
+      background: "assets/img/Other/desertBackground.png",
+      foreground: "assets/img/Other/desertForeground.png"
     }),
     new Game({
       active: false,
@@ -271,12 +291,14 @@ class ObservableAppState extends EventEmitter {
       healthMax: 100000,
       bossDmg: 60,
       bossDmgRate: 12000,
-      kiColor: '#d9c0e9',
+      kiColor: '#ac022f',
       powerLevel: 10000,
       powerMod: 1.1,
       zennieDrop: 1000,
       icon: 'assets/img/Vegeta/vegetaIcon.png',
-      lineUp: "assets/img/Vegeta/vegetaLineUp.png"
+      lineUp: "assets/img/Vegeta/vegetaLineUp.png",
+      background: "assets/img/Other/TitleBackground.png",
+      foreground: "assets/img/Other/WastelandForeground-large-crop.png"
     })
     ,
     new Game({
@@ -288,12 +310,14 @@ class ObservableAppState extends EventEmitter {
       healthMax: 1000000,
       bossDmg: 100,
       bossDmgRate: 10000,
-      kiColor: '#d9c0e9',
+      kiColor: '#0e5abe',
       powerLevel: 50000,
       powerMod: 1.1,
       zennieDrop: 100000,
       icon: 'assets/img/Bardock/bardockIcon.png',
-      lineUp: "assets/img/Bardock/bardockLineUp.png"
+      lineUp: "assets/img/Bardock/bardockLineUp.png",
+      background: "assets/img/Other/iceBackground.png",
+      foreground: "assets/img/Other/iceForeground.png"
     })
   ]
 

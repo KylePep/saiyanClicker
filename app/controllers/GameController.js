@@ -49,7 +49,9 @@ function _drawEffects() {
 }
 
 function _setBackground() {
-  document.getElementById('router-view').style.backgroundImage = `url(assets/img/Other/TitleBackground.png)`
+  let boss = AppState.boss.find(b => b.active == true)
+  document.getElementById('router-view').style.backgroundImage = `url(${boss.background})`
+  setHTML('foreground', `<img class="foreground" src="${boss.foreground}" alt=""></img>`)
 }
 function _drawInventory() {
   setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)

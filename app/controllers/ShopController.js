@@ -24,7 +24,9 @@ function _drawInventory() {
     setHTML('zennie', AppState.zennie)
     setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)
     setHTML('iWC', ` - ${AppState.shopItems[1].count}`)
-    setHTML('iSC', ` - ${AppState.shopItems[2].count}`)
+    setHTML('iHU', ` - ${AppState.shopItems[2].count}`)
+    setHTML('iAU', ` - ${AppState.shopItems[3].count}`)
+    setHTML('iSC', ` - ${AppState.shopItems[4].count}`)
   }
 }
 export class ShopController {

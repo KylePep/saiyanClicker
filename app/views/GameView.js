@@ -49,7 +49,7 @@ export const GameView = /*html*/`
 
 <!-- Button trigger modal -->
 <div class="gameMenu d-flex flex-column">
-<p><img src="assets/img/Other/senzuJuice.png"><span id="iSJ" class="text-light sml-font shadow-md-font"> - 0 </span></p>
+<p><img src="assets/img/Other/revive.png"><span id="iSJ" class="text-light sml-font shadow-md-font"> - 0 </span></p>
     <button onclick="app.GameController.pauseGame()" type="button" class="text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
       Pause
     </button>
@@ -73,7 +73,7 @@ export const GameView = /*html*/`
     </div>
     <!--  -->
 
-<div id="">
+<div id="foreground">
   <img class="foreground" src="assets/img/Other/WastelandForeground-large-crop.png" alt="">
 </div>
 
@@ -81,7 +81,7 @@ export const GameView = /*html*/`
   <div class="col-8 d-flex justify-content-around">  
     <div class="col-8 d-flex  justify-content-center align-items-end">
       <div class="d-flex flex-column  justify-content-center ">
-        <img id="character2Heal" onclick="app.CharacterController.revive('character2')" class="heal visually-hidden" src="assets/img/Other/senzuJuice.png">
+        <img id="character2Heal" onclick="app.CharacterController.revive('character2')" class="heal visually-hidden" src="assets/img/Other/revive.png">
         <div id="character2">
         </div>
       </div>
@@ -90,7 +90,7 @@ export const GameView = /*html*/`
 
     <div  class="col-4 d-flex justigy-conten-center align-items-end">
     <div class="d-flex flex-column  justify-content-center ">
-    <img id="character1Heal" onclick="app.CharacterController.revive('character1')" class="heal visually-hidden" src="assets/img/Other/senzuJuice.png">
+    <img id="character1Heal" onclick="app.CharacterController.revive('character1')" class="heal visually-hidden" src="assets/img/Other/revive.png">
     <div id="character1">
     </div>
   </div>

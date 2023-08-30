@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { characterService } from "../services/CharactersService.js"
 import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
 
@@ -50,10 +51,27 @@ function _setBackground() {
 }
 
 function _drawInventory() {
-  setHTML('zennie', AppState.zennie)
-  setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)
-  setHTML('iWC', ` - ${AppState.shopItems[1].count}`)
-  setHTML('iSC', ` - ${AppState.shopItems[2].count}`)
+  if (AppState.page == '') {
+    setHTML('zennie', AppState.zennie)
+    setHTML('iSJ', ` - ${AppState.shopItems[0].count}`)
+    setHTML('iWC', ` - ${AppState.shopItems[1].count}`)
+    setHTML('iHU', ` - ${AppState.shopItems[2].count}`)
+    setHTML('iAU', ` - ${AppState.shopItems[3].count}`)
+    setHTML('iSC', ` - ${AppState.shopItems[4].count}`)
+    setHTML('iWCC', AppState.shopItems[1].count)
+    setHTML('iHUC', AppState.shopItems[2].count)
+    setHTML('iAUC', AppState.shopItems[3].count)
+  }
+}
+function _drawInfo() {
+  if (AppState.page == '') {
+    let character = AppState.characters.find(c => c.name == AppState.infoCharacter.name)
+    setHTML('cName', character.name)
+    setHTML('cPower', character.powerLevel)
+    setHTML('cHealth', character.hp)
+    setHTML('cDamage', character.dmg)
+    setHTML('cIcon', `<img  src="${character.idle}" >`)
+  }
 }
 
 export class HomeController {
@@ -67,13 +85,12 @@ export class HomeController {
     _setBackground()
     _drawInventory()
     AppState.on('characters', _checkSelection)
+    AppState.on('shopItems', _drawInventory)
+    AppState.on('shopItems', _drawInfo)
     AppState.on('boss', _checkBoss)
   }
 
   selectCharacter(name) {
-    // When you press on the characters Icon it should switch in and out the first character postion, making the one that was first second, the one that was second null if not first.
-
-    // FIXME this needs to go down to the service
     let character = AppState.characters.find(c => c.name == name)
     let characters = AppState.characters
 
@@ -100,6 +117,14 @@ export class HomeController {
     let selectBoss = AppState.boss.find(b => b.active == true)
     AppState.activeBoss = selectBoss
     AppState.emit('boss')
+  }
+
+  infoCharacter(name) {
+    characterService.setInfoCharacter(name)
+    _drawInfo()
+  }
+  applyItem(itemId) {
+    characterService.applyItem(itemId)
   }
 
 }

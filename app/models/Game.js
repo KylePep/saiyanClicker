@@ -21,6 +21,8 @@ export class Game {
     this.zennieDrop = data.zennieDrop
     this.icon = data.icon
     this.lineUp = data.lineUp
+    this.background = data.background
+    this.foreground = data.foreground
   }
   get bossTemplate() {
     return `
