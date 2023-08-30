@@ -1,14 +1,48 @@
 import { AppState } from "../AppState.js"
+import { Character } from "../models/Character.js";
+import { Game } from "../models/Game.js";
+import { GameLock } from "../models/GameLock.js";
+import { ShopItem } from "../models/ShopItem.js";
+import { loadState, saveState } from "../utils/Store.js"
 import { characterService } from "./CharactersService.js"
 
 class GameService {
-
   constructor() {
+    this.loadData()
+    this.saveData()
     let boss = AppState.activeBoss
     setInterval(this.updateBossTimer, boss?.bossDmgRate / 50)
     window.addEventListener("mousemove", this.screenView);
 
     AppState.on('page', this.checkPage)
+  }
+
+  saveData() {
+    AppState.saveInit = true;
+    saveState('saveInit', AppState.saveInit)
+    saveState('zennie', AppState.zennie)
+    saveState('shopItems', AppState.shopItems)
+    saveState('locks', AppState.locks)
+    saveState('characters', AppState.characters)
+    saveState('boss', AppState.boss)
+    console.log('Saved Data', AppState.saveInit)
+  }
+  loadData() {
+    console.log('Is there something to load?')
+    AppState.saveInit = loadState('saveInit', [Boolean])
+    if (AppState.saveInit == false) {
+      console.log('Nothing to load')
+      console.log(AppState.saveInit)
+      return
+    } else {
+      console.log('Loaded something')
+      AppState.saveInit = loadState('saveInit', [Boolean])
+      AppState.zennie = loadState('zennie', [Number])
+      AppState.shopItems = loadState('shopItems', [ShopItem])
+      AppState.locks = loadState('locks', [GameLock])
+      AppState.characters = loadState('characters', [Character])
+      AppState.boss = loadState('boss', [Game])
+    }
   }
 
   screenView(e) {
@@ -19,7 +53,7 @@ class GameService {
   initBossStats() {
     let boss = AppState.boss.find(b => b.active == true)
     AppState.activeBoss = boss
-    console.log(AppState.activeBoss)
+    // console.log(AppState.activeBoss)
   }
 
   checkPage() {
@@ -205,7 +239,7 @@ class GameService {
         AppState.locks[lockIndex + 1].bossUnlocked = true
       }
     })
-    console.log('ACTIVE BOSS', activeBoss, 'LOCK INDEX', lockIndex, 'APPSTATE LOCKS', AppState.locks)
+    // console.log('ACTIVE BOSS', activeBoss, 'LOCK INDEX', lockIndex, 'APPSTATE LOCKS', AppState.locks)
   }
 
   bossStatsReset() {

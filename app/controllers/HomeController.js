@@ -1,10 +1,11 @@
 import { AppState } from "../AppState.js"
 import { characterService } from "../services/CharactersService.js"
+import { gameService } from "../services/GameService.js"
 import { Pop } from "../utils/Pop.js"
+import { loadState, saveState } from "../utils/Store.js"
 import { setHTML } from "../utils/Writer.js"
 
 // Public
-
 function _isUnlocked() {
   AppState.locks.forEach(l => {
     if (l.Unlocked == false) {
@@ -84,6 +85,8 @@ export class HomeController {
     _checkBoss()
     _setBackground()
     _drawInventory()
+    this.saveData()
+    console.log('Game is saved')
     AppState.on('characters', _checkSelection)
     AppState.on('shopItems', _drawInventory)
     AppState.on('shopItems', _drawInfo)
@@ -125,6 +128,13 @@ export class HomeController {
   }
   applyItem(itemId) {
     characterService.applyItem(itemId)
+  }
+
+  loadData() {
+    gameService.loadData()
+  }
+  saveData() {
+    gameService.saveData()
   }
 
 }

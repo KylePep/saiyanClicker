@@ -13,9 +13,14 @@ class ObservableAppState extends EventEmitter {
   gamePage = false
   gameState = 'null'
 
-  zennie = 100000;
+
+  saveInit = false
+
+  // SAVE DATA
 
 
+
+  zennie = 100000
   shopItems = [
     new ShopItem({
       id: 0,
@@ -58,8 +63,6 @@ class ObservableAppState extends EventEmitter {
       icon: "assets/img/Other/scouter.png"
     })
   ]
-  activeItem
-
   locks = [
     {
       element: 'raditzSelect',
@@ -86,8 +89,6 @@ class ObservableAppState extends EventEmitter {
       Unlocked: false
     },
   ]
-
-
   /** @type {import('./models/Character.js').Character[]} */
   characters = [
     new Character({
@@ -241,8 +242,6 @@ class ObservableAppState extends EventEmitter {
       // },
     })
   ]
-  /** @type {import('./models/Character.js').Character} */
-  infoCharacter = this.characters[0]
 
   /** @type {import('./models/Game.js').Game[]} */
   boss = [
@@ -320,10 +319,14 @@ class ObservableAppState extends EventEmitter {
       foreground: "assets/img/Other/iceForeground.png"
     })
   ]
+  // SAVE DATA
+
+  activeItem
+
+  /** @type {import('./models/Character.js').Character} */
+  infoCharacter = this.characters[0]
 
   activeBoss = this.boss[0]
-
-  // fighting = false
 
   powerLevelTotal = 0
 

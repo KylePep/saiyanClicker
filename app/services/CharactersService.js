@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { gameService } from "./GameService.js";
 
 class CharacterService {
 
@@ -12,7 +13,7 @@ class CharacterService {
   }
 
   timeout(func, timeout = 1900) {
-    console.log('[TIMER SET]')
+    // console.log('[TIMER SET]')
     let timer
     return (...args) => {
       clearTimeout(timer)
@@ -193,6 +194,7 @@ class CharacterService {
           break;
       }
       item.count--
+      gameService.saveData()
       AppState.emit('shopItems')
     }
   }
