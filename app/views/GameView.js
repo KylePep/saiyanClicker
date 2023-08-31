@@ -48,7 +48,7 @@ export const GameView = /*html*/`
 
 <!-- Button trigger modal -->
 <div class="gameMenu d-flex flex-column">
-    <button onclick="app.GameController.pauseGame()" type="button" class="text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
+    <button onclick="app.GameController.pauseGame()" type="button" class="text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2 user-select-none" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
       Pause
     </button>
 </div>

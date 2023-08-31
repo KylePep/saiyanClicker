@@ -47,7 +47,7 @@ export class Character {
   get characterTemplate() {
     return `
     <div onclick="app.CharacterController.animateBlock('${this.id}')">
-      <img class="${this.elementId}" src="${this.imgsrc}" alt="" draggable = false>
+      <img class="${this.elementId} user-select-none" src="${this.imgsrc}" alt="" draggable = false>
     </div>
     `
   }

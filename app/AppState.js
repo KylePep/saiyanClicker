@@ -258,7 +258,7 @@ class ObservableAppState extends EventEmitter {
       powerLevel: 4000,
       powerMod: 1.075,
       zennieDrop: 400,
-      icon: 'assets/img/Raditz/RaditzIcon.png',
+      icon: 'assets/img/Nappa/nappaIcon.png',
       lineUp: "assets/img/Nappa/nappaLineUp.png",
       background: "assets/img/Other/desertBackground.png",
       foreground: "assets/img/Other/desertForeground.png"
