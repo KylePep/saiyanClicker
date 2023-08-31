@@ -3,7 +3,6 @@ import { generateId } from "../utils/generateId.js"
 
 export class Game {
   constructor(data) {
-    this.id = generateId()
     this.active = data.active
     this.state = 'neutral'
     this.boss = data.boss
