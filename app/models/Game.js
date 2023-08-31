@@ -1,5 +1,5 @@
 import { AppState } from "../AppState.js"
-import { generateId } from "../utils/generateId.js"
+import { generateId } from "../utils/GenerateId.js"
 
 export class Game {
   constructor(data) {

@@ -3,7 +3,7 @@ import { Game } from "./models/Game.js"
 import { ShopItem } from "./models/ShopItem.js"
 import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
-import { isValidProp } from "./utils/isValidProp.js"
+import { isValidProp } from "./utils/IsValidProp.js"
 import { loadState } from "./utils/Store.js"
 
 class ObservableAppState extends EventEmitter {
