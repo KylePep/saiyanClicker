@@ -17,7 +17,7 @@ class ShopService {
       AppState.zennie -= activeItem.cost
       AppState.shopItems[activeItem.id].count += 1;
       AppState.shopItems[activeItem.id].cost = Math.floor(AppState.shopItems[activeItem.id].cost * 1.05)
-      console.log(AppState.shopItems[activeItem.id])
+      // console.log(AppState.shopItems[activeItem.id])
       AppState.emit('zennie')
       AppState.emit('shopItems')
     }

@@ -66,25 +66,25 @@ class ObservableAppState extends EventEmitter {
       element: 'raditzSelect',
       name: 'Raditz',
       bossUnlocked: true,
-      Unlocked: true
+      Unlocked: false
     },
     {
       element: 'nappaSelect',
       name: 'Nappa',
-      bossUnlocked: true,
-      Unlocked: true
+      bossUnlocked: false,
+      Unlocked: false
     },
     {
       element: 'vegetaSelect',
       name: 'Vegeta',
-      bossUnlocked: true,
-      Unlocked: true
+      bossUnlocked: false,
+      Unlocked: false
     },
     {
       element: 'bardockSelect',
       name: 'Bardock',
-      bossUnlocked: true,
-      Unlocked: true
+      bossUnlocked: false,
+      Unlocked: false
     },
   ]
   /** @type {import('./models/Character.js').Character[]} */
@@ -257,7 +257,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#ffad2c',
       powerLevel: 4000,
       powerMod: 1.075,
-      zennieDrop: 500,
+      zennieDrop: 400,
       icon: 'assets/img/Raditz/RaditzIcon.png',
       lineUp: "assets/img/Nappa/nappaLineUp.png",
       background: "assets/img/Other/desertBackground.png",
@@ -276,7 +276,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#ac022f',
       powerLevel: 18000,
       powerMod: 1.05,
-      zennieDrop: 600,
+      zennieDrop: 500,
       icon: 'assets/img/Vegeta/vegetaIcon.png',
       lineUp: "assets/img/Vegeta/vegetaLineUp.png",
       background: "assets/img/Other/TitleBackground.png",
@@ -292,7 +292,7 @@ class ObservableAppState extends EventEmitter {
       health: 1000000,
       healthMax: 1000000,
       bossDmg: 100,
-      bossDmgRate: 10000,
+      bossDmgRate: 7000,
       kiColor: '#0e5abe',
       powerLevel: 50000,
       powerMod: 1.05,
