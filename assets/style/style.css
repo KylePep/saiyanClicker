@@ -286,7 +286,7 @@ font-family: 'Wendy One', sans-serif; */
   object-fit: cover;
   width: 100vw;
   height: auto;
-  bottom: 0vh;
+  bottom: -16px;
   left: 0vh;
   z-index: -10;
 }

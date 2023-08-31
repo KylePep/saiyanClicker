@@ -66,25 +66,25 @@ class ObservableAppState extends EventEmitter {
       element: 'raditzSelect',
       name: 'Raditz',
       bossUnlocked: true,
-      Unlocked: false
+      Unlocked: true
     },
     {
       element: 'nappaSelect',
       name: 'Nappa',
-      bossUnlocked: false,
-      Unlocked: false
+      bossUnlocked: true,
+      Unlocked: true
     },
     {
       element: 'vegetaSelect',
       name: 'Vegeta',
-      bossUnlocked: false,
-      Unlocked: false
+      bossUnlocked: true,
+      Unlocked: true
     },
     {
       element: 'bardockSelect',
       name: 'Bardock',
-      bossUnlocked: false,
-      Unlocked: false
+      bossUnlocked: true,
+      Unlocked: true
     },
   ]
   /** @type {import('./models/Character.js').Character[]} */
@@ -257,7 +257,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#ffad2c',
       powerLevel: 4000,
       powerMod: 1.075,
-      zennieDrop: 600,
+      zennieDrop: 500,
       icon: 'assets/img/Raditz/RaditzIcon.png',
       lineUp: "assets/img/Nappa/nappaLineUp.png",
       background: "assets/img/Other/desertBackground.png",
@@ -276,7 +276,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#ac022f',
       powerLevel: 18000,
       powerMod: 1.05,
-      zennieDrop: 1000,
+      zennieDrop: 600,
       icon: 'assets/img/Vegeta/vegetaIcon.png',
       lineUp: "assets/img/Vegeta/vegetaLineUp.png",
       background: "assets/img/Other/TitleBackground.png",
@@ -296,7 +296,7 @@ class ObservableAppState extends EventEmitter {
       kiColor: '#0e5abe',
       powerLevel: 50000,
       powerMod: 1.05,
-      zennieDrop: 100000,
+      zennieDrop: 1000,
       icon: 'assets/img/Bardock/bardockIcon.png',
       lineUp: "assets/img/Bardock/bardockLineUp.png",
       background: "assets/img/Other/iceBackground.png",
