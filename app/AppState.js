@@ -118,7 +118,7 @@ class ObservableAppState extends EventEmitter {
       icon: "assets/img/Piccolo/piccoloIcon.png",
       lineUp: "assets/img/Piccolo/piccoloLineUp.png",
       idle: 'assets/img/Piccolo/piccoloIdle.gif',
-      attack: 'assets/img/Piccolo/PiccoloAttack.gif',
+      attack: 'assets/img/Piccolo/piccoloAttack.gif',
       block: 'assets/img/Piccolo/piccoloBlock.png',
       down: 'assets/img/Piccolo/piccoloDown.png',
       win: 'assets/img/Piccolo/piccoloWin.png',

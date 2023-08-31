@@ -30,7 +30,7 @@ export const StartView = /*html*/`
 
     <div class="col-4 d-flex flex-column align-items-center justify-content-end">
     <a href="#/game" class="nav-link d-flex flex-column align-items-center">
-      <img src="/assets/img/Other/DragonBallZ.png" alt="" class="Start-Button">
+      <img src="/assets/img/Other/dragonBallZ.png" alt="" class="Start-Button">
       <div class="lrg-font start-font fs-2 text-center ">
       Press to Start
       </div>
