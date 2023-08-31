@@ -97,8 +97,7 @@ font-family: 'Wendy One', sans-serif; */
 }
 
 .char-select {
-  /* background: linear-gradient(#fff870, #ffd800, #ffc000); */
-  scale: .9;
+  scale: .95;
   background: linear-gradient(#ff901f, #ff5810, #ff400f);
   box-shadow: 4px 4px #00000057;
   border: 4mm ridge black;

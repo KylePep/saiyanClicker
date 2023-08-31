@@ -4,12 +4,31 @@ import { gameService } from "./GameService.js";
 class CharacterService {
 
 
+
   constructor() {
     this.debounceResetChar1 = this.debounce(this.resetChar1);
     this.delayResetChar1 = this.timeout(this.resetChar1, 1900);
 
     this.debounceResetChar2 = this.debounce(this.resetChar2);
     this.delayResetChar2 = this.timeout(this.resetChar2, 1900);
+  }
+
+  selectCharacter(name) {
+    let character = AppState.characters.find(c => c.name == name)
+    let characters = AppState.characters
+    if (character?.elementId != 'character1') {
+      character.elementId = 'character1'
+
+      characters.forEach(c => {
+        if (c.name != name) {
+          if (c.elementId == 'character2')
+            c.elementId = null
+          if (c.elementId == 'character1')
+            c.elementId = 'character2'
+        }
+      })
+    }
+    AppState.emit('characters')
   }
 
   timeout(func, timeout = 1900) {

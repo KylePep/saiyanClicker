@@ -57,8 +57,8 @@ export const ShopView = /*html*/`
           <p class="px-1"> Cost: <span class="fs-5" id="iCost"></span>  </p>
           <p class="px-1"> Own: <span class="fs-5" id="iCount"></span>  </p>
           <div  class="d-flex justify-content-between shop-Modal-Body">
-          <button type="button" class="shop-Modal-button shadow-md-font text-light" data-bs-dismiss="modal">Cancel</button>
           <button onclick="app.ShopController.purchaseItem()" type="button" class="shop-Modal-button shadow-md-font text-light">Purchase</button>
+          <button type="button" class="shop-Modal-button shadow-md-font text-light" data-bs-dismiss="modal">Cancel</button>
           </div>
           </div>
       </div>

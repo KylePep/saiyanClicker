@@ -18,14 +18,12 @@ class ObservableAppState extends EventEmitter {
 
   // SAVE DATA
 
-
-
-  zennie = 0
+  zennie = 200
   shopItems = [
     new ShopItem({
       id: 0,
       name: 'Extra Wish',
-      cost: 100,
+      cost: 200,
       description: 'Allows you to revive one team member if they fall in battle',
       count: 0,
       icon: "assets/img/Other/revive.png"
@@ -49,7 +47,7 @@ class ObservableAppState extends EventEmitter {
     new ShopItem({
       id: 3,
       name: 'Strength Capsule',
-      cost: 200,
+      cost: 300,
       description: `Use to increase a fighters total attack by 10%`,
       count: 0,
       icon: "assets/img/Other/attackUp.png"
@@ -68,25 +66,25 @@ class ObservableAppState extends EventEmitter {
       element: 'raditzSelect',
       name: 'Raditz',
       bossUnlocked: true,
-      Unlocked: false
+      Unlocked: true
     },
     {
       element: 'nappaSelect',
       name: 'Nappa',
       bossUnlocked: false,
-      Unlocked: false
+      Unlocked: true
     },
     {
       element: 'vegetaSelect',
       name: 'Vegeta',
       bossUnlocked: false,
-      Unlocked: false
+      Unlocked: true
     },
     {
       element: 'bardockSelect',
       name: 'Bardock',
       bossUnlocked: false,
-      Unlocked: false
+      Unlocked: true
     },
   ]
   /** @type {import('./models/Character.js').Character[]} */
@@ -128,7 +126,7 @@ class ObservableAppState extends EventEmitter {
       hp: 160,
       hpMax: 160,
       hpMod: 2,
-      hpRegen: 0,
+      hpRegen: 1,
       powerLevel: 300,
       powerLevelMod: 1,
       kiColor: '#ffff5e',
@@ -148,15 +146,15 @@ class ObservableAppState extends EventEmitter {
       block: 'assets/img/Vegeta/vegetaBlock.png',
       down: 'assets/img/Vegeta/vegetaDown.png',
       // health: {
-      hp: 80,
-      hpMax: 80,
+      hp: 280,
+      hpMax: 280,
       hpMod: 2,
       hpRegen: 0,
       powerLevel: 18000,
       powerLevelMod: 2,
       kiColor: '#ac022f',
       // damage: {
-      dmg: 30,
+      dmg: 40,
       dmgMod: 1,
       dmgCost: 1,
     }),

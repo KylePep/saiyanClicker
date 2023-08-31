@@ -94,32 +94,11 @@ export class HomeController {
   }
 
   selectCharacter(name) {
-    let character = AppState.characters.find(c => c.name == name)
-    let characters = AppState.characters
-
-
-    if (character?.elementId != 'character1') {
-      character.elementId = 'character1'
-
-      characters.forEach(c => {
-        if (c.name != name) {
-          if (c.elementId == 'character2')
-            c.elementId = null
-          if (c.elementId == 'character1')
-            c.elementId = 'character2'
-        }
-      })
-    }
-    AppState.emit('characters')
+    characterService.selectCharacter(name)
   }
 
   selectBoss(bossName) {
-    let boss = AppState.boss.find(b => b.boss == bossName)
-    AppState.boss.forEach(b => b.active = false)
-    boss.active = true
-    let selectBoss = AppState.boss.find(b => b.active == true)
-    AppState.activeBoss = selectBoss
-    AppState.emit('boss')
+    gameService.selectBoss(bossName)
   }
 
   infoCharacter(name) {

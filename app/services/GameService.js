@@ -15,6 +15,14 @@ function _verifyHomePage() {
 }
 
 class GameService {
+  selectBoss(bossName) {
+    let boss = AppState.boss.find(b => b.boss == bossName)
+    AppState.boss.forEach(b => b.active = false)
+    boss.active = true
+    let selectBoss = AppState.boss.find(b => b.active == true)
+    AppState.activeBoss = selectBoss
+    AppState.emit('boss')
+  }
 
   constructor() {
     _verifyHomePage()

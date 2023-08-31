@@ -60,39 +60,36 @@ export const StartView = /*html*/`
       </div>
       </div>
       <div class="col-3 mx-auto text-light sml-font">
-        <div class="row ">
+        <div class="row m-0">
+          <div class="col-6 char-select p-0" >
+            <img  src="assets/img/Goku/gokuSelect.png" alt="" class=" img-fluid " onclick="app.HomeController.selectCharacter('Goku')">
+            <button onclick="app.HomeController.infoCharacter('Goku')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
+          </div>
+        
+          <div class="col-6 char-select p-0 " >
+            <img src="assets/img/Piccolo/piccoloSelect.png" alt="" class=" img-fluid " onclick="app.HomeController.selectCharacter('Piccolo')">
+            <button onclick="app.HomeController.infoCharacter('Piccolo')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
+          </div>
 
-        <div class="col-6 char-select p-0" >
-          <img  src="assets/img/Goku/gokuSelect.png" alt="" class=" img-fluid " onclick="app.HomeController.selectCharacter('Goku')">
-          <button onclick="app.HomeController.infoCharacter('Goku')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
-        </div>
-      
-        <div class="col-6 char-select p-0 " >
-          <img src="assets/img/Piccolo/piccoloSelect.png" alt="" class=" img-fluid " onclick="app.HomeController.selectCharacter('Piccolo')">
-          <button onclick="app.HomeController.infoCharacter('Piccolo')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
-        </div>
+          <div id="raditzSelect" class="col-6 char-select p-0">
+            <img src="assets/img/Raditz/raditzSelect.png" alt="" class=" img-fluid "  onclick="app.HomeController.selectCharacter('Raditz')">
+            <button onclick="app.HomeController.infoCharacter('Raditz')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
+          </div>
 
-        <div id="raditzSelect" class="col-6 char-select p-0">
-          <img src="assets/img/Raditz/raditzSelect.png" alt="" class=" img-fluid "  onclick="app.HomeController.selectCharacter('Raditz')">
-          <button onclick="app.HomeController.infoCharacter('Raditz')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
-        </div>
+          <div id="nappaSelect" class="col-6 char-select p-0" >
+            <img src="assets/img/Nappa/nappaSelect.png" alt="" class=" img-fluid "onclick="app.HomeController.selectCharacter('Nappa')">
+            <button onclick="app.HomeController.infoCharacter('Nappa')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
+          </div>
 
-        <div id="nappaSelect" class="col-6 char-select p-0" >
-          <img src="assets/img/Nappa/nappaSelect.png" alt="" class=" img-fluid "onclick="app.HomeController.selectCharacter('Nappa')">
-          <button onclick="app.HomeController.infoCharacter('Nappa')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
-        </div>
+          <div id="vegetaSelect" class="col-6 char-select p-0">
+            <img src="assets/img/Vegeta/vegetaSelect.png" alt="" class=" img-fluid "  onclick="app.HomeController.selectCharacter('Vegeta')">
+            <button onclick="app.HomeController.infoCharacter('Vegeta')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
+          </div>
 
-        <div id="vegetaSelect" class="col-6 char-select p-0">
-          <img src="assets/img/Vegeta/vegetaSelect.png" alt="" class=" img-fluid "  onclick="app.HomeController.selectCharacter('Vegeta')">
-          <button onclick="app.HomeController.infoCharacter('Vegeta')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
-        </div>
-
-        <div id="bardockSelect" class="col-6 char-select p-0" >
-          <img src="assets/img/Bardock/bardockSelect.png" alt="" class=" img-fluid " onclick="app.HomeController.selectCharacter('Bardock')">
-          <button onclick="app.HomeController.infoCharacter('Bardock')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
-        </div>
-      
-      
+          <div id="bardockSelect" class="col-6 char-select p-0" >
+            <img src="assets/img/Bardock/bardockSelect.png" alt="" class=" img-fluid " onclick="app.HomeController.selectCharacter('Bardock')">
+            <button onclick="app.HomeController.infoCharacter('Bardock')" data-bs-toggle="modal" data-bs-target="#characterModal" class="bg-dark border-none text-light w-100">Stats</button>
+          </div>
         </div>
   </div>
   </div>
