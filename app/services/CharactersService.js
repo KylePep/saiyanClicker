@@ -5,6 +5,7 @@ class CharacterService {
 
 
 
+
   constructor() {
     this.debounceResetChar1 = this.debounce(this.resetChar1);
     this.delayResetChar1 = this.timeout(this.resetChar1, 1900);
@@ -153,6 +154,17 @@ class CharacterService {
     })
   }
 
+  healthRegen() {
+    AppState.characters.forEach(c => {
+      if (c.state != 'block') {
+        return
+      } else {
+        c.hp = Math.ceil(c.hp + c.hpRegen / 100)
+        AppState.emit('characters')
+      }
+    }
+    )
+  }
 
 
   revive(elementId) {

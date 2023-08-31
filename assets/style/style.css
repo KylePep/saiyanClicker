@@ -92,7 +92,7 @@ font-family: 'Wendy One', sans-serif; */
 
 .clouds>img {
   object-fit: cover;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -129,7 +129,8 @@ font-family: 'Wendy One', sans-serif; */
 }
 
 .Raditz {
-  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  transform: scaleX(-1);
+  filter: drop-shadow(0px -2px 3px #b668e1);
   position: absolute;
   left: 55%;
   bottom: 40%;
@@ -137,7 +138,7 @@ font-family: 'Wendy One', sans-serif; */
 }
 
 .Nappa {
-  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  filter: drop-shadow(0px -2px 3px #ffad2c);
   position: absolute;
   left: 39%;
   bottom: 16%;
@@ -145,7 +146,7 @@ font-family: 'Wendy One', sans-serif; */
 }
 
 .Vegeta {
-  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  filter: drop-shadow(0px -2px 3px #ac022f);
   position: absolute;
   left: 48%;
   bottom: 31%;
@@ -153,7 +154,8 @@ font-family: 'Wendy One', sans-serif; */
 }
 
 .Bardock {
-  filter: drop-shadow(0px -2px 3px rgb(255, 64, 0));
+  transform: scaleX(-1);
+  filter: drop-shadow(0px -2px 3px #0e5abe);
   position: absolute;
   left: 51%;
   bottom: 48%;
@@ -198,16 +200,20 @@ font-family: 'Wendy One', sans-serif; */
 }
 
 .character-Modal-Item {
+  background-image: url("../img/Other/WastelandBackground.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  background-color: #2d85ce;
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .character-Modal-Item>img {
-  filter: drop-shadow(8px 0px #185d95);
+  transform: scaleX(-1);
+  filter: drop-shadow(8px 0px #185d9577);
   display: flex;
   justify-content: center;
   height: 20vh;

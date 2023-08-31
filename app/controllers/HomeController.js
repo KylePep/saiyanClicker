@@ -71,6 +71,7 @@ function _drawInfo() {
     setHTML('cPower', character.powerLevel)
     setHTML('cHealth', character.hp)
     setHTML('cDamage', character.dmg)
+    setHTML('cDescript', character.description)
     setHTML('cIcon', `<img  src="${character.idle}" >`)
   }
 }

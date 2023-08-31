@@ -99,18 +99,16 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Goku/gokuAttack.gif',
       block: 'assets/img/Goku/gokuBlockOne.png',
       down: 'assets/img/Goku/gokuDown.png',
+      description: 'Saiyan raised on earth',
       // health: {
       hp: 120,
-      hpMax: 12,
-      hpMod: 2,
+      hpMax: 120,
       hpRegen: 0,
       powerLevel: 350,
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
-      dmg: 1200,
-      dmgMod: 1,
-      dmgCost: 1,
+      dmg: 12,
     }),
     new Character({
       name: "Piccolo",
@@ -122,18 +120,16 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Piccolo/PiccoloAttack.gif',
       block: 'assets/img/Piccolo/piccoloBlock.png',
       down: 'assets/img/Piccolo/piccoloDown.png',
+      description: 'Demon King Piccolo',
       // health: {
       hp: 160,
       hpMax: 160,
-      hpMod: 2,
       hpRegen: 1,
       powerLevel: 300,
       powerLevelMod: 1,
       kiColor: '#ffff5e',
       // damage: {
       dmg: 8,
-      dmgMod: 1,
-      dmgCost: 1,
     }),
     new Character({
       name: "Vegeta",
@@ -145,18 +141,16 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Vegeta/vegetaAttack.gif',
       block: 'assets/img/Vegeta/vegetaBlock.png',
       down: 'assets/img/Vegeta/vegetaDown.png',
+      description: 'Prince of all Saiyans',
       // health: {
       hp: 280,
       hpMax: 280,
-      hpMod: 2,
       hpRegen: 0,
       powerLevel: 18000,
       powerLevelMod: 2,
       kiColor: '#ac022f',
       // damage: {
       dmg: 40,
-      dmgMod: 1,
-      dmgCost: 1,
     }),
     new Character({
       name: "Raditz",
@@ -168,18 +162,16 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Raditz/raditzAttack.gif',
       block: 'assets/img/Raditz/raditzBlock.png',
       down: 'assets/img/Raditz/raditzDown.png',
+      description: 'Raditz the runt',
       // health: {
       hp: 100,
       hpMax: 100,
-      hpMod: 2,
       hpRegen: 0,
       powerLevel: 1600,
       powerLevelMod: 1,
       kiColor: '#b668e1',
       // damage: {
       dmg: 10,
-      dmgMod: 1,
-      dmgCost: 1,
     }),
     new Character({
       name: "Nappa",
@@ -191,18 +183,16 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Nappa/nappaAttack.gif',
       block: 'assets/img/Nappa/nappaBlock.png',
       down: 'assets/img/Nappa/nappaDown.png',
+      description: 'General Nappa',
       // health: {
       hp: 200,
       hpMax: 200,
-      hpMod: 2,
       hpRegen: 0,
       powerLevel: 4000,
       powerLevelMod: 1,
       kiColor: '#ffad2c',
       // damage: {
       dmg: 20,
-      dmgMod: 1,
-      dmgCost: 1,
     }),
     new Character({
       name: "Bardock",
@@ -214,18 +204,16 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Bardock/bardockAttack.gif',
       block: 'assets/img/Bardock/bardockBlock.png',
       down: 'assets/img/Bardock/bardockDown.png',
+      description: 'Alone against fate',
       // health: {
       hp: 300,
       hpMax: 300,
-      hpMod: 2,
       hpRegen: 0,
       powerLevel: 50000,
       powerLevelMod: 2,
       kiColor: '#0e5abe',
       // damage: {
       dmg: 50,
-      dmgMod: 1,
-      dmgCost: 1,
     })
   ]
 

@@ -149,6 +149,7 @@ class GameService {
         // @ts-ignore
         if (bossStats.bossTillDmg < bossStats.bossDmgRate) {
           if (AppState.gameState != 'pause') {
+            characterService.healthRegen()
             // @ts-ignore
             bossStats.bossTillDmg += bossStats.bossDmgRate / 50;
             AppState.emit('activeBoss')

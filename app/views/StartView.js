@@ -100,17 +100,16 @@ export const StartView = /*html*/`
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content fs-3 text-light sml-font shadow-md-font character-Modal">
       <div class="modal-body p-0">
-        <p class="character-Modal-Header ps-3"> Name: <span class="fs-1 " id="cName"></span> </p>
+        <p class="character-Modal-Header ps-3 text-center fs-1" id="cName"></p>
           <p id="cIcon" class=" character-Modal-Item "></p>
-          <div class="character-Modal-Body">
-          <p class="px-1"> Power Level: <span class="fs-2" id="cPower"></span>  </p>
-          <p class="px-1"> Health: <span class="fs-2" id="cHealth"></span>  </p>
-          <p class="px-1"> Damage: <span class="fs-2" id="cDamage"></span>  </p>
-          <div class="d-flex justify-content-around character-Modal-Body">
-          <div><img onclick="app.HomeController.applyItem(1)" class="info-button" src="assets/img/Other/weightedClothing.png"><span id="iWCC">x</span></div>
-          <div><img onclick="app.HomeController.applyItem(2)" class="info-button"  src="assets/img/Other/healthUp.png"><span id="iHUC">x</span></div>
-          <div><img onclick="app.HomeController.applyItem(3)" class="info-button"  src="assets/img/Other/attackUp.png"><span id="iAUC">x</span></div>
+          <div id="cDescript" class="d-flex justify-content-around character-Modal-Body">
+            <<'Description'>>
           </div>
+          <div class="character-Modal-Body ">
+          <div class="d-flex justify-content-between"> <p class="px-1"> Power Level: <span class="fs-2" id="cPower"></span>  </p><div><img onclick="app.HomeController.applyItem(1)" class="info-button pe-2" src="assets/img/Other/weightedClothing.png"><span id="iWCC" class="pe-2">x</span></div></div>
+          <div class="d-flex justify-content-between"><p class="px-1"> Health: <span class="fs-2" id="cHealth"></span>  </p><div><img onclick="app.HomeController.applyItem(2)" class="info-button"  src="assets/img/Other/healthUp.png"><span id="iHUC" class="pe-2">x</span></div></div>
+          <div class="d-flex justify-content-between"><p class="px-1"> Damage: <span class="fs-2" id="cDamage"></span>  </p> <div><img onclick="app.HomeController.applyItem(3)" class="info-button"  src="assets/img/Other/attackUp.png"><span id="iAUC" class="pe-2">x</span></div></div>
+
           <div class="d-flex justify-content-end character-Modal-Body">
           <button type="button" class="character-Modal-button shadow-md-font text-light" data-bs-dismiss="modal">Close</button>
           </div>

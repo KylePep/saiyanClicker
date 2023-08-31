@@ -20,17 +20,18 @@ export class Character {
     this.down = data.down;
     this.elementId = data.elementId;
     this.imgsrc = this.idle;
+    this.description = data.description;
     // Damage
     this.damage = [
       this.dmg = data.dmg,
-      this.dmgMod = data.dmgMod,
-      this.dmgCost = data.dmgCost,
+      // this.dmgMod = data.dmgMod,
+      // this.dmgCost = data.dmgCost,
     ]
     // Health
     this.health = [
       this.hp = data.hp,
       this.hpMax = data.hpMax,
-      this.hpMod = data.hpMod,
+      // this.hpMod = data.hpMod,
       this.hpRegen = data.hpRegen,
     ]
     // PowerLevel
