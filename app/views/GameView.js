@@ -17,10 +17,8 @@ export const GameView = /*html*/`
 <header class="container-fluid">
 <section class="row">
   <div class="col-5" id="characterStats">
-
-    
-
   </div>
+  
   <div class="col-2 d-flex flex-column fs-1 text-light lrg-font shadow-md-font text-center justify-content-center">
     <div class="mb-3">VS</div>
     <div id="totals" class="fs-4 powerTotal">Char|Boss</div>
@@ -41,6 +39,7 @@ export const GameView = /*html*/`
     </div>
   </div>
 </section>
+<p><img src="assets/img/Other/revive.png"><span id="iSJ" class="text-light sml-font shadow-md-font"> - 0 </span></p>
 </header>
 
 
@@ -49,7 +48,6 @@ export const GameView = /*html*/`
 
 <!-- Button trigger modal -->
 <div class="gameMenu d-flex flex-column">
-<p><img src="assets/img/Other/revive.png"><span id="iSJ" class="text-light sml-font shadow-md-font"> - 0 </span></p>
     <button onclick="app.GameController.pauseGame()" type="button" class="text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-toggle="modal" data-bs-target="#pauseMenu" >
       Pause
     </button>

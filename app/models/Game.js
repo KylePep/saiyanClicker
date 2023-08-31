@@ -27,7 +27,7 @@ export class Game {
   get bossTemplate() {
     return `
       <div onclick="app.GameController.attack('${this.id}')">
-      <img id="bossImg" class="boss" src="${this.imgsrc}" alt="">
+      <img id="bossImg" class="boss" src="${this.imgsrc}" alt="" draggable = false>
     </div>
       </div>
   `

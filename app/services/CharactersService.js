@@ -87,6 +87,7 @@ class CharacterService {
   takeDamage() {
     if (AppState.gameState == 'fail') {
       this.resetStats()
+      gameService.bossStatsReset()
       AppState.gameState = 'null'
       document.location.href = '#'
     }

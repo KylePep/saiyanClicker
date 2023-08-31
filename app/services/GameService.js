@@ -6,9 +6,18 @@ import { ShopItem } from "../models/ShopItem.js";
 import { loadState, saveState } from "../utils/Store.js"
 import { characterService } from "./CharactersService.js"
 
+function _verifyHomePage() {
+  console.log('[PAGE]', location.href)
+  if (AppState.saveInit == false && document.location.href != '#') {
+    console.log("No Save Yet")
+    document.location.href = '#'
+  }
+}
+
 class GameService {
 
   constructor() {
+    _verifyHomePage()
     this.loadData()
     this.saveData()
     let boss = AppState.activeBoss
