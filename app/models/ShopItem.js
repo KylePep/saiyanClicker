@@ -1,5 +1,4 @@
-import { AppState } from "../AppState.js"
-import { generateId } from "../utils/generateId.js"
+
 
 export class ShopItem {
   constructor(data) {
