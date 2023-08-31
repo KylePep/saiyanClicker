@@ -77,7 +77,7 @@ function _drawInventory() {
 
 export class GameController {
   constructor() {
-    console.log('[Game Controller]')
+    // console.log('[Game Controller]')
 
     _initBossStats()
     _drawBossStats()

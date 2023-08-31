@@ -78,8 +78,8 @@ function _drawInfo() {
 
 export class HomeController {
   constructor() {
-    console.log('[HomeController]')
-    console.log(AppState.activeBoss)
+    // console.log('[HomeController]')
+    // console.log(AppState.activeBoss)
     _isUnlocked()
     _isUnlockedBoss()
     _checkSelection()
@@ -87,7 +87,7 @@ export class HomeController {
     _setBackground()
     _drawInventory()
     this.saveData()
-    console.log('Game is saved')
+    // console.log('Game is saved')
     AppState.on('characters', _checkSelection)
     AppState.on('shopItems', _drawInventory)
     AppState.on('shopItems', _drawInfo)

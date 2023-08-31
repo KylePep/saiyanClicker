@@ -141,7 +141,7 @@ class CharacterService {
         AppState.gameState = 'fail'
         AppState.emit('gameState')
       }
-      console.log('[GameState]', AppState.gameState)
+      // console.log('[GameState]', AppState.gameState)
     }
     setTimeout(this.stopDamage, 50)
   }

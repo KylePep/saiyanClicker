@@ -7,9 +7,9 @@ import { loadState, saveState } from "../utils/Store.js"
 import { characterService } from "./CharactersService.js"
 
 function _verifyHomePage() {
-  console.log('[PAGE]', location.href)
+  // console.log('[PAGE]', location.href)
   if (AppState.saveInit == false && document.location.href != '#') {
-    console.log("No Save Yet")
+    // console.log("No Save Yet")
     document.location.href = '#'
   }
 }
@@ -36,17 +36,17 @@ class GameService {
     saveState('locks', AppState.locks)
     saveState('characters', AppState.characters)
     saveState('boss', AppState.boss)
-    console.log('Saved Data', AppState.saveInit)
+    // console.log('Saved Data', AppState.saveInit)
   }
   loadData() {
-    console.log('Is there something to load?')
+    // console.log('Is there something to load?')
     AppState.saveInit = loadState('saveInit', [Boolean])
     if (AppState.saveInit == false) {
-      console.log('Nothing to load')
-      console.log(AppState.saveInit)
+      // console.log('Nothing to load')
+      // console.log(AppState.saveInit)
       return
     } else {
-      console.log('Loaded something')
+      // console.log('Loaded something')
       AppState.saveInit = loadState('saveInit', [Boolean])
       AppState.zennie = loadState('zennie', [Number])
       AppState.shopItems = loadState('shopItems', [ShopItem])
@@ -82,7 +82,7 @@ class GameService {
 
   checkPage() {
     if (AppState.page == '#/game') {
-      console.log('[Page]', AppState.page)
+      // console.log('[Page]', AppState.page)
       AppState.gamePage = true
       // gameService.initBossStats()
     } else {
@@ -251,10 +251,10 @@ class GameService {
       AppState.emit('boss')
       setTimeout(this.endGame, 5000)
       AppState.gameState = 'success'
-      console.log('[GameState]', AppState.gameState)
+      // console.log('[GameState]', AppState.gameState)
 
       AppState.emit('gameState')
-      console.log('[GameState]', AppState.gameState)
+      // console.log('[GameState]', AppState.gameState)
     }
   }
 
