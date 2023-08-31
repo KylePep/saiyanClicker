@@ -66,25 +66,25 @@ class ObservableAppState extends EventEmitter {
       element: 'raditzSelect',
       name: 'Raditz',
       bossUnlocked: true,
-      Unlocked: true
+      Unlocked: false
     },
     {
       element: 'nappaSelect',
       name: 'Nappa',
       bossUnlocked: false,
-      Unlocked: true
+      Unlocked: false
     },
     {
       element: 'vegetaSelect',
       name: 'Vegeta',
       bossUnlocked: false,
-      Unlocked: true
+      Unlocked: false
     },
     {
       element: 'bardockSelect',
       name: 'Bardock',
       bossUnlocked: false,
-      Unlocked: true
+      Unlocked: false
     },
   ]
   /** @type {import('./models/Character.js').Character[]} */
@@ -109,7 +109,7 @@ class ObservableAppState extends EventEmitter {
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
-      dmg: 120,
+      dmg: 12,
     }),
     new Character({
       name: "Piccolo",

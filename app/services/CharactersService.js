@@ -160,8 +160,10 @@ class CharacterService {
       if (c.state != 'block') {
         return
       } else {
-        c.hp = Math.ceil(c.hp + c.hpRegen / 100)
-        AppState.emit('characters')
+        if (c.hp < c.hpMax) {
+          c.hp = Math.ceil(c.hp + c.hpRegen / 200)
+          AppState.emit('characters')
+        }
       }
     }
     )

@@ -296,6 +296,7 @@ class GameService {
 
   bossStatsReset() {
     let findBoss = AppState.activeBoss
+    findBoss.imgsrc = findBoss.bossIdle
     // @ts-ignore
     findBoss.health = findBoss.healthMax
     // @ts-ignore
