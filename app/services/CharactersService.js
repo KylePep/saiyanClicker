@@ -2,14 +2,9 @@ import { AppState } from "../AppState.js"
 import { gameService } from "./GameService.js";
 
 class CharacterService {
-
-
-
-
   constructor() {
     this.debounceResetChar1 = this.debounce(this.resetChar1);
     this.delayResetChar1 = this.timeout(this.resetChar1, 1900);
-
     this.debounceResetChar2 = this.debounce(this.resetChar2);
     this.delayResetChar2 = this.timeout(this.resetChar2, 1900);
   }
@@ -19,7 +14,6 @@ class CharacterService {
     let characters = AppState.characters
     if (character?.elementId != 'character1') {
       character.elementId = 'character1'
-
       characters.forEach(c => {
         if (c.name != name) {
           if (c.elementId == 'character2')
@@ -54,7 +48,8 @@ class CharacterService {
     let char1 = characters.find(c => c.elementId == 'character1')
     if (char1.state != 'down') {
       char1.state = 'neutral'
-      char1.imgsrc = char1.idle
+      if (AppState.gameState != 'success')
+        char1.imgsrc = char1.idle
     }
     AppState.emit('characters')
   }
@@ -63,45 +58,50 @@ class CharacterService {
     let char2 = characters.find(c => c.elementId == 'character2')
     if (char2.state != 'down') {
       char2.state = 'neutral'
-      char2.imgsrc = char2.idle
+      if (AppState.gameState != 'success')
+        char2.imgsrc = char2.idle
     }
     AppState.emit('characters')
   }
   animateBlock(characterId) {
-    let characters = AppState.characters
-    let blockCharacter = characters.find(c => c.id == characterId)
+    if (AppState.gameState != 'success') {
+      let characters = AppState.characters
+      let blockCharacter = characters.find(c => c.id == characterId)
 
-    if (blockCharacter?.state != 'down') {
-      blockCharacter.state = 'block'
-    }
-
-    characters.forEach(c => {
-      if (c.state == 'block') {
-        c.imgsrc = c.block
+      if (blockCharacter?.state != 'down') {
+        blockCharacter.state = 'block'
       }
-    })
-    if (blockCharacter?.elementId == 'character1') {
-      this.debounceResetChar1()
-    } else this.debounceResetChar2()
+
+      characters.forEach(c => {
+        if (c.state == 'block') {
+          c.imgsrc = c.block
+        }
+      })
+      if (blockCharacter?.elementId == 'character1') {
+        this.debounceResetChar1()
+      } else this.debounceResetChar2()
+    }
     AppState.emit('characters')
   }
 
   animateAttack() {
-    let characters = AppState.characters
-    characters.forEach(c => {
-      if (c.state == 'neutral') {
-        if (characters.find(c => c.elementId == 'character1')) {
-          this.debounceResetChar1()
-        }
-        if (characters.find(c => c.elementId == 'character2')) {
-          this.debounceResetChar2()
+    if (AppState.gameState != 'success') {
+      let characters = AppState.characters
+      characters.forEach(c => {
+        if (c.state == 'neutral') {
+          if (characters.find(c => c.elementId == 'character1')) {
+            this.debounceResetChar1()
+          }
+          if (characters.find(c => c.elementId == 'character2')) {
+            this.debounceResetChar2()
 
+          }
+          c.imgsrc = c.attack
+          c.state = 'attack'
+          // console.log('[character state]', c.state)
         }
-        c.imgsrc = c.attack
-        c.state = 'attack'
-        // console.log('[character state]', c.state)
-      }
-    })
+      })
+    }
     AppState.emit('characters')
   }
   takeDamage() {
@@ -139,6 +139,7 @@ class CharacterService {
       })
       if (!upChar) {
         AppState.gameState = 'fail'
+        AppState.emit('gameState')
       }
       console.log('[GameState]', AppState.gameState)
     }
@@ -184,6 +185,14 @@ class CharacterService {
     })
     AppState.emit('characters')
     AppState.emit('shopItems')
+  }
+  winState() {
+    AppState.characters.forEach(c => {
+      if (c.elementId != null) {
+        c.imgsrc = c.win
+      }
+    })
+    AppState.emit('characters')
   }
 
   resetStats() {

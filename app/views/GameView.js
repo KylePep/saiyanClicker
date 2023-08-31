@@ -43,7 +43,7 @@ export const GameView = /*html*/`
 </header>
 
 
-<main class="container-fluid d-flex flex-column justify-content-end" class=" main ">
+<main class="container-fluid d-flex flex-column justify-content-end position-relative" class=" main ">
 
 
 <!-- Button trigger modal -->
@@ -52,24 +52,6 @@ export const GameView = /*html*/`
       Pause
     </button>
 </div>
-
-    <!-- Modal -->
-    <div class="modal" id="pauseMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content pause-menu">
-          <div class="modal-body d-flex flex-column justify-content-center align-items-center">
-          <button onclick="app.GameController.pauseGame()" type="button" class="mb-5 text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-dismiss="modal" data-bs-target="#pauseMenu" >
-          Resume
-        </button>
-          <div onclick="app.GameController.quitGame()" class="text-light fs-2 sml-font shadow-md-font quitButton">
-            Quit
-        </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--  -->
 
 <div id="foreground">
   <img class="foreground" src="assets/img/Other/WastelandForeground-large-crop.png" alt="">
@@ -98,9 +80,11 @@ export const GameView = /*html*/`
   <div class="col-4">
     <div id="boss" class="col-3 fs-1 d-flex flex-column justify-content-end">
   </div>
-
-
 </section>
+
+<div id="endState" class="endState visually-hidden fs-1 lrg-font text-center flex-grow-1">
+Success/Failure
+</div>
 
 </main>
 
@@ -110,4 +94,21 @@ export const GameView = /*html*/`
   
 </div>
 </footer> 
+    <!-- Modal -->
+    <div class="modal" id="pauseMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content pause-menu">
+          <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+          <button onclick="app.GameController.pauseGame()" type="button" class="mb-5 text-light fs-2 ps-0 sml-font shadow-md-font pauseButton mb-2" data-bs-dismiss="modal" data-bs-target="#pauseMenu" >
+          Resume
+        </button>
+          <div onclick="app.GameController.quitGame()" class="text-light fs-2 sml-font shadow-md-font quitButton">
+            Quit
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
 `

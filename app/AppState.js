@@ -99,6 +99,7 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Goku/gokuAttack.gif',
       block: 'assets/img/Goku/gokuBlockOne.png',
       down: 'assets/img/Goku/gokuDown.png',
+      win: 'assets/img/Goku/gokuWin.png',
       description: 'Saiyan raised on earth',
       // health: {
       hp: 120,
@@ -108,7 +109,7 @@ class ObservableAppState extends EventEmitter {
       powerLevelMod: 1,
       kiColor: '#0882ed',
       // damage: {
-      dmg: 12,
+      dmg: 120,
     }),
     new Character({
       name: "Piccolo",
@@ -120,6 +121,7 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Piccolo/PiccoloAttack.gif',
       block: 'assets/img/Piccolo/piccoloBlock.png',
       down: 'assets/img/Piccolo/piccoloDown.png',
+      win: 'assets/img/Piccolo/piccoloWin.png',
       description: 'Demon King Piccolo',
       // health: {
       hp: 160,
@@ -141,6 +143,7 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Vegeta/vegetaAttack.gif',
       block: 'assets/img/Vegeta/vegetaBlock.png',
       down: 'assets/img/Vegeta/vegetaDown.png',
+      win: 'assets/img/Vegeta/vegetaWin.png',
       description: 'Prince of all Saiyans',
       // health: {
       hp: 280,
@@ -162,6 +165,7 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Raditz/raditzAttack.gif',
       block: 'assets/img/Raditz/raditzBlock.png',
       down: 'assets/img/Raditz/raditzDown.png',
+      win: 'assets/img/Raditz/raditzWin.png',
       description: 'Raditz the runt',
       // health: {
       hp: 100,
@@ -183,6 +187,7 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Nappa/nappaAttack.gif',
       block: 'assets/img/Nappa/nappaBlock.png',
       down: 'assets/img/Nappa/nappaDown.png',
+      win: 'assets/img/Nappa/nappaWin.png',
       description: 'General Nappa',
       // health: {
       hp: 200,
@@ -204,6 +209,7 @@ class ObservableAppState extends EventEmitter {
       attack: 'assets/img/Bardock/bardockAttack.gif',
       block: 'assets/img/Bardock/bardockBlock.png',
       down: 'assets/img/Bardock/bardockDown.png',
+      win: 'assets/img/Bardock/bardockWin.png',
       description: 'Alone against fate',
       // health: {
       hp: 300,
@@ -224,6 +230,7 @@ class ObservableAppState extends EventEmitter {
       boss: 'Raditz',
       bossIdle: 'assets/img/Raditz/RaditzIdle.gif',
       bossAttack: 'assets/img/Raditz/raditzAttack.gif',
+      bossDown: 'assets/img/Raditz/raditzDown.png',
       health: 15000,
       healthMax: 15000,
       bossDmg: 10,
@@ -242,6 +249,7 @@ class ObservableAppState extends EventEmitter {
       boss: 'Nappa',
       bossIdle: 'assets/img/Nappa/nappaIdle.gif',
       bossAttack: 'assets/img/Nappa/nappaAttack.gif',
+      bossDown: 'assets/img/Nappa/nappaDown.png',
       health: 30000,
       healthMax: 30000,
       bossDmg: 30,
@@ -260,6 +268,7 @@ class ObservableAppState extends EventEmitter {
       boss: 'Vegeta',
       bossIdle: 'assets/img/Vegeta/vegetaIdle.gif',
       bossAttack: 'assets/img/Vegeta/vegetaAttack.gif',
+      bossDown: 'assets/img/Vegeta/vegetaDown.png',
       health: 100000,
       healthMax: 100000,
       bossDmg: 60,
@@ -279,6 +288,7 @@ class ObservableAppState extends EventEmitter {
       boss: 'Bardock',
       bossIdle: 'assets/img/Bardock/bardockIdle.gif',
       bossAttack: 'assets/img/Bardock/bardockAttack.gif',
+      bossDown: 'assets/img/Bardock/bardockDown.png',
       health: 1000000,
       healthMax: 1000000,
       bossDmg: 100,

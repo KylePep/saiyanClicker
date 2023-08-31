@@ -5,9 +5,11 @@ export class Game {
   constructor(data) {
     this.id = generateId()
     this.active = data.active
+    this.state = 'neutral'
     this.boss = data.boss
     this.bossIdle = data.bossIdle
     this.bossAttack = data.bossAttack
+    this.bossDown = data.bossDown
     this.imgsrc = this.bossIdle;
     this.health = data.health
     this.healthMax = data.healthMax

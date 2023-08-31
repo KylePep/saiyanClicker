@@ -47,6 +47,24 @@ function _drawEffects() {
     setHTML(effectIndex[effects], boss.bossDamageEffect)
   }
 }
+function _drawEndState() {
+  if (AppState.page == '#/game') {
+    let gameState = AppState.gameState
+    if (gameState == 'null' || gameState == 'pause') {
+      document.getElementById('endState')?.classList.add('visually-hidden')
+    } else {
+      document.getElementById('endState')?.classList.remove('visually-hidden')
+      if (gameState == 'success') {
+        setHTML('endState', 'SUCCESS')
+        document.getElementById('endState')?.classList.add('success')
+      }
+      if (gameState == 'fail') {
+        setHTML('endState', 'FAILURE')
+        document.getElementById('endState')?.classList.add('fail')
+      }
+    }
+  }
+}
 
 function _setBackground() {
   let boss = AppState.boss.find(b => b.active == true)
@@ -71,6 +89,7 @@ export class GameController {
     AppState.on('activeBoss', _drawBossStats)
     AppState.on('boss', _drawBoss)
     AppState.on('effects', _drawEffects)
+    AppState.on('gameState', _drawEndState)
     AppState.on('shopItems', _drawInventory)
   }
 

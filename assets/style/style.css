@@ -324,6 +324,27 @@ font-family: 'Wendy One', sans-serif; */
   height: 16px;
 }
 
+.endState {
+  width: 100vw;
+  text-shadow: -4px 4px 0 #000,
+    4px 4px 0 #000,
+    4px -4px 0 #000,
+    -4px -4px 0 #000,
+    4px 0px 0 #000,
+    -4px 0px 0 #000;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+
+.success {
+  color: #2bff0f;
+}
+
+.fail {
+  color: #b60000;
+}
+
 .character1 {
   image-rendering: pixelated;
   scale: 2;

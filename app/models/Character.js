@@ -18,6 +18,7 @@ export class Character {
     this.attack = data.attack;
     this.block = data.block;
     this.down = data.down;
+    this.win = data.win;
     this.elementId = data.elementId;
     this.imgsrc = this.idle;
     this.description = data.description;
