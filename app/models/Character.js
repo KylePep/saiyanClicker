@@ -1,9 +1,9 @@
-import { generateId } from "../utils/GenerateId.js";
+import { GenerateId } from "../utils/GenerateId.js";
 
 export class Character {
   constructor(data) {
     //Character information
-    this.id = data.id ? data.id : generateId();
+    this.id = data.id ? data.id : GenerateId();
     this.name = data.name;
     // this.active = data.active;
     // this.alive = data.alive;

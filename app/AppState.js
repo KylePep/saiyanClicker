@@ -3,7 +3,7 @@ import { Game } from "./models/Game.js"
 import { ShopItem } from "./models/ShopItem.js"
 import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
-import { isValidProp } from "./utils/IsValidProp.js"
+import { IsValidProp } from "./utils/IsValidProp.js"
 import { loadState } from "./utils/Store.js"
 
 class ObservableAppState extends EventEmitter {
@@ -328,11 +328,11 @@ class ObservableAppState extends EventEmitter {
 
 export const AppState = new Proxy(new ObservableAppState(), {
   get(target, prop) {
-    isValidProp(target, prop)
+    IsValidProp(target, prop)
     return target[prop]
   },
   set(target, prop, value) {
-    isValidProp(target, prop)
+    IsValidProp(target, prop)
     target[prop] = value
     target.emit(prop, value)
     return true

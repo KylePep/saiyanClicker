@@ -1,8 +1,8 @@
-import { generateId } from "../utils/GenerateId.js"
+import { GenerateId } from "../utils/GenerateId.js"
 
 export class Value {
   constructor(data) {
-    this.id = generateId()
+    this.id = GenerateId()
     this.title = data.title
   }
 
